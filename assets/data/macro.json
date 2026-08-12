@@ -1,8 +1,19 @@
 {
-  "_how_to_update": "Edit the numbers below when new official data is released, then redeploy the site. 'value' must be a plain number (no % sign) - the suffix is added automatically.",
+  "_how_to_update": "Edit the numbers below when new official data is released, then commit and push - the site redeploys itself. 'value' must be a plain number (no % or naira sign); prefix/suffix are added automatically. IMPORTANT: an item only appears on the site when \"publish\": true AND it has a value. Leave an item unpublished until you have checked the figure against the official source named in 'source'. Never publish a rate you have not verified - this site is a regulated firm's publication.",
   "stats": [
     { "label": "Headline inflation (y/y)", "value": 15.91, "suffix": "%", "note": "Consumer price inflation, year on year.", "asOf": "Jun 2026", "source": "NBS" },
     { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "note": "The CBN's benchmark interest rate.", "asOf": "Jul 2026", "source": "CBN MPC" },
     { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "note": "Reserve requirement for deposit money banks.", "asOf": "Jul 2026", "source": "CBN" }
+  ],
+  "_ticker_note": "The scrolling strip at the top of the home page. Ordered as listed. Keep it to the rates a fixed-income investor actually watches.",
+  "ticker": [
+    { "label": "USD/NGN", "value": 1360.14, "prefix": "₦", "decimals": 2, "asOf": "10 Aug 2026", "source": "CBN", "publish": true },
+    { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "decimals": 2, "asOf": "Jul 2026", "source": "CBN MPC", "publish": true },
+    { "label": "Headline inflation", "value": 15.91, "suffix": "%", "decimals": 2, "asOf": "Jun 2026", "source": "NBS", "publish": true },
+    { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "decimals": 0, "asOf": "Jul 2026", "source": "CBN", "publish": true },
+    { "label": "NTB 91-day stop rate", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "CBN auction", "publish": false },
+    { "label": "NTB 182-day stop rate", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "CBN auction", "publish": false },
+    { "label": "NTB 364-day stop rate", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "CBN auction", "publish": false },
+    { "label": "FGN 10-year yield", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "FMDQ", "publish": false }
   ]
 }
