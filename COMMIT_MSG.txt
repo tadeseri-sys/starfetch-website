@@ -1,0 +1,24 @@
+Equity ticker legibility on the dark section, and correct the publishing instructions
+
+Equity ticker
+The TradingView widget was configured with its light theme, which renders dark
+text. Sitting in the Market pulse section - which has a dark forest background -
+the prices were close to unreadable. Switched the widget to its dark theme so the
+figures render in white, and made the surrounding container translucent rather
+than white so the block sits in the section rather than fighting it.
+
+Publishing instructions
+PUBLISHING.md described a launchd setup that failed on this machine with
+"Input/output error" and requested administrator rights. The publish job is in
+fact scheduled with cron, which needs no elevated permission. Documentation that
+does not match the running configuration is worse than none, particularly for a
+control a technology auditor may later ask to see evidence of.
+
+- Replaced the launchd instructions with the cron entry actually in use, and
+  recorded why launchd was abandoned.
+- Added the Full Disk Access diagnosis for the case where scheduled runs fail
+  while manual runs succeed.
+- Noted that any leftover launchd plist should be removed so two schedulers
+  cannot publish at once.
+
+Approved by Toluwani Adeseri, Director - Investment Strategy & Finance.

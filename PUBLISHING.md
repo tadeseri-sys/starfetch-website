@@ -15,37 +15,33 @@ Set up 12 August 2026. The intention is that you never open a terminal to update
 
 ---
 
-## One-time setup
+## How it is scheduled
 
-Paste this into Terminal once. It creates the scheduled job and starts it. You will not need to do it again.
+Installed 12 August 2026 using **cron**. The entry is:
 
-```bash
-mkdir -p ~/Library/LaunchAgents && cat > ~/Library/LaunchAgents/com.starfetch.website-publish.plist <<'PLIST'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>Label</key>
-  <string>com.starfetch.website-publish</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/bash</string>
-    <string>/Users/tadeseri/Library/CloudStorage/OneDrive-Personal/HP Envy Laptop/HP Envy - Documents/NEXA AM/STARFETCH INV LTD/05_Tech_and_AI/Website/publish.sh</string>
-  </array>
-  <key>StartInterval</key>
-  <integer>300</integer>
-  <key>RunAtLoad</key>
-  <true/>
-</dict>
-</plist>
-PLIST
-chmod +x "/Users/tadeseri/Library/CloudStorage/OneDrive-Personal/HP Envy Laptop/HP Envy - Documents/NEXA AM/STARFETCH INV LTD/05_Tech_and_AI/Website/publish.sh"
-launchctl unload ~/Library/LaunchAgents/com.starfetch.website-publish.plist 2>/dev/null
-launchctl load ~/Library/LaunchAgents/com.starfetch.website-publish.plist
-echo "Auto-publish is running. It checks every 5 minutes."
+```
+*/5 * * * * /bin/bash ".../05_Tech_and_AI/Website/publish.sh"
 ```
 
-It runs every five minutes, and only does anything when something has actually changed.
+To see it: `crontab -l`. To remove it: `crontab -e`, delete the line, save.
+
+**Why cron and not launchd.** The launchd route (`launchctl bootstrap`) failed on this Mac with
+"Input/output error" and asked for administrator rights, which a job this small does not warrant.
+Cron does the same work, needs no elevated permission, and is easier to inspect. If a
+`com.starfetch.website-publish.plist` file is still sitting in `~/Library/LaunchAgents`, delete it
+so there is no chance of two schedulers publishing at once:
+
+```bash
+rm ~/Library/LaunchAgents/com.starfetch.website-publish.plist
+```
+
+**If scheduled runs never publish but a manual run does**, macOS is blocking cron from reading the
+CloudStorage folder. Fix it in System Settings → Privacy & Security → Full Disk Access, adding
+`/usr/sbin/cron`. Run the script manually any time to publish immediately:
+
+```bash
+bash ".../05_Tech_and_AI/Website/publish.sh"
+```
 
 ---
 
