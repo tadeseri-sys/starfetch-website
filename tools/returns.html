@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Returns Calculator · Starfetch Investment Limited</title>
+<meta name="description" content="Free compound returns calculator — project lump-sum and monthly contributions, gross and net of fees.">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/logo-icon.svg" alt="Starfetch Investment Limited logo">
+      <span class="brand-name">STARFETCH<span>INVESTMENT LIMITED</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../tools/index.html" class="active">Free Tools</a>
+        <a href="../contact.html">Contact</a>
+        <a class="btn" href="../contact.html">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:30px"><div class="wrap" style="grid-template-columns:1fr"><div>
+  <span class="eyebrow">Tool 03</span>
+  <h1>Returns <em>Calculator</em></h1>
+  <p class="lead">Project how a starting amount plus monthly contributions could compound — and see the difference fees make, because we believe you should always know the net number.</p>
+</div></div></section>
+<section style="padding-top:20px">
+  <div class="wrap tool-grid">
+    <div class="tool-panel">
+      <div class="field"><label for="r-lump">Starting amount (₦)</label><input type="number" id="r-lump" min="0" value="500000"></div>
+      <div class="field"><label for="r-monthly">Monthly contribution (₦)</label><input type="number" id="r-monthly" min="0" value="50000"></div>
+      <div class="field"><label for="r-years">Investment period (years)</label><input type="number" id="r-years" min="1" max="40" value="5"></div>
+      <div class="field"><label for="r-rate">Assumed annual return (%)</label><input type="number" id="r-rate" min="0" max="60" step="0.1" value="15"><p class="form-note">You choose the assumption. Compare a savings-account rate against an investment rate to see the gap.</p></div>
+      <div class="field"><label for="r-fee">Annual management fee (%)</label><input type="number" id="r-fee" min="0" max="10" step="0.05" value="1.5"></div>
+      <button class="btn" id="r-run" type="button">Project my returns</button>
+    </div>
+    <div>
+      <div class="result-box" id="r-results" hidden>
+        <h3>Projected value</h3>
+        <p>Total contributed: <span class="range-out" id="r-out-contrib">—</span></p>
+        <p style="margin-top:10px">Projected value (net of fees):</p>
+        <p class="big-figure" id="r-out-net">—</p>
+        <p>Gross (before fees): <span class="range-out" id="r-out-gross">—</span></p>
+        <p id="r-out-feecost" style="margin-top:6px"></p>
+        <div id="r-bars" style="margin-top:18px"></div>
+        
+      <form name="tool-results" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html" style="margin-top:20px">
+        <input type="hidden" name="form-name" value="tool-results">
+        <input type="hidden" name="consent_version" value="2026-08-11.v2">
+        <input type="hidden" name="source" value="returns-calculator">
+        <input type="hidden" name="result_summary" id="result-summary" value="">
+        <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+        <h3 style="color:var(--forest-deep);margin-bottom:10px">Email me my results</h3>
+        <div class="field"><label for="rf-name">First name</label><input type="text" id="rf-name" name="first_name" required></div>
+        <div class="field"><label for="rf-email">Email address</label><input type="email" id="rf-email" name="email" required></div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-results" name="consent_results" required value="yes">
+          <label for="rf-consent-results" style="font-weight:400;color:inherit">Email me these results. Starfetch Investment Limited may store my name and email address in order to send them. <a href="../privacy.html">Privacy Policy</a>.</label>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-digest" name="consent_digest" value="yes">
+          <label for="rf-consent-digest" style="font-weight:400;color:inherit">Optional — also send me the Starfetch market digest by email. I can withdraw consent at any time using the unsubscribe link. Leaving this unticked does not affect receiving my results.</label>
+        </div>
+        <button class="btn" type="submit">Send my results</button>
+        <p class="form-note">We only ask for your name and email. No phone calls unless you request one.</p>
+      </form>
+      </div>
+      <div class="result-box" id="r-empty">
+        <h3>Your projection appears here</h3>
+        <p>Set your amounts and assumptions, then press <strong>Project my returns</strong>.</p>
+      </div>
+      <p class="disclaimer">Projections are illustrations based entirely on the assumptions you enter — they are not forecasts, promises or indications of any Starfetch product's performance. Investment values can fall as well as rise. Figures compound monthly and ignore taxes.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  const N = x => "₦" + Math.round(x).toLocaleString("en-NG");
+  const qs = new URLSearchParams(location.search);
+  if (qs.get("monthly")) document.getElementById("r-monthly").value = qs.get("monthly");
+  function fv(lump, pmt, annualPct, years) {
+    const i = Math.pow(1 + annualPct / 100, 1 / 12) - 1, n = Math.round(years * 12);
+    const lumpFV = lump * Math.pow(1 + i, n);
+    const pmtFV = i === 0 ? pmt * n : pmt * (Math.pow(1 + i, n) - 1) / i;
+    return lumpFV + pmtFV;
+  }
+  document.getElementById("r-run").addEventListener("click", function () {
+    const lump = Math.max(0, Number(document.getElementById("r-lump").value) || 0);
+    const pmt = Math.max(0, Number(document.getElementById("r-monthly").value) || 0);
+    const yrs = Math.min(40, Math.max(1, Number(document.getElementById("r-years").value) || 1));
+    const rate = Math.min(60, Math.max(0, Number(document.getElementById("r-rate").value) || 0));
+    const fee = Math.min(10, Math.max(0, Number(document.getElementById("r-fee").value) || 0));
+    if (lump === 0 && pmt === 0) { alert("Enter a starting amount or a monthly contribution."); return; }
+    const contrib = lump + pmt * yrs * 12;
+    const gross = fv(lump, pmt, rate, yrs);
+    const net = fv(lump, pmt, Math.max(0, rate - fee), yrs);
+    document.getElementById("r-empty").hidden = true;
+    document.getElementById("r-results").hidden = false;
+    document.getElementById("r-out-contrib").textContent = N(contrib);
+    document.getElementById("r-out-net").textContent = N(net);
+    document.getElementById("r-out-gross").textContent = N(gross);
+    document.getElementById("r-out-feecost").textContent =
+      "Estimated cost of a " + fee + "% annual fee over " + yrs + " years: " + N(gross - net) + ".";
+    const maxv = Math.max(gross, 1);
+    const mk = (label, val, cls) => '<div class="bar-row">' + label + " — " + N(val)
+      + '<div class="bar ' + cls + '" style="width:' + (val / maxv * 100) + '%"></div></div>';
+    document.getElementById("r-bars").innerHTML =
+      mk("Contributed", contrib, "alt") + mk("Net of fees", net, "") + mk("Gross", gross, "mid");
+    document.getElementById("result-summary").value =
+      "Returns: " + N(lump) + " + " + N(pmt) + "/mo, " + yrs + "y @ " + rate + "% (fee " + fee + "%) → net " + N(net);
+  });
+})();
+</script>
+<section class="newsletter-band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#B4E717">Market digest</span>
+    <h2>Stay ahead of the Nigerian market</h2>
+    <p>Rates, market notes and plain-language investing guidance — sent periodically, no noise.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="source" value="newsletter-band">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <input type="text" name="first_name" placeholder="First name" required aria-label="First name">
+      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <button class="btn" type="submit">Subscribe</button>
+      <div class="consent">
+        <input type="checkbox" name="consent_newsletter" id="nl-consent" required value="yes">
+        <label for="nl-consent" style="font-weight:400;color:inherit">I agree that Starfetch Investment Limited may store my details and send me its market digest by email. I can withdraw consent at any time using the unsubscribe link in every email. <a href="../privacy.html">Privacy Policy</a>.</label>
+      </div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Starfetch Investment Limited</h4>
+      <p>The Bloc (2nd Floor), 70 Kusenla Road, Off Lekki–Epe Expressway, Ikate-Elegushi, Lekki, Lagos, Nigeria</p>
+      <p style="margin-top:8px"><a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="../about.html">About us</a>
+      <a href="../services.html">Services</a>
+      <a href="../tools/index.html">Free tools</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="../complaints.html">Complaints policy</a>
+    </div>
+    <div class="footer-legal">
+      <p>Starfetch Investment Limited · RC 7402697 · Incorporated in Nigeria under CAMA 2020.</p>
+      <p>Registered with the Securities and Exchange Commission, Nigeria as a Fund/Portfolio Manager.</p>
+      <p>Investing involves risk, including the possible loss of principal. Past performance is not a reliable indicator of future results. Nothing on this website constitutes investment, legal or tax advice, an offer, or a solicitation to buy or sell any security.</p>
+      <p>© <span id="year">2026</span> Starfetch Investment Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="msg-widget">
+  <button class="msg-fab" id="msg-fab" aria-expanded="false" aria-controls="msg-panel">
+    <span class="msg-fab-icon">✉</span> Leave a message
+  </button>
+  <div class="msg-panel" id="msg-panel" hidden>
+    <div class="msg-head">
+      <strong>Message Starfetch</strong>
+      <button class="msg-close" id="msg-close" aria-label="Close">×</button>
+    </div>
+    <p class="msg-sub">We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
+    <form name="quick-message" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="quick-message">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="page" value="Returns Calculator">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <div class="field"><input type="text" name="name" placeholder="Your name" required aria-label="Your name"></div>
+      <div class="field"><input type="email" name="email" placeholder="Email address" required aria-label="Email address"></div>
+      <div class="field"><textarea name="message" rows="3" placeholder="How can we help?" required aria-label="Message"></textarea></div>
+      <div class="consent">
+        <input type="checkbox" name="consent_contact" id="mw-consent-tools" required value="yes">
+        <label for="mw-consent-tools" style="font-weight:400;color:inherit">You may store my details and reply to my message. <a href="../privacy.html">Privacy</a>.</label>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Send</button>
+    </form>
+    <p class="msg-alt">Prefer email? <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

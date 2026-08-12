@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Planner · Starfetch Investment Limited</title>
+<meta name="description" content="Free Naira budget planner — map your monthly income and expenses and find your savings capacity.">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/logo-icon.svg" alt="Starfetch Investment Limited logo">
+      <span class="brand-name">STARFETCH<span>INVESTMENT LIMITED</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../tools/index.html" class="active">Free Tools</a>
+        <a href="../contact.html">Contact</a>
+        <a class="btn" href="../contact.html">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:30px"><div class="wrap" style="grid-template-columns:1fr"><div>
+  <span class="eyebrow">Tool 01</span>
+  <h1>Budget <em>Planner</em></h1>
+  <p class="lead">Enter your typical month. Everything runs in your browser — nothing is stored unless you choose to email yourself the results.</p>
+</div></div></section>
+<section style="padding-top:20px">
+  <div class="wrap tool-grid">
+    <div class="tool-panel">
+      <h3 style="color:var(--forest-deep);margin-bottom:14px">Monthly income</h3>
+      <div class="field"><label for="b-income">Take-home income (₦)</label><input type="number" id="b-income" min="0" placeholder="e.g. 850000"></div>
+      <div class="field"><label for="b-other">Other income (₦)</label><input type="number" id="b-other" min="0" placeholder="e.g. 150000"></div>
+      <h3 style="color:var(--forest-deep);margin:18px 0 14px">Monthly spending</h3>
+      <div class="field"><label for="b-housing">Housing &amp; utilities (₦)</label><input type="number" id="b-housing" min="0" placeholder="rent, power, water, internet"></div>
+      <div class="field"><label for="b-food">Food &amp; household (₦)</label><input type="number" id="b-food" min="0"></div>
+      <div class="field"><label for="b-transport">Transport &amp; fuel (₦)</label><input type="number" id="b-transport" min="0"></div>
+      <div class="field"><label for="b-family">Family, school fees &amp; support (₦)</label><input type="number" id="b-family" min="0"></div>
+      <div class="field"><label for="b-lifestyle">Lifestyle &amp; subscriptions (₦)</label><input type="number" id="b-lifestyle" min="0"></div>
+      <div class="field"><label for="b-debt">Loan &amp; debt repayments (₦)</label><input type="number" id="b-debt" min="0"></div>
+      <div class="field"><label for="b-otherexp">Everything else (₦)</label><input type="number" id="b-otherexp" min="0"></div>
+      <button class="btn" id="b-run" type="button">Calculate my budget</button>
+    </div>
+    <div>
+      <div class="result-box" id="b-results" hidden>
+        <h3>Your month at a glance</h3>
+        <p>Total income: <span class="range-out" id="b-out-income">—</span></p>
+        <p>Total spending: <span class="range-out" id="b-out-spend">—</span></p>
+        <p style="margin-top:10px">Monthly surplus available to save or invest:</p>
+        <p class="big-figure" id="b-out-surplus">—</p>
+        <p id="b-out-rate" style="margin-top:6px"></p>
+        <div id="b-bars" style="margin-top:18px"></div>
+        <p id="b-verdict" style="margin-top:14px;font-weight:600"></p>
+        <p style="margin-top:14px"><a class="btn btn-dark" href="returns.html" id="b-to-returns">See what this surplus could grow into →</a></p>
+        
+      <form name="tool-results" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html" style="margin-top:20px">
+        <input type="hidden" name="form-name" value="tool-results">
+        <input type="hidden" name="consent_version" value="2026-08-11.v2">
+        <input type="hidden" name="source" value="budget-planner">
+        <input type="hidden" name="result_summary" id="result-summary" value="">
+        <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+        <h3 style="color:var(--forest-deep);margin-bottom:10px">Email me my results</h3>
+        <div class="field"><label for="rf-name">First name</label><input type="text" id="rf-name" name="first_name" required></div>
+        <div class="field"><label for="rf-email">Email address</label><input type="email" id="rf-email" name="email" required></div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-results" name="consent_results" required value="yes">
+          <label for="rf-consent-results" style="font-weight:400;color:inherit">Email me these results. Starfetch Investment Limited may store my name and email address in order to send them. <a href="../privacy.html">Privacy Policy</a>.</label>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-digest" name="consent_digest" value="yes">
+          <label for="rf-consent-digest" style="font-weight:400;color:inherit">Optional — also send me the Starfetch market digest by email. I can withdraw consent at any time using the unsubscribe link. Leaving this unticked does not affect receiving my results.</label>
+        </div>
+        <button class="btn" type="submit">Send my results</button>
+        <p class="form-note">We only ask for your name and email. No phone calls unless you request one.</p>
+      </form>
+      </div>
+      <div class="result-box" id="b-empty">
+        <h3>Your results appear here</h3>
+        <p>Fill in the figures and press <strong>Calculate my budget</strong>. Tip: use averages from your last three months of bank statements for a realistic picture.</p>
+      </div>
+      <p class="disclaimer">Illustrative planning tool only; not financial advice. The 50/30/20 guideline (needs/wants/savings) is a rule of thumb, not a rule.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  const N = x => "₦" + Math.round(x).toLocaleString("en-NG");
+  const v = id => Math.max(0, Number(document.getElementById(id).value) || 0);
+  document.getElementById("b-run").addEventListener("click", function () {
+    const income = v("b-income") + v("b-other");
+    const needs = v("b-housing") + v("b-food") + v("b-transport") + v("b-family") + v("b-debt");
+    const wants = v("b-lifestyle") + v("b-otherexp");
+    const spend = needs + wants;
+    if (income <= 0) { alert("Please enter your monthly income."); return; }
+    const surplus = income - spend;
+    const rate = income > 0 ? surplus / income * 100 : 0;
+    document.getElementById("b-empty").hidden = true;
+    document.getElementById("b-results").hidden = false;
+    document.getElementById("b-out-income").textContent = N(income);
+    document.getElementById("b-out-spend").textContent = N(spend);
+    document.getElementById("b-out-surplus").textContent = (surplus < 0 ? "−" : "") + N(Math.abs(surplus));
+    document.getElementById("b-out-rate").textContent = surplus >= 0
+      ? "That is a savings capacity of " + rate.toFixed(0) + "% of income."
+      : "You are spending " + Math.abs(rate).toFixed(0) + "% more than you earn.";
+    const mk = (label, val, cls) => {
+      const pct = income > 0 ? Math.min(100, val / income * 100) : 0;
+      return '<div class="bar-row">' + label + " — " + N(val) + " (" + pct.toFixed(0) + "%)"
+        + '<div class="bar ' + cls + '" style="width:' + pct + '%"></div></div>';
+    };
+    document.getElementById("b-bars").innerHTML =
+      mk("Needs (guideline ≤50%)", needs, "alt") + mk("Wants (guideline ≤30%)", wants, "mid")
+      + mk("Surplus (guideline ≥20%)", Math.max(0, surplus), "");
+    document.getElementById("b-verdict").textContent = surplus < 0
+      ? "First priority: close the gap. Review the wants category and any debt costs before investing."
+      : rate >= 20 ? "Strong position — a regular investment plan could put this surplus to work."
+      : "A start — even a small automated monthly investment builds the habit while you grow the surplus.";
+    document.getElementById("b-to-returns").href = "returns.html?monthly=" + Math.max(0, Math.round(surplus));
+    document.getElementById("result-summary").value =
+      "Budget: income " + N(income) + ", spend " + N(spend) + ", surplus " + N(surplus) + " (" + rate.toFixed(0) + "%)";
+  });
+})();
+</script>
+<section class="newsletter-band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#B4E717">Market digest</span>
+    <h2>Stay ahead of the Nigerian market</h2>
+    <p>Rates, market notes and plain-language investing guidance — sent periodically, no noise.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="source" value="newsletter-band">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <input type="text" name="first_name" placeholder="First name" required aria-label="First name">
+      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <button class="btn" type="submit">Subscribe</button>
+      <div class="consent">
+        <input type="checkbox" name="consent_newsletter" id="nl-consent" required value="yes">
+        <label for="nl-consent" style="font-weight:400;color:inherit">I agree that Starfetch Investment Limited may store my details and send me its market digest by email. I can withdraw consent at any time using the unsubscribe link in every email. <a href="../privacy.html">Privacy Policy</a>.</label>
+      </div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Starfetch Investment Limited</h4>
+      <p>The Bloc (2nd Floor), 70 Kusenla Road, Off Lekki–Epe Expressway, Ikate-Elegushi, Lekki, Lagos, Nigeria</p>
+      <p style="margin-top:8px"><a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="../about.html">About us</a>
+      <a href="../services.html">Services</a>
+      <a href="../tools/index.html">Free tools</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="../complaints.html">Complaints policy</a>
+    </div>
+    <div class="footer-legal">
+      <p>Starfetch Investment Limited · RC 7402697 · Incorporated in Nigeria under CAMA 2020.</p>
+      <p>Registered with the Securities and Exchange Commission, Nigeria as a Fund/Portfolio Manager.</p>
+      <p>Investing involves risk, including the possible loss of principal. Past performance is not a reliable indicator of future results. Nothing on this website constitutes investment, legal or tax advice, an offer, or a solicitation to buy or sell any security.</p>
+      <p>© <span id="year">2026</span> Starfetch Investment Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="msg-widget">
+  <button class="msg-fab" id="msg-fab" aria-expanded="false" aria-controls="msg-panel">
+    <span class="msg-fab-icon">✉</span> Leave a message
+  </button>
+  <div class="msg-panel" id="msg-panel" hidden>
+    <div class="msg-head">
+      <strong>Message Starfetch</strong>
+      <button class="msg-close" id="msg-close" aria-label="Close">×</button>
+    </div>
+    <p class="msg-sub">We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
+    <form name="quick-message" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="quick-message">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="page" value="Budget Planner">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <div class="field"><input type="text" name="name" placeholder="Your name" required aria-label="Your name"></div>
+      <div class="field"><input type="email" name="email" placeholder="Email address" required aria-label="Email address"></div>
+      <div class="field"><textarea name="message" rows="3" placeholder="How can we help?" required aria-label="Message"></textarea></div>
+      <div class="consent">
+        <input type="checkbox" name="consent_contact" id="mw-consent-tools" required value="yes">
+        <label for="mw-consent-tools" style="font-weight:400;color:inherit">You may store my details and reply to my message. <a href="../privacy.html">Privacy</a>.</label>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Send</button>
+    </form>
+    <p class="msg-alt">Prefer email? <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Starfetch Investment Limited — Netlify configuration
+# Static site, published from the repository root.
+
+[build]
+  publish = "."
+
+# Security headers. These are checked by the SEC technology-audit control
+# checklist (ISO 27001 / NIST CSF aligned) referenced in the Technology Plan §5.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+
+# Static assets can be cached hard; HTML must not be, so edits appear immediately.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

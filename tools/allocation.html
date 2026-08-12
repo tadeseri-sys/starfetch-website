@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Allocation Tool · Starfetch Investment Limited</title>
+<meta name="description" content="Free risk-profiling tool — six questions produce a suggested asset allocation across money-market, fixed-income and growth assets.">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/logo-icon.svg" alt="Starfetch Investment Limited logo">
+      <span class="brand-name">STARFETCH<span>INVESTMENT LIMITED</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../services.html">Services</a>
+        <a href="../tools/index.html" class="active">Free Tools</a>
+        <a href="../contact.html">Contact</a>
+        <a class="btn" href="../contact.html">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:30px"><div class="wrap" style="grid-template-columns:1fr"><div>
+  <span class="eyebrow">Tool 02</span>
+  <h1>Portfolio <em>Allocation</em> Tool</h1>
+  <p class="lead">Six questions, no jargon. Your answers produce a suggested split across three broad asset groups — a starting point for a conversation, not a prescription.</p>
+</div></div></section>
+<section style="padding-top:20px">
+  <div class="wrap tool-grid">
+    <div class="tool-panel" id="quiz">
+      <div class="field"><label>1. How long before you expect to need most of this money?</label>
+        <select id="q1"><option value="1">Under 1 year</option><option value="2">1–3 years</option><option value="3" selected>3–7 years</option><option value="4">More than 7 years</option></select></div>
+      <div class="field"><label>2. If your portfolio fell 15% in three months, you would…</label>
+        <select id="q2"><option value="1">Sell everything — I can't take losses</option><option value="2" selected>Feel uncomfortable but wait</option><option value="3">Hold and review the plan</option><option value="4">Invest more at lower prices</option></select></div>
+      <div class="field"><label>3. Your experience with investing so far</label>
+        <select id="q3"><option value="1">None — this is new to me</option><option value="2" selected>Savings and fixed deposits</option><option value="3">Funds, T-bills or bonds</option><option value="4">Shares and other market assets</option></select></div>
+      <div class="field"><label>4. The main goal for this money</label>
+        <select id="q4"><option value="1">Keep it safe and accessible</option><option value="2" selected>Steady income above inflation-adjusted savings</option><option value="3">Grow it meaningfully over years</option><option value="4">Maximise long-term growth</option></select></div>
+      <div class="field"><label>5. How much of your total savings does this represent?</label>
+        <select id="q5"><option value="1">Almost all of it</option><option value="2" selected>More than half</option><option value="3">Less than half</option><option value="4">A small part</option></select></div>
+      <div class="field"><label>6. How stable is your income?</label>
+        <select id="q6"><option value="1">Irregular or uncertain</option><option value="2" selected>Fairly stable</option><option value="3">Stable salaried</option><option value="4">Very stable with reserves</option></select></div>
+      <button class="btn" id="a-run" type="button">Show my suggested mix</button>
+    </div>
+    <div>
+      <div class="result-box" id="a-results" hidden>
+        <h3>Suggested starting allocation</h3>
+        <p class="big-figure" id="a-profile">—</p>
+        <div id="a-bars" style="margin-top:16px"></div>
+        <p id="a-note" style="margin-top:14px"></p>
+        <p style="margin-top:14px"><a class="btn btn-dark" href="../services.html">See which Starfetch services fit →</a></p>
+        
+      <form name="tool-results" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html" style="margin-top:20px">
+        <input type="hidden" name="form-name" value="tool-results">
+        <input type="hidden" name="consent_version" value="2026-08-11.v2">
+        <input type="hidden" name="source" value="allocation-tool">
+        <input type="hidden" name="result_summary" id="result-summary" value="">
+        <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+        <h3 style="color:var(--forest-deep);margin-bottom:10px">Email me my results</h3>
+        <div class="field"><label for="rf-name">First name</label><input type="text" id="rf-name" name="first_name" required></div>
+        <div class="field"><label for="rf-email">Email address</label><input type="email" id="rf-email" name="email" required></div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-results" name="consent_results" required value="yes">
+          <label for="rf-consent-results" style="font-weight:400;color:inherit">Email me these results. Starfetch Investment Limited may store my name and email address in order to send them. <a href="../privacy.html">Privacy Policy</a>.</label>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="rf-consent-digest" name="consent_digest" value="yes">
+          <label for="rf-consent-digest" style="font-weight:400;color:inherit">Optional — also send me the Starfetch market digest by email. I can withdraw consent at any time using the unsubscribe link. Leaving this unticked does not affect receiving my results.</label>
+        </div>
+        <button class="btn" type="submit">Send my results</button>
+        <p class="form-note">We only ask for your name and email. No phone calls unless you request one.</p>
+      </form>
+      </div>
+      <div class="result-box" id="a-empty">
+        <h3>Your suggested mix appears here</h3>
+        <p>Answer the six questions and press <strong>Show my suggested mix</strong>.</p>
+      </div>
+      <p class="disclaimer">This tool suggests an educational starting point based on your answers. It is not a personal recommendation. A full, documented risk-profiling exercise is completed with every Starfetch client before any mandate is agreed.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  const profiles = [
+    { name: "Capital Preservation", mm: 70, fi: 25, gr: 5,
+      note: "Priority: keeping money safe and liquid. Mostly money-market instruments, a slice of short-tenor fixed income, minimal growth assets." },
+    { name: "Conservative Income", mm: 45, fi: 45, gr: 10,
+      note: "Priority: steady income with limited swings. Balanced between money-market and fixed income with a small growth allocation." },
+    { name: "Balanced Growth", mm: 25, fi: 45, gr: 30,
+      note: "Priority: growth over several years while managing drawdowns. Fixed income anchors the portfolio; growth assets do the compounding." },
+    { name: "Long-Term Growth", mm: 10, fi: 35, gr: 55,
+      note: "Priority: long-horizon compounding. Larger allocation to growth assets, accepting bigger interim swings for higher expected outcomes." }
+  ];
+  document.getElementById("a-run").addEventListener("click", function () {
+    let s = 0;
+    for (let i = 1; i <= 6; i++) s += Number(document.getElementById("q" + i).value);
+    const idx = s <= 9 ? 0 : s <= 13 ? 1 : s <= 18 ? 2 : 3;
+    const p = profiles[idx];
+    document.getElementById("a-empty").hidden = true;
+    document.getElementById("a-results").hidden = false;
+    document.getElementById("a-profile").textContent = p.name;
+    const mk = (label, val, cls) => '<div class="bar-row">' + label + " — " + val + "%"
+      + '<div class="bar ' + cls + '" style="width:' + val + '%"></div></div>';
+    document.getElementById("a-bars").innerHTML =
+      mk("Money-market & cash", p.mm, "alt") + mk("Fixed income", p.fi, "mid") + mk("Growth assets", p.gr, "");
+    document.getElementById("a-note").textContent = p.note;
+    document.getElementById("result-summary").value =
+      "Allocation profile: " + p.name + " (MM " + p.mm + "% / FI " + p.fi + "% / Growth " + p.gr + "%)";
+  });
+})();
+</script>
+<section class="newsletter-band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#B4E717">Market digest</span>
+    <h2>Stay ahead of the Nigerian market</h2>
+    <p>Rates, market notes and plain-language investing guidance — sent periodically, no noise.</p>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="source" value="newsletter-band">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <input type="text" name="first_name" placeholder="First name" required aria-label="First name">
+      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+      <button class="btn" type="submit">Subscribe</button>
+      <div class="consent">
+        <input type="checkbox" name="consent_newsletter" id="nl-consent" required value="yes">
+        <label for="nl-consent" style="font-weight:400;color:inherit">I agree that Starfetch Investment Limited may store my details and send me its market digest by email. I can withdraw consent at any time using the unsubscribe link in every email. <a href="../privacy.html">Privacy Policy</a>.</label>
+      </div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Starfetch Investment Limited</h4>
+      <p>The Bloc (2nd Floor), 70 Kusenla Road, Off Lekki–Epe Expressway, Ikate-Elegushi, Lekki, Lagos, Nigeria</p>
+      <p style="margin-top:8px"><a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="../about.html">About us</a>
+      <a href="../services.html">Services</a>
+      <a href="../tools/index.html">Free tools</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="../complaints.html">Complaints policy</a>
+    </div>
+    <div class="footer-legal">
+      <p>Starfetch Investment Limited · RC 7402697 · Incorporated in Nigeria under CAMA 2020.</p>
+      <p>Registered with the Securities and Exchange Commission, Nigeria as a Fund/Portfolio Manager.</p>
+      <p>Investing involves risk, including the possible loss of principal. Past performance is not a reliable indicator of future results. Nothing on this website constitutes investment, legal or tax advice, an offer, or a solicitation to buy or sell any security.</p>
+      <p>© <span id="year">2026</span> Starfetch Investment Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="msg-widget">
+  <button class="msg-fab" id="msg-fab" aria-expanded="false" aria-controls="msg-panel">
+    <span class="msg-fab-icon">✉</span> Leave a message
+  </button>
+  <div class="msg-panel" id="msg-panel" hidden>
+    <div class="msg-head">
+      <strong>Message Starfetch</strong>
+      <button class="msg-close" id="msg-close" aria-label="Close">×</button>
+    </div>
+    <p class="msg-sub">We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
+    <form name="quick-message" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="../thanks.html">
+      <input type="hidden" name="form-name" value="quick-message">
+      <input type="hidden" name="consent_version" value="2026-08-11.v2">
+      <input type="hidden" name="page" value="Portfolio Allocation Tool">
+      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
+      <div class="field"><input type="text" name="name" placeholder="Your name" required aria-label="Your name"></div>
+      <div class="field"><input type="email" name="email" placeholder="Email address" required aria-label="Email address"></div>
+      <div class="field"><textarea name="message" rows="3" placeholder="How can we help?" required aria-label="Message"></textarea></div>
+      <div class="consent">
+        <input type="checkbox" name="consent_contact" id="mw-consent-tools" required value="yes">
+        <label for="mw-consent-tools" style="font-weight:400;color:inherit">You may store my details and reply to my message. <a href="../privacy.html">Privacy</a>.</label>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Send</button>
+    </form>
+    <p class="msg-alt">Prefer email? <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+  </div>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "_how_to_update": "Edit the numbers below when new official data is released, then redeploy the site. 'value' must be a plain number (no % sign) - the suffix is added automatically.",
+  "stats": [
+    { "label": "Headline inflation (y/y)", "value": 15.91, "suffix": "%", "note": "Consumer price inflation, year on year.", "asOf": "Jun 2026", "source": "NBS" },
+    { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "note": "The CBN's benchmark interest rate.", "asOf": "Jul 2026", "source": "CBN MPC" },
+    { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "note": "Reserve requirement for deposit money banks.", "asOf": "Jul 2026", "source": "CBN" }
+  ]
+}
