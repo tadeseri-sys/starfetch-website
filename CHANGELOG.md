@@ -13,6 +13,31 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 12 August 2026 — Home page de-duplicated: equity ticker returns to the header band
+
+**Changed**
+
+- The self-hosted rates strip was removed from the top of the home page and the TradingView equity
+  ticker returned to that position.
+- The duplicate equity block in the Market pulse section was removed.
+- The disclosure line — prices supplied by TradingView, may be delayed, information only, not an
+  offer, recommendation or indication of any Starfetch product's performance — now sits beneath the
+  ticker band.
+- Privacy policy updated to **v5** to place the third-party equity ticker at the top of the page
+  rather than in Market pulse, and to state that these third-party features appear on the home page
+  only. Consent version `2026-08-12.v5`.
+
+**Why.** The rates strip and the Market pulse cards were showing the same three figures — Monetary
+Policy Rate, headline inflation and Cash Reserve Ratio — on the same page. Each kind of content now
+appears exactly once, in the position that suits its shape: equity prices scroll in the header band
+because short numbers read well there and they change continuously; policy figures sit as cards
+with their notes, sources and as-of dates; headlines run as a marquee below them.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who identified the
+duplication.
+
+---
+
 ## 12 August 2026 — USD/NGN removed from the rates strip
 
 **Changed**
@@ -167,6 +192,7 @@ Consent version `2026-07-14.v1`. Privacy policy `2026-07-14.v1`.
 
 | Date | Consent version | Privacy policy | Complaints policy |
 |---|---|---|---|
+| 12 Aug 2026 | `2026-08-12.v5` | `2026-08-12.v5` | `2026-08-11.v1` |
 | 12 Aug 2026 | `2026-08-12.v4` | `2026-08-12.v4` | `2026-08-11.v1` |
 | 12 Aug 2026 | `2026-08-12.v3` | `2026-08-12.v3` | `2026-08-11.v1` |
 | 11 Aug 2026 | `2026-08-11.v2` | `2026-08-11.v2` | `2026-08-11.v1` |

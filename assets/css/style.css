@@ -225,7 +225,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--lime); bord
 .market-section .card { border: none; }
 .market-section .form-note { color: #B9CDC5; }
 
-/* Market ticker (self-hosted, fed by assets/data/macro.json) */
+/* Market ticker band (TradingView equity ticker-tape) */
 .ngx-ticker { border-bottom: 1px solid var(--line); background: #fff; min-height: 46px; }
 
 /* Macro stat cards */
@@ -342,29 +342,9 @@ footer a:hover { color: var(--lime); }
 }
 
 
-/* Nigerian rates ticker */
-.ngx-ticker[hidden] { display: none; }
-.rate-track { display: flex; width: max-content; animation: rate-scroll 55s linear infinite; }
-.rate-track:hover { animation-play-state: paused; }
-.rate-item {
-  display: flex; align-items: baseline; gap: 8px; white-space: nowrap;
-  padding: 13px 24px; border-right: 1px solid var(--line);
-}
-.rate-label { font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); font-weight: 700; }
-.rate-value { font-size: .95rem; font-weight: 700; color: var(--forest); }
-.rate-asof { font-size: .7rem; color: var(--grey); font-weight: 400; }
-@keyframes rate-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-  .rate-track { animation: none; flex-wrap: wrap; width: 100%; }
-}
-@media (max-width: 880px) { .rate-item { padding: 11px 16px; } }
 
-
-/* Equity ticker block (TradingView widget, inside Market pulse) */
-.equity-block { margin-top: 30px; }
-.equity-block h3 { font-size: 1.05rem; color: #fff; margin-bottom: 12px; }
-.equity-ticker-outer {
-  overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 12px;
-  background: rgba(255,255,255,.06); min-height: 46px;
+.ticker-note {
+  max-width: 1180px; margin: 0 auto; padding: 6px 20px 10px;
+  font-size: .72rem; line-height: 1.45; color: var(--grey);
 }
-.equity-block .form-note { margin-top: 10px; }
+@media (max-width: 880px) { .ticker-note { font-size: .68rem; } }

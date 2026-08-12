@@ -68,44 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     restart();
   }
 
-  // Nigerian rates ticker (self-hosted, from assets/data/macro.json).
-  // Only items with "publish": true and a value are rendered - never publish an unverified rate.
-  var rateWrap = document.getElementById("rate-ticker");
-  var rateTrack = document.getElementById("rate-track");
-  if (rateWrap && rateTrack) {
-    fetch("assets/data/macro.json").then(function (r) { return r.json(); }).then(function (data) {
-      var items = (data.ticker || []).filter(function (t) {
-        return t.publish === true && t.value !== null && t.value !== undefined;
-      });
-      if (!items.length) return;                 // nothing verified -> strip stays hidden
-      var build = function (t) {
-        var dp = typeof t.decimals === "number" ? t.decimals : 2;
-        var el = document.createElement("div");
-        el.className = "rate-item";
-        el.innerHTML = '<span class="rate-label"></span><span class="rate-value"></span><span class="rate-asof"></span>';
-        el.children[0].textContent = t.label;
-        el.children[1].textContent = (t.prefix || "") + Number(t.value).toLocaleString("en-NG", {
-          minimumFractionDigits: dp, maximumFractionDigits: dp
-        }) + (t.suffix || "");
-        el.children[2].textContent = [t.source, t.asOf].filter(Boolean).join(" \u00b7 ");
-        return el;
-      };
-      // The marquee animates to translateX(-50%), so the track must be two identical
-      // halves. With only a few items one half can be narrower than the screen, which
-      // would show a gap - so each half repeats the set enough times to cover the width.
-      items.forEach(function (t) { rateTrack.appendChild(build(t)); });
-      rateWrap.hidden = false;
-      var setWidth = rateTrack.scrollWidth || 1;
-      var copies = Math.max(1, Math.ceil(window.innerWidth / setWidth) + 1);
-      rateTrack.innerHTML = "";
-      for (var half = 0; half < 2; half++) {
-        for (var c = 0; c < copies; c++) {
-          items.forEach(function (t) { rateTrack.appendChild(build(t)); });
-        }
-      }
-    }).catch(function () { /* strip stays hidden if the data file is unreachable */ });
-  }
-
   // Macro stat cards (from assets/data/macro.json) with count-up animation
   var macroWrap = document.getElementById("macro-cards");
   if (macroWrap) {
