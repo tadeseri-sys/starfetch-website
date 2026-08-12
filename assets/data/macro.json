@@ -5,9 +5,9 @@
     { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "note": "The CBN's benchmark interest rate.", "asOf": "Jul 2026", "source": "CBN MPC" },
     { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "note": "Reserve requirement for deposit money banks.", "asOf": "Jul 2026", "source": "CBN" }
   ],
-  "_ticker_note": "The scrolling strip at the top of the home page. Ordered as listed. Keep it to the rates a fixed-income investor actually watches.",
+  "_ticker_note": "The scrolling strip at the top of the home page, ordered as listed. RULE: only put figures here that change on a known, infrequent schedule - policy rates, monthly statistics, auction results. Anything that moves daily (FX, equity prices, bond yields quoted intraday) does not belong here, because this file is updated by hand and a daily number goes stale between updates. Live market data belongs in the TradingView block further down the page, which updates itself.",
   "ticker": [
-    { "label": "USD/NGN", "value": 1360.14, "prefix": "₦", "decimals": 2, "asOf": "10 Aug 2026", "source": "CBN", "publish": true },
+    { "_retired": "USD/NGN was removed from the strip on 12 Aug 2026. It moves daily and this file is updated by hand, so it would always have been showing a stale figure. Do not re-add it unless the value is being fed automatically.", "label": "USD/NGN", "value": 1360.14, "prefix": "₦", "decimals": 2, "asOf": "10 Aug 2026", "source": "CBN", "publish": false },
     { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "decimals": 2, "asOf": "Jul 2026", "source": "CBN MPC", "publish": true },
     { "label": "Headline inflation", "value": 15.91, "suffix": "%", "decimals": 2, "asOf": "Jun 2026", "source": "NBS", "publish": true },
     { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "decimals": 0, "asOf": "Jul 2026", "source": "CBN", "publish": true },

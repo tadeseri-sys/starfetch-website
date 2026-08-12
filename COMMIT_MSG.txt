@@ -1,0 +1,23 @@
+Remove USD/NGN from the rates strip; keep only figures with a known update cycle
+
+The rates strip is maintained by hand and each figure is verified against its
+official source before publication. The exchange rate moves daily, so a
+hand-maintained value would always have been showing a stale number - and it is
+the one figure a visitor is most likely to know is out of date, on a site whose
+positioning is honest numbers.
+
+The strip now carries the Monetary Policy Rate, headline inflation and the Cash
+Reserve Ratio, each changing on a published schedule: policy rates when the MPC
+moves them, inflation monthly with the NBS release, auction rates at each
+auction. Treasury bill stop rates and the FGN 10-year yield remain configured but
+unpublished until verified figures are available.
+
+Live, fast-moving market data is served by the TradingView block further down the
+page, which updates itself.
+
+- macro.json records the rule so the distinction is not lost later, and keeps the
+  retired USD/NGN entry with an explanation rather than deleting it silently.
+- The strip now repeats its contents to fill the viewport, so a short list cannot
+  leave a visible gap on a wide screen.
+
+Approved by Toluwani Adeseri, Director - Investment Strategy & Finance.

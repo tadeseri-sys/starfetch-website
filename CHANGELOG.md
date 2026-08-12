@@ -13,6 +13,30 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 12 August 2026 — USD/NGN removed from the rates strip
+
+**Changed**
+
+- USD/NGN retired from the home page rates strip. The strip now carries the Monetary Policy Rate,
+  headline inflation and the Cash Reserve Ratio, with treasury bill stop rates and the FGN 10-year
+  yield held unpublished pending verified figures.
+- A rule recorded in `assets/data/macro.json`: only figures that change on a known, infrequent
+  schedule belong in the strip. Anything that moves daily belongs in the live market data block,
+  which updates itself.
+- The strip now repeats its contents enough times to fill the screen, so a short list cannot leave
+  a visible gap on a wide display.
+
+**Why.** The rates strip is maintained by hand and verified against the official source before
+publication. The exchange rate moves daily, so a hand-maintained figure would always have been
+displaying a stale number — the one figure a visitor is most likely to know is out of date, on a
+site whose positioning is honest numbers. The remaining figures change on published schedules:
+policy rates when the MPC moves them, inflation monthly with the NBS release, auction rates at each
+auction. Each carries its source and as-of date.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance.
+
+---
+
 ## 12 August 2026 — Nigerian equity prices restored alongside the rates strip
 
 **Changed**

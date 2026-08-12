@@ -90,11 +90,19 @@ document.addEventListener("DOMContentLoaded", function () {
         el.children[2].textContent = [t.source, t.asOf].filter(Boolean).join(" \u00b7 ");
         return el;
       };
-      // rendered twice so the marquee loops seamlessly at translateX(-50%)
-      for (var pass = 0; pass < 2; pass++) {
-        items.forEach(function (t) { rateTrack.appendChild(build(t)); });
-      }
+      // The marquee animates to translateX(-50%), so the track must be two identical
+      // halves. With only a few items one half can be narrower than the screen, which
+      // would show a gap - so each half repeats the set enough times to cover the width.
+      items.forEach(function (t) { rateTrack.appendChild(build(t)); });
       rateWrap.hidden = false;
+      var setWidth = rateTrack.scrollWidth || 1;
+      var copies = Math.max(1, Math.ceil(window.innerWidth / setWidth) + 1);
+      rateTrack.innerHTML = "";
+      for (var half = 0; half < 2; half++) {
+        for (var c = 0; c < copies; c++) {
+          items.forEach(function (t) { rateTrack.appendChild(build(t)); });
+        }
+      }
     }).catch(function () { /* strip stays hidden if the data file is unreachable */ });
   }
 
