@@ -1,0 +1,19 @@
+Add written change reasons, published change log and 404 page
+
+Attaches a documented reason to every website change, at management's request,
+so that a compliance reviewer or auditor can establish what changed, when, and
+on whose authority without relying on anyone's recollection.
+
+- CHANGELOG.md: full history of the site from initial publication (14 July 2026)
+  through the Gate 1 remediation and today's market-data changes. Each entry
+  records what changed, why, who approved it, and the consent and policy
+  versions in force afterwards.
+- publish.sh now reads its commit message from COMMIT_MSG.txt where one is
+  present, so a reason travels with the change into the Git history instead of
+  a bare timestamp. The file is consumed and removed after use.
+- 404.html: branded not-found page, replacing Netlify's default.
+- netlify.toml: internal working documents (CHANGELOG, PUBLISHING, DEPLOY_GUIDE,
+  EDITING_GUIDE, publish.sh) now return the 404 page rather than being served
+  publicly. They were previously readable by anyone who guessed the filename.
+
+Approved by Toluwani Adeseri, Director - Investment Strategy & Finance.

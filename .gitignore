@@ -2,4 +2,6 @@
 Thumbs.db
 tmp*.js
 *.log
+.publish.log
+PAUSE_PUBLISH
 .netlify/

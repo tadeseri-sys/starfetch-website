@@ -158,9 +158,44 @@
     <div class="section-head">
       <span class="eyebrow">Market pulse</span>
       <h2>The numbers shaping Nigerian investing</h2>
-      <p>Key policy figures, updated as official data is released, and live headlines from the Nigerian market.</p>
+      <p>Policy rates we verify against the official source before publishing, Nigerian equity prices, and live headlines from the market.</p>
     </div>
     <div class="grid-3" id="macro-cards"><!-- populated from assets/data/macro.json --></div>
+
+    <!-- NGX equity prices via the TradingView ticker-tape widget. TradingView is a licensed
+         redistributor of NGX data, which is why we can display it. Note: the widget loads from
+         s3.tradingview.com and may set TradingView's own cookies - this is disclosed in §8 of
+         our privacy policy. Edit the symbol list below to change what is shown. -->
+    <div class="equity-block">
+      <h3>Nigerian equities</h3>
+      <div class="equity-ticker-outer">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+            "symbols": [
+              {"proName": "NSENG:DANGCEM", "title": "Dangote Cement"},
+              {"proName": "NSENG:MTNN", "title": "MTN Nigeria"},
+              {"proName": "NSENG:AIRTELAFRI", "title": "Airtel Africa"},
+              {"proName": "NSENG:GTCO", "title": "GTCO"},
+              {"proName": "NSENG:ZENITHBANK", "title": "Zenith Bank"},
+              {"proName": "NSENG:BUACEMENT", "title": "BUA Cement"},
+              {"proName": "NSENG:SEPLAT", "title": "Seplat Energy"},
+              {"proName": "NSENG:NESTLE", "title": "Nestle Nigeria"},
+              {"proName": "TVC:UKOIL", "title": "Brent Crude"}
+            ],
+            "showSymbolLogo": false,
+            "colorTheme": "light",
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "locale": "en"
+          }
+          </script>
+        </div>
+      </div>
+      <p class="form-note">Equity prices supplied by TradingView, a licensed redistributor of Nigerian Exchange data. Prices may be delayed and are shown for information only - they are not an offer, a recommendation, or an indication of the performance of any Starfetch product.</p>
+    </div>
+
     <div class="news-block">
       <h3 id="news-title" hidden>Latest market headlines</h3>
       <div class="news-track-outer" id="news-outer" hidden>
@@ -205,7 +240,7 @@
     <p>Rates, market notes and plain-language investing guidance — sent periodically, no noise.</p>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
       <input type="hidden" name="form-name" value="newsletter">
-      <input type="hidden" name="consent_version" value="2026-08-12.v3">
+      <input type="hidden" name="consent_version" value="2026-08-12.v4">
       <input type="hidden" name="source" value="newsletter-band">
       <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
       <input type="text" name="first_name" placeholder="First name" required aria-label="First name">
@@ -257,7 +292,7 @@
     <p class="msg-sub">We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
     <form name="quick-message" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html">
       <input type="hidden" name="form-name" value="quick-message">
-      <input type="hidden" name="consent_version" value="2026-08-12.v3">
+      <input type="hidden" name="consent_version" value="2026-08-12.v4">
       <input type="hidden" name="page" value="Home">
       <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
       <div class="field"><input type="text" name="name" placeholder="Your name" required aria-label="Your name"></div>

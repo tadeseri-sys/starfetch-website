@@ -358,3 +358,13 @@ footer a:hover { color: var(--lime); }
   .rate-track { animation: none; flex-wrap: wrap; width: 100%; }
 }
 @media (max-width: 880px) { .rate-item { padding: 11px 16px; } }
+
+
+/* Equity ticker block (TradingView widget, inside Market pulse) */
+.equity-block { margin-top: 30px; }
+.equity-block h3 { font-size: 1.05rem; color: #fff; margin-bottom: 12px; }
+.equity-ticker-outer {
+  overflow: hidden; border: 1px solid var(--line); border-radius: 12px;
+  background: #fff; min-height: 46px;
+}
+.equity-block .form-note { margin-top: 10px; }
