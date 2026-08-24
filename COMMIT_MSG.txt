@@ -1,0 +1,27 @@
+Retry unpushed commits, add a heartbeat and raise a visible alert on failure
+
+publish.sh exited early whenever the folder had no new edits, so it only ever
+pushed as a side effect of committing. When the push on 12 August 2026 failed
+with a credential error, the commit stayed on the Mac and nothing retried it.
+The live site ran twelve days behind the approved version in silence, still
+showing a hand-maintained USD/NGN rate that had been retired precisely because
+it goes stale - on the published material of an SEC-registered firm.
+
+The script now:
+
+- pushes whenever this Mac holds commits GitHub does not have, independently of
+  whether anything new was edited;
+- writes a proof-of-life timestamp to .publish_heartbeat on every run, so it can
+  be established whether the scheduler is running at all;
+- raises a visible alert file and a Mac notification when a push or commit
+  fails, and clears it automatically on the next success;
+- sets GIT_TERMINAL_PROMPT=0 so a credential problem fails fast and loudly
+  rather than waiting for a password no one can type.
+
+CHANGELOG.md records the 12-24 August publication gap, what remained on display
+during it, and the fact that consent captured in that window is governed by
+privacy policy v4 rather than v5.
+
+No published page, policy or figure is changed by this commit.
+
+Approved by Toluwani Adeseri, Director - Investment Strategy & Finance.

@@ -13,6 +13,52 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 24 August 2026 — Publishing restored, and a record of the 12–24 August publication gap
+
+**Changed**
+
+- `publish.sh` rewritten so that a push to GitHub is retried on every run whenever this Mac holds
+  commits GitHub does not have — previously the script exited early whenever the folder had no new
+  edits, so a push that had already failed was never attempted again.
+- The script now writes a proof-of-life timestamp to `.publish_heartbeat` on every run, so it can be
+  established at any time whether the scheduler is still running at all.
+- On failure the script now raises a visible alert — a file named `00 - WEBSITE DID NOT PUBLISH -
+  READ ME.txt` at the top of the website folder, plus a Mac notification — and removes it
+  automatically once publishing succeeds.
+- `GIT_TERMINAL_PROMPT=0` set, so a credential problem fails immediately and visibly instead of
+  leaving the job waiting for a password that no one can type.
+- No change to any published page, policy or figure. Consent, privacy and complaints versions are
+  unaffected by this entry.
+
+**Publication record — this is the part a reviewer should read.** The two entries dated 12 August
+2026 below were written and committed on 12 August 2026 but **did not reach the live site until 24
+August 2026.** The automated push to GitHub failed that afternoon with a credential error, and
+because the script did not retry, the failure ran unnoticed for twelve days.
+
+Between 12 and 24 August 2026 the live site therefore continued to display:
+
+- **USD/NGN ₦1,360.14, marked "as at 10 Aug 2026"**, in the home page rates strip — the very figure
+  the 12 August entry retired, and by 24 August a fourteen-day-old hand-maintained exchange rate;
+- the **duplicated policy-rate figures** on the home page; and
+- **privacy policy v4**, consent version `2026-08-12.v4`.
+
+**Any consent captured through a website form between 12 and 24 August 2026 is recorded against
+`2026-08-12.v4`, and v4 is the wording that governs it.** Version v5 governs only from 24 August
+2026. No figure published in that window was inaccurate at the date it carried; the exchange rate
+was correct as at 10 August 2026 and was labelled as such throughout.
+
+**Why.** Publishing depended on a single unattended push with no confirmation that it had happened
+and no alarm when it had not. For the published material of an SEC-registered firm that is not an
+acceptable arrangement: the failure mode was silent, and the thing left on display was the one item
+that had been judged unsafe to leave on display. The heartbeat, the retry and the visible alert
+exist so that the next failure is noticed within minutes rather than weeks, and so that the
+question "was this actually live?" can be answered from the record.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who identified that the
+live site did not match the approved version.
+
+---
+
 ## 12 August 2026 — Home page de-duplicated: equity ticker returns to the header band
 
 **Changed**
@@ -192,11 +238,16 @@ Consent version `2026-07-14.v1`. Privacy policy `2026-07-14.v1`.
 
 | Date | Consent version | Privacy policy | Complaints policy |
 |---|---|---|---|
-| 12 Aug 2026 | `2026-08-12.v5` | `2026-08-12.v5` | `2026-08-11.v1` |
-| 12 Aug 2026 | `2026-08-12.v4` | `2026-08-12.v4` | `2026-08-11.v1` |
+| 12 Aug 2026 | `2026-08-12.v5` | `2026-08-12.v5` | `2026-08-11.v1` | *(approved 12 Aug 2026; live from 24 Aug 2026 — see the entry for 24 August)*
+| 12 Aug 2026 | `2026-08-12.v4` | `2026-08-12.v4` | `2026-08-11.v1` | *(live 12–24 Aug 2026)*
 | 12 Aug 2026 | `2026-08-12.v3` | `2026-08-12.v3` | `2026-08-11.v1` |
 | 11 Aug 2026 | `2026-08-11.v2` | `2026-08-11.v2` | `2026-08-11.v1` |
 | 14 Jul 2026 | `2026-07-14.v1` | `2026-07-14.v1` | — |
+
+**Dates in the left-hand column are approval dates.** Where a version reached the live site
+later than it was approved, the delay is stated beside the row and explained in the entry for
+the date it went live. The consent version stored with a form submission is the version that
+was live at the moment of submission, not the version approved on that date.
 
 Superseded policy versions are retained in the Git history of this repository and can be produced
 in full on request.

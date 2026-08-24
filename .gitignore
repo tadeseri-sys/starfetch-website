@@ -3,5 +3,8 @@ Thumbs.db
 tmp*.js
 *.log
 .publish.log
+.publish_heartbeat
 PAUSE_PUBLISH
+publish.sh.bak-*
+00 - WEBSITE DID NOT PUBLISH - READ ME.txt
 .netlify/
