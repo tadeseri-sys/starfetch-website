@@ -129,6 +129,11 @@ if [ "$AHEAD" -gt 0 ]; then
   exit $?
 fi
 
-# Nothing to do, and nothing outstanding. Stay quiet, but the heartbeat above
-# proves the job ran.
+# Nothing outstanding: this Mac and GitHub agree. Clear any alert left over from
+# an earlier failure - including one cleared by a push made from somewhere else,
+# such as GitHub Desktop - then stay quiet. The heartbeat above proves the job ran.
+if [ -f "$ALERT" ]; then
+  echo "$(stamp) RESOLVED - this Mac and GitHub agree; clearing the alert" >> "$LOG"
+  rm -f "$ALERT"
+fi
 exit 0
