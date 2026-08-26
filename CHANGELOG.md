@@ -13,6 +13,36 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 26 August 2026 — Published figures were being cached for seven days after a correction
+
+**Changed**
+
+- **`netlify.toml` no longer caches `/assets/data/` like a static asset.** The existing rule cached
+  everything under `/assets/` for seven days. `assets/data/macro.json` holds the published rates, so a
+  figure corrected today could still be served from cache for a week after the deploy. Files under
+  `/assets/data/` now revalidate every five minutes.
+- **The page script fetches the figures with `cache: "no-store"`**, so a returning visitor is never
+  shown a cached rate after a correction has gone live, whatever any intermediate cache is holding.
+- **The `ticker` array in `macro.json` is now marked DORMANT.** Nothing on the site reads it. The
+  self-hosted rates strip it fed was removed on 12 August when the equity ticker returned to the top
+  of the page, and the rendering code went with it. The curated values and the update rule are kept
+  against a future reinstatement, but the note now says plainly that editing them changes nothing.
+
+**Why.** The July inflation figure was published, pushed and deployed on 26 August, and the live site
+went on serving 15.91% for June. Nothing had failed: GitHub held the correction, Netlify had deployed
+it, the page itself updated. The data file behind the figures was simply being cached as though it
+were a logo. That is a worse failure than the one it hid — a stale figure that nobody can see is
+stale, on a site whose positioning is honest numbers, with no alert and nothing in any log.
+
+The dormant ticker array is the same class of problem found in the same investigation: care was being
+taken over data that reaches no one. Both come from the same root — no check that what was published
+is what is actually being served.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who reported that the July
+inflation figure had not updated on the live site.
+
+---
+
 ## 26 August 2026 — Macro figures refreshed: July inflation published, policy rates re-verified
 
 **Changed**

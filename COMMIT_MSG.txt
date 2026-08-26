@@ -1,0 +1,22 @@
+Stop caching published figures for seven days after a correction
+
+The July inflation update was pushed and deployed on 26 August and the live site
+went on serving June's 15.91%. Nothing had failed: GitHub held the correction,
+Netlify had deployed it, the HTML updated immediately. netlify.toml simply
+cached everything under /assets/ for seven days, and assets/data/macro.json -
+which holds the published rates - was being treated as though it were a logo.
+
+Files under /assets/data/ now revalidate every five minutes, and the page script
+fetches the figures with cache: "no-store", so a visitor is never shown a cached
+rate after a correction has gone live regardless of what any intermediate cache
+is holding.
+
+Also found in the same investigation: the "ticker" array in macro.json is dead
+data. Nothing reads it. The self-hosted rates strip it fed was removed on 12
+August when the equity ticker returned to the top of the page, and the rendering
+code went with it. The values and the update rule are kept against a future
+reinstatement, but the file now says plainly that editing them changes nothing a
+visitor sees.
+
+Both are the same root cause: no check that what was published is what is being
+served.
