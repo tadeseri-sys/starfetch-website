@@ -1,0 +1,26 @@
+Refresh the macro figures: July inflation in, policy rates re-verified
+
+Headline inflation moves from 15.91% (June 2026) to 15.43% (July 2026), in both
+the rates strip and the Market pulse card, on the NBS July 2026 CPI report
+released 17 August. The July figure had been public for nine days while the site
+still showed June.
+
+The Monetary Policy Rate and Cash Reserve Ratio were checked against the CBN's
+published decisions and are unchanged at 26.5% and 45%: the 306th MPC meeting of
+20-21 July 2026 retained both. Their as-of labels now name that meeting rather
+than the month, and each note says the rate was held there with the next MPC due
+in September - so a reader can tell a confirmed figure from a forgotten one,
+which was the real problem. All three looked equally stale; only one was.
+
+macro.json now records _last_verified and a _release_calendar, so the next
+person knows when everything was last checked against source and when the next
+official releases are due.
+
+Showing the verification date on the page was considered and deliberately not
+done: a "checked on" line that has itself gone stale reads worse than none at
+all. The date stays in the data file for the internal record. In its place, a
+standing monthly check now runs on the 17th - just after the NBS CPI release -
+and reports the figures against source for approval whether or not they have
+moved. Both the decision and its reasoning are in CHANGELOG.md.
+
+Approved by Toluwani Adeseri, Director - Investment Strategy & Finance.

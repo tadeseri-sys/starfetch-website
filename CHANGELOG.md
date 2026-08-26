@@ -13,6 +13,52 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 26 August 2026 — Macro figures refreshed: July inflation published, policy rates re-verified
+
+**Changed**
+
+- **Headline inflation updated from 15.91% (June 2026) to 15.43% (July 2026)**, in both the home page
+  rates strip and the Market pulse card. Source: the National Bureau of Statistics July 2026 Consumer
+  Price Index report, released 17 August 2026. Month-on-month was 1.57%, down from 1.66% in June;
+  this is the second consecutive monthly easing.
+- **Monetary Policy Rate and Cash Reserve Ratio re-verified and left unchanged** at 26.5% and 45%.
+  Both were confirmed against the Central Bank of Nigeria's published monetary policy decisions: the
+  306th MPC meeting of 20–21 July 2026 retained the MPR at 26.5% with the asymmetric corridor at
+  +50/-450 basis points, and left the CRR for deposit money banks at 45%.
+- **The as-of labels on those two now name the meeting rather than the month** — "MPC of 20-21 Jul
+  2026" — and each card's note says the rate was held or left unchanged at that meeting, with the
+  next MPC due in September.
+- **`assets/data/macro.json` now carries a `_last_verified` date and a `_release_calendar`**, recording
+  when every figure was last checked against source and when the next official releases are expected.
+
+**Why.** A visitor looking at the site in late August saw inflation dated June and policy rates dated
+July, with nothing to tell them whether those were current figures or forgotten ones. One of the
+three was in fact stale: the July CPI had been out for nine days. The other two were correct — the
+MPC simply had not met since July — but a figure that is right for a reason the reader cannot see is
+indistinguishable from neglect, on a site whose whole positioning is honest numbers. Naming the
+meeting and recording the verification date makes an unchanged number legible as a confirmed one.
+
+**Decided, not overlooked.** Displaying the verification date on the page itself was considered and
+**deliberately not done**. The reasoning: a "checked on" line is only worth having if it is reliably
+kept current, and a verification date that has itself gone stale reads worse than none at all — it
+converts a silent lapse into a published one. The date is recorded in `assets/data/macro.json` for
+the internal record instead, and the as-of labels now carry the meaning on the page. Revisit if the
+monthly check below proves it is kept reliably.
+
+**Instead, a standing monthly check was put in place** on 26 August 2026: on the 17th of each month —
+just after the NBS publishes the CPI report for the previous month — the published figures are
+checked against their official sources and the result reported for approval, whether or not anything
+has moved. It drafts changes; it does not publish them. An unchanged figure that has been
+re-verified is a recorded result, which is precisely what was missing here.
+
+**Still open.** The treasury bill stop rates and the FGN 10-year yield remain unpublished pending
+verified figures.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who identified that the
+published figures had not moved with the official releases.
+
+---
+
 ## 26 August 2026 — Market data notice moved from the top of the home page to the footer
 
 **Changed**
