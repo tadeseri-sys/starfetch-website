@@ -71,7 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Macro stat cards (from assets/data/macro.json) with count-up animation
   var macroWrap = document.getElementById("macro-cards");
   if (macroWrap) {
-    fetch("assets/data/macro.json").then(function (r) { return r.json(); }).then(function (data) {
+    // no-store: these are published figures, so a visitor must never be shown a
+    // cached rate after a correction has gone live.
+    fetch("assets/data/macro.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
       data.stats.forEach(function (s) {
         var card = document.createElement("div");
         card.className = "card macro-card";
