@@ -226,7 +226,8 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--lime); bord
 .market-section .form-note { color: #B9CDC5; }
 
 /* Market ticker band (TradingView equity ticker-tape) */
-.ngx-ticker { border-bottom: 1px solid var(--line); background: #fff; min-height: 46px; }
+.ngx-ticker { display: flex; align-items: center; border-bottom: 1px solid var(--line); background: #fff; min-height: 46px; }
+.ngx-ticker .tradingview-widget-container { flex: 1 1 auto; min-width: 0; }
 
 /* Macro stat cards */
 .macro-card { text-align: center; }
@@ -343,8 +344,23 @@ footer a:hover { color: var(--lime); }
 
 
 
-.ticker-note {
-  max-width: 1180px; margin: 0 auto; padding: 6px 20px 10px;
-  font-size: .72rem; line-height: 1.45; color: var(--grey);
+/* Market data notice marker. The full wording lives in the footer, under
+   #market-data-notice; this keeps the disclosure reachable from the prices it
+   qualifies without putting a paragraph of small print above the fold. */
+.ticker-info {
+  flex: none; margin: 0 14px 0 8px;
+  width: 21px; height: 21px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line); color: var(--grey);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .78rem; font-style: italic; font-weight: 700;
+  line-height: 1; text-decoration: none;
+  transition: color .15s, border-color .15s, background-color .15s;
 }
-@media (max-width: 880px) { .ticker-note { font-size: .68rem; } }
+.ticker-info:hover { color: var(--forest); border-color: var(--forest); background: #F2F6F4; }
+.ticker-info:focus-visible { outline: 2px solid var(--forest); outline-offset: 2px; }
+/* Make the notice obvious when the marker has just jumped the reader to it. */
+#market-data-notice:target {
+  background: rgba(180,231,23,.20); border-radius: 4px;
+  padding: 4px 8px; margin-left: -8px;
+}

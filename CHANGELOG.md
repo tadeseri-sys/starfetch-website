@@ -13,6 +13,40 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 26 August 2026 — Market data notice moved from the top of the home page to the footer
+
+**Changed**
+
+- The two-line TradingView disclosure that sat immediately beneath the equity ticker at the top of
+  the home page has been removed from that position.
+- Its full wording now sits in the footer legal block, alongside the risk warning and the regulatory
+  statements, as `#market-data-notice`, reworded only to say that the prices it describes are the
+  ones **shown on our home page**.
+- A discreet circled information marker sits at the right-hand end of the ticker band and links to
+  that notice. It carries the substance in its tooltip and its accessible label — *equity prices are
+  supplied by TradingView and may be delayed* — so a screen reader and a hovering mouse both reach
+  the meaning without following the link. The notice highlights briefly when the link lands on it.
+- No change to the wording of the disclosure itself, to the prices shown, or to any policy version.
+
+**Why.** The ticker is the first thing on the page, above the hero image, so the disclosure was the
+first prose a visitor read — two lines of grey small print introducing an asset manager. The
+substance is unchanged and remains on the same page; only its position and its prominence relative
+to the rest of the page have changed. Grouping it with the other legal statements in the footer also
+puts it where a reader looking for disclosures would think to look.
+
+**Still open — recorded so it is not discovered later.** An icon is a weaker signal than words. The
+alternative considered was a single muted line beneath the ticker reading *"Delayed prices, for
+information only — full notice"*, which would have kept a worded disclosure attached to the data at
+roughly a quarter of the previous visual weight. That option was put forward and not taken. If
+compliance review or counsel takes the view that a market data disclosure must be worded at the
+point of display rather than reachable from it, that one line is the change to make, and it is a
+five-minute edit.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who raised the
+appearance of the notice at the top of the page and chose the marker.
+
+---
+
 ## 24–26 August 2026 — Publishing restored, and a record of the 12–26 August publication gap
 
 **Changed**
