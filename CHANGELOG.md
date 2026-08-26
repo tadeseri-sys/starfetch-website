@@ -13,7 +13,7 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
-## 24 August 2026 — Publishing restored, and a record of the 12–24 August publication gap
+## 24–26 August 2026 — Publishing restored, and a record of the 12–26 August publication gap
 
 **Changed**
 
@@ -31,20 +31,22 @@ stored with every form submission, so it establishes exactly what wording a subs
   unaffected by this entry.
 
 **Publication record — this is the part a reviewer should read.** The two entries dated 12 August
-2026 below were written and committed on 12 August 2026 but **did not reach the live site until 24
+2026 below were written and committed on 12 August 2026 but **did not reach the live site until 26
 August 2026.** The automated push to GitHub failed that afternoon with a credential error, and
-because the script did not retry, the failure ran unnoticed for twelve days.
+because the script did not retry, the failure ran unnoticed for twelve days. Restoring the push then
+took a further two days, because the credential could not be re-entered on the Mac's terminal; the
+backlog was finally pushed through GitHub Desktop on the morning of 26 August 2026.
 
-Between 12 and 24 August 2026 the live site therefore continued to display:
+Between 12 and 26 August 2026 the live site therefore continued to display:
 
 - **USD/NGN ₦1,360.14, marked "as at 10 Aug 2026"**, in the home page rates strip — the very figure
-  the 12 August entry retired, and by 24 August a fourteen-day-old hand-maintained exchange rate;
+  the 12 August entry retired, and by 26 August a sixteen-day-old hand-maintained exchange rate;
 - the **duplicated policy-rate figures** on the home page; and
 - **privacy policy v4**, consent version `2026-08-12.v4`.
 
-**Any consent captured through a website form between 12 and 24 August 2026 is recorded against
-`2026-08-12.v4`, and v4 is the wording that governs it.** Version v5 governs only from 24 August
-2026. No figure published in that window was inaccurate at the date it carried; the exchange rate
+**Any consent captured through a website form between 12 and 26 August 2026 is recorded against
+`2026-08-12.v4`, and v4 is the wording that governs it.** Version v5 governs only from 26 August
+2026, 10:20 West Africa Time, the deploy that followed the push. No figure published in that window was inaccurate at the date it carried; the exchange rate
 was correct as at 10 August 2026 and was labelled as such throughout.
 
 **Why.** Publishing depended on a single unattended push with no confirmation that it had happened
@@ -53,6 +55,12 @@ acceptable arrangement: the failure mode was silent, and the thing left on displ
 that had been judged unsafe to leave on display. The heartbeat, the retry and the visible alert
 exist so that the next failure is noticed within minutes rather than weeks, and so that the
 question "was this actually live?" can be answered from the record.
+
+**Note on this entry.** It was drafted on 24 August 2026, when the script was repaired, and states
+the dates it then expected. Publication did not in fact occur until 26 August 2026, and every date in
+the entry was corrected to the actual one on that day. The correction is recorded here rather than
+made silently, because an audit record that quietly adjusts its own dates is worth less than one that
+shows where it was wrong.
 
 **Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who identified that the
 live site did not match the approved version.
@@ -238,8 +246,8 @@ Consent version `2026-07-14.v1`. Privacy policy `2026-07-14.v1`.
 
 | Date | Consent version | Privacy policy | Complaints policy |
 |---|---|---|---|
-| 12 Aug 2026 | `2026-08-12.v5` | `2026-08-12.v5` | `2026-08-11.v1` | *(approved 12 Aug 2026; live from 24 Aug 2026 — see the entry for 24 August)*
-| 12 Aug 2026 | `2026-08-12.v4` | `2026-08-12.v4` | `2026-08-11.v1` | *(live 12–24 Aug 2026)*
+| 12 Aug 2026 | `2026-08-12.v5` | `2026-08-12.v5` | `2026-08-11.v1` | *(approved 12 Aug 2026; live from 26 Aug 2026 — see the entry for 24–26 August)*
+| 12 Aug 2026 | `2026-08-12.v4` | `2026-08-12.v4` | `2026-08-11.v1` | *(live 12–26 Aug 2026)*
 | 12 Aug 2026 | `2026-08-12.v3` | `2026-08-12.v3` | `2026-08-11.v1` |
 | 11 Aug 2026 | `2026-08-11.v2` | `2026-08-11.v2` | `2026-08-11.v1` |
 | 14 Jul 2026 | `2026-07-14.v1` | `2026-07-14.v1` | — |
