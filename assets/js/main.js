@@ -71,9 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Macro stat cards (from assets/data/macro.json) with count-up animation
   var macroWrap = document.getElementById("macro-cards");
   if (macroWrap) {
-    // no-store: these are published figures, so a visitor must never be shown a
-    // cached rate after a correction has gone live.
-    fetch("assets/data/macro.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
+    // These are published figures, so a visitor must never be shown a cached rate
+    // after a correction has gone live. no-store handles the browser's own cache;
+    // the timestamp handles every shared cache between here and the server, which
+    // no-store cannot reach and which held a corrected figure for two days in
+    // August 2026. A unique URL is the only thing no cache can serve from memory.
+    // The file is ~2KB: correctness is worth more than caching it.
+    fetch("assets/data/macro.json?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.json(); }).then(function (data) {
       data.stats.forEach(function (s) {
         var card = document.createElement("div");
         card.className = "card macro-card";

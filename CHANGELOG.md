@@ -13,6 +13,37 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 27 August 2026 — The figures are now fetched on a unique URL
+
+**Changed**
+
+- `main.js` now requests `assets/data/macro.json?t=<timestamp>`, a URL no cache anywhere has seen
+  before, in addition to `cache: "no-store"`.
+- Asset version bumped to `?v=2026-08-27b` across all twelve pages, per the standing rule, because
+  `main.js` changed.
+
+**Why.** After the previous fix deployed, the live data file was **still** returning June's 15.91%
+when fetched with a fresh query string — two days after the correction was published. `no-store`
+governs the visitor's own browser cache; it has no authority over a shared cache sitting between the
+visitor and Netlify, and the new five-minute header only applies to objects fetched after the deploy,
+not to one a shared cache was already holding under the old seven-day instruction. That cached copy
+would have been served until roughly 2 September.
+
+A unique URL is the only thing no cache can answer from memory. The file is about two kilobytes;
+fetching it fresh on every page load costs nothing worth measuring, and buys certainty that what a
+visitor sees is what has been published.
+
+**The pattern, stated once.** Four fixes in this sequence, each correct, each defeated by a layer
+further out: the push that never retried; the data cached like a logo; the fix shipped inside a
+cached file; and the correction still held by a cache upstream of the header that was meant to stop
+it. Every one was found by looking at the rendered page, none by inspecting the pipeline. Caching is
+an optimisation for content that does not change. Published rates change, and on a regulated firm's
+site being right matters more than being fast.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance.
+
+---
+
 ## 27 August 2026 — The cache fix was itself sitting in a cached file
 
 **Changed**
