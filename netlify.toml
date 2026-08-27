@@ -32,6 +32,22 @@
   [headers.values]
     Cache-Control = "public, max-age=300, must-revalidate"
 
+# EXCEPTION: the stylesheet and the page script carry fixes, and they were caught
+# by the seven-day rule too - so on 26 Aug 2026 the very fix that stops figures
+# being cached was itself sitting in a cached file and could not take effect for
+# a week. Their URLs now carry a ?v= version bumped whenever they change, which
+# is what actually busts the cache; this hour-long TTL is the safety net for when
+# someone forgets to bump it. Images and fonts keep the seven-day rule above.
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
 [[headers]]
   for = "/*.html"
   [headers.values]

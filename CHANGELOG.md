@@ -13,6 +13,35 @@ stored with every form submission, so it establishes exactly what wording a subs
 
 ---
 
+## 27 August 2026 — The cache fix was itself sitting in a cached file
+
+**Changed**
+
+- **Every stylesheet and script reference in all twelve pages now carries a version query**
+  (`assets/js/main.js?v=2026-08-27`). Because HTML is served with `max-age=0`, a browser fetches the
+  new HTML immediately, sees a URL it has never held, and is forced to fetch the current code.
+- **`/assets/js/` and `/assets/css/` moved from the seven-day cache to one hour**, with revalidation.
+  The version query is what actually busts the cache; the shorter TTL is the safety net for when
+  someone forgets to bump it. Images and fonts keep the seven-day rule.
+
+**Why.** Yesterday's fix stopped the figures being cached. It did not work, and could not have: the
+fix lives in `assets/js/main.js`, and that file was caught by the same seven-day rule it was written
+to escape. Any visitor who had loaded the site before yesterday was still running last week's script
+and still holding last week's figures, and would have gone on doing so for up to a week — including
+the Director, who reported the July inflation figure still showing as June on his own screen after
+the correction had been published, deployed and verified on the server.
+
+Three layers of this now: the push that never retried, the data file cached as though it were a logo,
+and the correction shipped inside a cached file. Each one was invisible, and each was found only
+because someone looked at the actual page rather than at the pipeline. That is the lesson worth
+keeping — every check in this system now ends at what a visitor's browser renders, not at what the
+server holds.
+
+**Approved by** Toluwani Adeseri, Director — Investment Strategy & Finance, who reported that the
+figure was still wrong on the live site after the previous fix.
+
+---
+
 ## 26 August 2026 — Published figures were being cached for seven days after a correction
 
 **Changed**
