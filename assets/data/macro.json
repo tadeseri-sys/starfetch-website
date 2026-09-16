@@ -1,10 +1,10 @@
 {
-  "_last_verified": "2026-08-26 - every figure below checked against its official source on this date. An unchanged number is a CONFIRMED number, not a forgotten one: record the check here even when nothing moves, so the next person can tell the difference.",
-  "_release_calendar": "NBS publishes the CPI report mid-month for the previous month (July 2026 CPI was released 17 Aug 2026). The CBN MPC meets roughly every two months; the 306th met 20-21 Jul 2026 and the next is due September 2026. Check within a few days of each.",
+  "_last_verified": "2026-09-16 - every figure below checked against its official source on this date. An unchanged number is a CONFIRMED number, not a forgotten one: record the check here even when nothing moves, so the next person can tell the difference.",
+  "_release_calendar": "NBS publishes the CPI report mid-month for the previous month (August 2026 CPI was released 15 Sep 2026). The CBN MPC meets roughly every two months; the 306th met 20-21 Jul 2026 and the 307th is scheduled for 21-22 Sep 2026. Check within a few days of each.",
   "_how_to_update": "Edit the numbers below when new official data is released, then commit and push - the site redeploys itself. 'value' must be a plain number (no % or naira sign); prefix/suffix are added automatically. IMPORTANT: an item only appears on the site when \"publish\": true AND it has a value. Leave an item unpublished until you have checked the figure against the official source named in 'source'. Never publish a rate you have not verified - this site is a regulated firm's publication.",
   "stats": [
-    { "label": "Headline inflation (y/y)", "value": 15.43, "suffix": "%", "note": "Consumer price inflation, year on year. Eased for a second month, from 15.91% in June.", "asOf": "Jul 2026", "source": "NBS CPI report, 17 Aug 2026" },
-    { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "note": "The CBN's benchmark interest rate. Held at this level at the 306th MPC meeting; the next meeting is due in September.", "asOf": "MPC of 20-21 Jul 2026", "source": "CBN" },
+    { "label": "Headline inflation (y/y)", "value": 15.39, "suffix": "%", "note": "Consumer price inflation, year on year. Eased for a third month, from 15.43% in July.", "asOf": "Aug 2026", "source": "NBS CPI report, 15 Sep 2026" },
+    { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "note": "The CBN's benchmark interest rate. Held at this level at the 306th MPC meeting; the 307th meeting is due 21-22 September.", "asOf": "MPC of 20-21 Jul 2026", "source": "CBN" },
     { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "note": "Reserve requirement for deposit money banks. Left unchanged at the 306th MPC meeting.", "asOf": "MPC of 20-21 Jul 2026", "source": "CBN" }
   ],
   "_ticker_status": "DORMANT since 12 Aug 2026 - NOTHING ON THE SITE READS THIS ARRAY. The self-hosted rates strip it fed was removed from the top of the home page when the TradingView equity ticker returned to that position, and the code that rendered it went with it. Editing these values changes nothing a visitor sees. The curated figures and the rule below are kept because they are correct and hard-won, ready if a rates strip is reinstated - but until then, the only figures that reach the page are in the stats array above.",
@@ -12,7 +12,7 @@
   "ticker": [
     { "_retired": "USD/NGN was removed from the strip on 12 Aug 2026. It moves daily and this file is updated by hand, so it would always have been showing a stale figure. Do not re-add it unless the value is being fed automatically.", "label": "USD/NGN", "value": 1360.14, "prefix": "₦", "decimals": 2, "asOf": "10 Aug 2026", "source": "CBN", "publish": false },
     { "label": "Monetary Policy Rate", "value": 26.5, "suffix": "%", "decimals": 2, "asOf": "Jul 2026", "source": "CBN MPC", "publish": true },
-    { "label": "Headline inflation", "value": 15.43, "suffix": "%", "decimals": 2, "asOf": "Jul 2026", "source": "NBS", "publish": true },
+    { "label": "Headline inflation", "value": 15.39, "suffix": "%", "decimals": 2, "asOf": "Aug 2026", "source": "NBS", "publish": true },
     { "label": "Cash Reserve Ratio", "value": 45, "suffix": "%", "decimals": 0, "asOf": "Jul 2026", "source": "CBN", "publish": true },
     { "label": "NTB 91-day stop rate", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "CBN auction", "publish": false },
     { "label": "NTB 182-day stop rate", "value": null, "suffix": "%", "decimals": 2, "asOf": "", "source": "CBN auction", "publish": false },
