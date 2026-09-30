@@ -1,7 +1,7 @@
 // Starfetch — account opening page (open-account.html)
 (function () {
   "use strict";
-  var form = document.querySelector('form[name="account-opening"]');
+  var form = document.querySelector('form[name="account-individual"]');
   if (!form) return;
 
   // 1. Account type from the menu link (?type=individual / ?type=joint)
