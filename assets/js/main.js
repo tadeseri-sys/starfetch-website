@@ -7,6 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
     var open = nav.classList.toggle("open");
     t.setAttribute("aria-expanded", open ? "true" : "false");
   });
+    // Open Account dropdown (button + menu, not hover: touch devices have no
+  // hover, and a hover-only menu hides half the site on a phone). Click
+  // toggles; outside click or Escape closes.
+  var dd = document.querySelector(".nav-dropdown");
+  if (dd) {
+    var ddBtn = dd.querySelector(".nav-dd-btn");
+    var ddMenu = dd.querySelector(".nav-dd-menu");
+    var closeDD = function () {
+      ddMenu.hidden = true;
+      ddBtn.setAttribute("aria-expanded", "false");
+    };
+    ddBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var willOpen = ddMenu.hidden;
+      ddMenu.hidden = !willOpen;
+      ddBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+    document.addEventListener("click", function (e) {
+      if (!ddMenu.hidden && !dd.contains(e.target)) closeDD();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !ddMenu.hidden) { closeDD(); ddBtn.focus(); }
+    });
+  }
   // Footer year
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

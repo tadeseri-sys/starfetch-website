@@ -1,0 +1,106 @@
+/* Starfetch — account opening page (open-account.html). Site-wide look is in style.css. */
+.oa-intro { padding: 46px 0 8px; }
+.oa-intro .lead { max-width: 46em; }
+.oa-steps-note {
+  margin-top: 14px; padding: 14px 18px; border-left: 4px solid var(--lime);
+  background: var(--mist); border-radius: 0 10px 10px 0; font-size: .9rem; color: var(--grey);
+}
+.req { color: #B23A2E; }
+.oa-shell { padding: 26px 0 60px; }
+.oa-panel {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 32px;
+}
+.form-section { border: none; padding: 0; margin: 0 0 30px; min-width: 0; }
+.form-section > legend {
+  font-size: 1.35rem; font-weight: 800; color: var(--forest-deep);
+  padding: 0; margin-bottom: 4px;
+}
+.form-section .step-sub { color: var(--grey); font-size: .92rem; margin: 0 0 16px; }
+.form-section h3 { color: var(--forest-deep); margin: 18px 0 10px; font-size: 1.05rem; }
+.oa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; }
+.oa-grid .span-2 { grid-column: 1 / -1; }
+@media (max-width: 720px) {
+  .oa-grid { grid-template-columns: 1fr; }
+  .oa-panel { padding: 22px 18px; }
+}
+.applicant-block {
+  border: 1px solid var(--line); border-radius: 12px; padding: 20px 20px 8px;
+  margin-bottom: 22px; background: var(--mist);
+}
+.applicant-block h3 { margin-top: 0; }
+.opt-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 6px 0 12px; align-items: center; }
+.opt-row label {
+  display: inline-flex; align-items: center; gap: 8px; font-weight: 600;
+  font-size: .9rem; margin: 0; cursor: pointer;
+}
+.opt-row input { width: 17px; height: 17px; accent-color: var(--forest); }
+.opt-row .opt-label {
+  flex-basis: 100%; font-weight: 700; font-size: .88rem; color: var(--forest-deep);
+}
+label.opt {
+  display: inline-flex; align-items: center; gap: 8px; font-weight: 600;
+  font-size: .9rem; margin: 0; cursor: pointer;
+}
+.svc-table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; }
+.svc-table th, .svc-table td {
+  text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top;
+}
+.svc-table th { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--grey); }
+.svc-table .svc-desc { font-size: .82rem; color: var(--grey); font-weight: 400; margin-top: 3px; }
+.svc-table input[type="number"] {
+  max-width: 190px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px;
+  font-size: .95rem; font-family: inherit; background: #fff; width: 100%;
+}
+@media (max-width: 560px) {
+  .svc-table thead { display: none; }
+  .svc-table tr { display: block; border-bottom: 1px solid var(--line); padding: 10px 0; }
+  .svc-table td { display: block; border: none; padding: 4px 0; }
+}
+.clause-box {
+  background: var(--mist); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 20px; margin: 12px 0 18px; font-size: .88rem; color: var(--ink);
+}
+.clause-box ol { margin: 8px 0 0 20px; }
+.clause-box li { margin-bottom: 8px; }
+.clause-box .kicker {
+  font-weight: 800; color: var(--forest-deep); text-transform: uppercase;
+  letter-spacing: 1.2px; font-size: .74rem;
+}
+.pp-sign { margin: 18px 0 6px; }
+.sign-row {
+  display: flex; align-items: flex-end; gap: 16px; margin: 14px 0;
+  font-size: .85rem; color: var(--grey); font-weight: 600;
+}
+.sign-row span:first-child { flex: 0 0 210px; }
+.sign-line { flex: 1; border-bottom: 1px solid var(--forest-deep); height: 26px; }
+@media (max-width: 560px) {
+  .sign-row { flex-direction: column; align-items: stretch; gap: 4px; }
+}
+.docs-list { list-style: none; margin: 6px 0; }
+.docs-list li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.docs-list label {
+  display: inline-flex; gap: 10px; align-items: flex-start; font-weight: 600;
+  font-size: .9rem; margin: 0; cursor: pointer;
+}
+.docs-list input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--forest); }
+.oa-actions {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-top: 1px solid var(--line); padding-top: 20px; margin-top: 10px;
+}
+.btn-outline-dark {
+  background: transparent; border: 2px solid var(--line); color: var(--forest-deep);
+}
+.btn-outline-dark:hover { background: var(--mist); transform: translateY(-1px); }
+@media print {
+  .site-header, .ngx-ticker, .oa-intro .oa-steps-note, .newsletter-band,
+  footer, .msg-widget, .oa-actions, .form-note a[href^="mailto"] {
+    display: none !important;
+  }
+  .oa-intro { padding: 0 0 10px; }
+  .oa-shell { padding: 0; }
+  .oa-panel { border: none; padding: 0; }
+  .applicant-block, .clause-box { background: #fff; }
+  .form-section { break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+}
