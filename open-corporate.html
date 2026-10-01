@@ -1,0 +1,3947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Open a Corporate Account · Starfetch Investment Limited</title>
+
+  <meta
+    name="description"
+    content="Open a corporate portfolio management account with Starfetch Investment Limited.">
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/img/favicon.svg">
+
+  <link
+    rel="stylesheet"
+    href="assets/css/style.css?v=2026-09-30a">
+
+  <link
+    rel="stylesheet"
+    href="assets/css/open-account.css?v=2026-10-01a">
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap">
+
+    <a
+      class="brand"
+      href="index.html">
+
+      <img
+        src="assets/img/logo-icon.svg"
+        alt="Starfetch Investment Limited logo">
+
+      <span class="brand-name">
+        STARFETCH
+        <span>INVESTMENT LIMITED</span>
+      </span>
+
+    </a>
+
+
+    <button
+      class="nav-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+
+    <nav
+      class="main-nav"
+      aria-label="Main navigation">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="tools/index.html">Free Tools</a>
+      <a href="contact.html">Contact</a>
+
+
+      <div class="nav-dropdown">
+
+        <button
+          type="button"
+          class="btn nav-dd-btn"
+          id="open-account-btn"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="open-account-menu">
+
+          Open Account
+          <span
+            class="caret"
+            aria-hidden="true">
+            ▾
+          </span>
+
+        </button>
+
+
+        <div
+          class="nav-dd-menu"
+          id="open-account-menu"
+          hidden>
+
+          <a href="open-individual.html">
+            Individual/Joint Account
+          </a>
+
+          <a href="open-corporate.html">
+            Corporate Account
+          </a>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="oa-intro">
+
+  <div class="wrap">
+
+    <span class="eyebrow">
+      Corporate account opening
+    </span>
+
+    <h1>
+      Open a <em>corporate account</em>.
+    </h1>
+
+
+    <p class="lead">
+      Complete the Corporate Portfolio Management Mandate
+      online. Fields marked
+      <span class="req">*</span>
+      are compulsory. Please ensure that the information
+      entered matches the organisation's official registration
+      and KYC documents.
+    </p>
+
+
+    <div class="oa-steps-note">
+
+      <strong>Before you start, please have to hand:</strong>
+
+      your RC/registration information, TIN,
+      authorised signatories' BVN and NIN,
+      valid identification documents,
+      corporate bank details, beneficial ownership information,
+      board resolution and supporting corporate documents.
+
+      <strong>
+        Cash is not an acceptable mode of payment.
+      </strong>
+
+      Funding must originate from an account
+      held in the applicant's own name.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CORPORATE FORM
+========================================================= -->
+
+<section class="oa-shell">
+
+  <div class="wrap">
+
+    <div class="oa-panel">
+
+
+      <form
+        id="corporate-account-form"
+        name="account-corporate"
+        method="POST"
+        enctype="multipart/form-data">
+
+
+        <!-- =================================================
+             SECTION 1
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            1. Mandate selection
+          </legend>
+
+          <p class="step-sub">
+            Please select the service(s) required.
+          </p>
+
+
+          <table class="svc-table">
+
+            <thead>
+
+              <tr>
+                <th>Service</th>
+                <th>Select</th>
+                <th>Amount (₦)</th>
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              <tr>
+
+                <td>
+
+                  <strong>
+                    Starfetch Fixed Note
+                  </strong>
+
+                  <div class="svc-desc">
+                    Naira money-market instruments,
+                    treasury bills and quality corporate paper.
+                  </div>
+
+                </td>
+
+
+                <td>
+
+                  <label class="opt">
+
+                    <input
+                      type="checkbox"
+                      id="corp_svc_fixed_note"
+                      name="svc_fixed_note"
+                      value="Yes"
+                      data-service-checkbox
+                      data-amount-target="corp_svc_fixed_note_amount">
+
+                    Select
+
+                  </label>
+
+                </td>
+
+
+                <td>
+
+                  <input
+                    type="number"
+                    id="corp_svc_fixed_note_amount"
+                    name="svc_fixed_note_amount"
+                    min="0"
+                    step="1000"
+                    disabled
+                    aria-label="Starfetch Fixed Note amount in naira">
+
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+
+                  <strong>
+                    Discretionary Portfolio Management
+                  </strong>
+
+                  <div class="svc-desc">
+                    Day-to-day decisions delegated to us
+                    under an agreed mandate, risk profile
+                    and investment policy statement.
+                  </div>
+
+                </td>
+
+
+                <td>
+
+                  <label class="opt">
+
+                    <input
+                      type="checkbox"
+                      id="corp_svc_discretionary"
+                      name="svc_discretionary"
+                      value="Yes"
+                      data-service-checkbox
+                      data-amount-target="corp_svc_discretionary_amount">
+
+                    Select
+
+                  </label>
+
+                </td>
+
+
+                <td>
+
+                  <input
+                    type="number"
+                    id="corp_svc_discretionary_amount"
+                    name="svc_discretionary_amount"
+                    min="0"
+                    step="1000"
+                    disabled
+                    aria-label="Discretionary Portfolio Management amount in naira">
+
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+
+                  <strong>
+                    Non-Discretionary Mandate
+                  </strong>
+
+                  <div class="svc-desc">
+                    Client retains all investment decisions;
+                    we provide research, execution
+                    and administration.
+                  </div>
+
+                </td>
+
+
+                <td>
+
+                  <label class="opt">
+
+                    <input
+                      type="checkbox"
+                      id="corp_svc_non_discretionary"
+                      name="svc_non_discretionary"
+                      value="Yes"
+                      data-service-checkbox
+                      data-amount-target="corp_svc_non_discretionary_amount">
+
+                    Select
+
+                  </label>
+
+                </td>
+
+
+                <td>
+
+                  <input
+                    type="number"
+                    id="corp_svc_non_discretionary_amount"
+                    name="svc_non_discretionary_amount"
+                    min="0"
+                    step="1000"
+                    disabled
+                    aria-label="Non-Discretionary Mandate amount in naira">
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+
+          <p
+            id="service-validation-message"
+            class="form-note"
+            hidden>
+          </p>
+
+
+          <p class="form-note">
+            Minimum investment amount is ₦ ____________.
+            Funding must originate from an account
+            in the applicant's own name.
+          </p>
+
+
+          <div class="oa-grid">
+
+
+            <div class="field">
+
+              <label for="corp_total_amount">
+
+                Total amount to be invested (₦)
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="number"
+                id="corp_total_amount"
+                name="total_amount"
+                min="0"
+                step="1000"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corp_funding_date">
+                Proposed funding date
+              </label>
+
+              <input
+                type="date"
+                id="corp_funding_date"
+                name="funding_date">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corp_investment_horizon">
+                Investment horizon
+              </label>
+
+              <select
+                id="corp_investment_horizon"
+                name="investment_horizon">
+
+                <option value="">
+                  Select…
+                </option>
+
+                <option value="Under 1 year">
+                  &lt; 1 year
+                </option>
+
+                <option value="1–3 years">
+                  1–3 years
+                </option>
+
+                <option value="3–5 years">
+                  3–5 years
+                </option>
+
+                <option value="5 years +">
+                  5 years +
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corp_base_currency">
+                Base currency
+              </label>
+
+              <select
+                id="corp_base_currency"
+                name="base_currency">
+
+                <option
+                  value="NGN"
+                  selected>
+                  NGN — Naira
+                </option>
+
+                <option value="USD">
+                  USD
+                </option>
+
+                <option value="GBP">
+                  GBP
+                </option>
+
+                <option value="EUR">
+                  EUR
+                </option>
+
+              </select>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 2
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            2. Corporate applicant details
+          </legend>
+
+
+          <div class="oa-grid">
+
+
+            <div class="field">
+
+              <label for="institution_name">
+
+                Name of institution
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="institution_name"
+                name="institution_name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="registration_number">
+
+                RC / Registration number
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="registration_number"
+                name="registration_number"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="incorporation_date">
+
+                Date of incorporation
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="date"
+                id="incorporation_date"
+                name="incorporation_date"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="incorporation_place">
+                Place of incorporation
+              </label>
+
+              <input
+                type="text"
+                id="incorporation_place"
+                name="incorporation_place">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="legal_entity_type">
+                Legal entity type
+              </label>
+
+              <input
+                type="text"
+                id="legal_entity_type"
+                name="legal_entity_type">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="business_sector">
+                Business sector
+              </label>
+
+              <input
+                type="text"
+                id="business_sector"
+                name="business_sector">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_tin">
+
+                Tax Identification Number (TIN)
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="corporate_tin"
+                name="corporate_tin"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_lei">
+                LEI (if any)
+              </label>
+
+              <input
+                type="text"
+                id="corporate_lei"
+                name="corporate_lei">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_phone">
+
+                Phone number
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="tel"
+                id="corporate_phone"
+                name="corporate_phone"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_email">
+
+                Email address
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="email"
+                id="corporate_email"
+                name="corporate_email"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_website">
+                Website
+              </label>
+
+              <input
+                type="url"
+                id="corporate_website"
+                name="corporate_website"
+                placeholder="https://">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="annual_turnover">
+                Annual turnover (₦)
+              </label>
+
+              <input
+                type="number"
+                id="annual_turnover"
+                name="annual_turnover"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field span-2">
+
+              <label for="registered_address">
+
+                Registered address
+                <span class="req">*</span>
+
+              </label>
+
+              <textarea
+                id="registered_address"
+                name="registered_address"
+                rows="3"
+                required></textarea>
+
+            </div>
+
+
+            <div class="field span-2">
+
+              <label for="business_address">
+                Business address
+              </label>
+
+              <textarea
+                id="business_address"
+                name="business_address"
+                rows="3"></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_city">
+                City
+              </label>
+
+              <input
+                type="text"
+                id="corporate_city"
+                name="corporate_city">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_state">
+                State
+              </label>
+
+              <input
+                type="text"
+                id="corporate_state"
+                name="corporate_state">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_country">
+                Country
+              </label>
+
+              <input
+                type="text"
+                id="corporate_country"
+                name="corporate_country">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="nature_of_business">
+                Nature of business
+              </label>
+
+              <input
+                type="text"
+                id="nature_of_business"
+                name="nature_of_business">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="contact_person">
+
+                Contact person
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="contact_person"
+                name="contact_person"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="contact_designation">
+                Designation
+              </label>
+
+              <input
+                type="text"
+                id="contact_designation"
+                name="contact_designation">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="contact_email">
+
+                Contact email
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="email"
+                id="contact_email"
+                name="contact_email"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="contact_phone">
+
+                Contact phone
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="tel"
+                id="contact_phone"
+                name="contact_phone"
+                required>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 3
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            3. Investment objective and risk profile
+          </legend>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Primary investment objective
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="investment_objective"
+                value="Capital preservation">
+              Capital preservation
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="investment_objective"
+                value="Income">
+              Income
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="investment_objective"
+                value="Balanced">
+              Balanced
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="investment_objective"
+                value="Growth">
+              Growth
+            </label>
+
+          </div>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Risk tolerance
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Conservative">
+              Conservative
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Moderate">
+              Moderate
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Balanced">
+              Balanced
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Aggressive">
+              Aggressive
+            </label>
+
+          </div>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Investment horizon
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="Under 1 year">
+              &lt; 1 year
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="1–3 years">
+              1–3 years
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="3–5 years">
+              3–5 years
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="5 years +">
+              5 years +
+            </label>
+
+          </div>
+
+
+          <div class="oa-grid">
+
+            <div class="field">
+
+              <label for="expected_withdrawals">
+                Expected withdrawals (₦)
+              </label>
+
+              <input
+                type="number"
+                id="expected_withdrawals"
+                name="expected_withdrawals"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="withdrawal_frequency">
+                Frequency
+              </label>
+
+              <select
+                id="withdrawal_frequency"
+                name="withdrawal_frequency">
+
+                <option value="">
+                  Select…
+                </option>
+
+                <option>None</option>
+                <option>Monthly</option>
+                <option>Quarterly</option>
+                <option>Semi-annual</option>
+                <option>Annual</option>
+                <option>As needed</option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field span-2">
+
+              <label for="investment_restrictions">
+                Investment restrictions or exclusions (if any)
+              </label>
+
+              <textarea
+                id="investment_restrictions"
+                name="investment_restrictions"
+                rows="3"></textarea>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 4
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            4. Source of funds and wealth — AML/CFT
+          </legend>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Source of funds to be invested
+            </span>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_business"
+                value="Business income / operating cash">
+              Business income / operating cash
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_asset_sale"
+                value="Sale of assets">
+              Sale of assets
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_financing"
+                value="Loan / financing">
+              Loan / financing
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                id="corporate_source_other"
+                name="source_other"
+                value="Other">
+              Other
+            </label>
+
+          </div>
+
+
+          <div
+            class="field"
+            id="corporate_source_other_wrap"
+            hidden>
+
+            <label for="corporate_source_other_specify">
+              If other, specify
+            </label>
+
+            <input
+              type="text"
+              id="corporate_source_other_specify"
+              name="source_other_specify"
+              disabled>
+
+          </div>
+
+
+          <div class="oa-grid">
+
+            <div class="field">
+
+              <label for="expected_annual_inflow">
+                Expected annual inflow (₦)
+              </label>
+
+              <input
+                type="number"
+                id="expected_annual_inflow"
+                name="expected_annual_inflow"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="expected_transaction_frequency">
+                Expected transaction frequency
+              </label>
+
+              <select
+                id="expected_transaction_frequency"
+                name="expected_transaction_frequency">
+
+                <option value="">
+                  Select…
+                </option>
+
+                <option>
+                  Rarely — a few times a year
+                </option>
+
+                <option>Monthly</option>
+                <option>Weekly</option>
+                <option>Daily</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 5
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            5. Bank details
+          </legend>
+
+
+          <p class="step-sub">
+            For all withdrawals and distributions.
+            Withdrawals will be paid only to an account held
+            in the applicant's own name.
+            Third-party payments are not permitted.
+          </p>
+
+
+          <div class="oa-grid">
+
+
+            <div class="field">
+
+              <label for="corporate_bank_name">
+
+                Bank name
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="corporate_bank_name"
+                name="bank_name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_bank_account_number">
+
+                Account number (NUBAN)
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="corporate_bank_account_number"
+                name="bank_account_number"
+                inputmode="numeric"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                title="Enter exactly 10 digits."
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_bank_account_name">
+
+                Account name
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="corporate_bank_account_name"
+                name="bank_account_name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_bank_account_type">
+                Account type
+              </label>
+
+              <select
+                id="corporate_bank_account_type"
+                name="bank_account_type">
+
+                <option value="">
+                  Select…
+                </option>
+
+                <option>
+                  Savings
+                </option>
+
+                <option>
+                  Current
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_bank_branch">
+                Branch / sort code
+              </label>
+
+              <input
+                type="text"
+                id="corporate_bank_branch"
+                name="bank_branch">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="corporate_bank_bvn">
+
+                BVN linked to account
+                <span class="req">*</span>
+
+              </label>
+
+              <input
+                type="text"
+                id="corporate_bank_bvn"
+                name="bank_bvn"
+                inputmode="numeric"
+                maxlength="11"
+                pattern="[0-9]{11}"
+                title="Enter exactly 11 digits."
+                required>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 6
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            6. Directors and authorised signatories
+          </legend>
+
+
+
+          <!-- SIGNATORY / DIRECTOR 1 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Authorised signatory / Director 1
+            </h3>
+
+
+            <div class="oa-grid">
+
+
+              <div class="field">
+
+                <label for="director1_full_name">
+
+                  Full name
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_full_name"
+                  name="director1_full_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_designation">
+
+                  Designation
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_designation"
+                  name="director1_designation"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_id_type">
+
+                  ID type
+                  <span class="req">*</span>
+
+                </label>
+
+                <select
+                  id="director1_id_type"
+                  name="director1_id_type"
+                  required>
+
+                  <option value="">
+                    Select…
+                  </option>
+
+                  <option>
+                    International Passport
+                  </option>
+
+                  <option>
+                    National ID
+                  </option>
+
+                  <option>
+                    Driver's Licence
+                  </option>
+
+                  <option>
+                    Permanent Voter's Card
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_id_number">
+
+                  ID number
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_id_number"
+                  name="director1_id_number"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_id_issue">
+                  Date of issue
+                </label>
+
+                <input
+                  type="date"
+                  id="director1_id_issue"
+                  name="director1_id_issue">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_id_expiry">
+                  Expiry date
+                </label>
+
+                <input
+                  type="date"
+                  id="director1_id_expiry"
+                  name="director1_id_expiry">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_bvn">
+
+                  BVN
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_bvn"
+                  name="director1_bvn"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_nin">
+
+                  NIN
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_nin"
+                  name="director1_nin"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_dob">
+
+                  Date of birth
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="director1_dob"
+                  name="director1_dob"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_nationality">
+
+                  Nationality
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director1_nationality"
+                  name="director1_nationality"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_email">
+
+                  Email
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="email"
+                  id="director1_email"
+                  name="director1_email"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director1_phone">
+
+                  Phone
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="tel"
+                  id="director1_phone"
+                  name="director1_phone"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2 signature-upload-box">
+
+                <label for="director1_signature">
+
+                  Upload specimen signature
+                  <span class="req">*</span>
+
+                </label>
+
+                <p class="signature-help">
+                  Sign clearly on plain white paper
+                  or a clean white background.
+                  Upload a clear JPG, PNG or WEBP image
+                  between 10 KB and 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="director1_signature"
+                  name="director1_signature"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-signature-upload
+                  required>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SIGNATORY / DIRECTOR 2 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Authorised signatory / Director 2
+            </h3>
+
+
+            <div class="oa-grid">
+
+
+              <div class="field">
+
+                <label for="director2_full_name">
+
+                  Full name
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_full_name"
+                  name="director2_full_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_designation">
+
+                  Designation
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_designation"
+                  name="director2_designation"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_id_type">
+
+                  ID type
+                  <span class="req">*</span>
+
+                </label>
+
+                <select
+                  id="director2_id_type"
+                  name="director2_id_type"
+                  required>
+
+                  <option value="">
+                    Select…
+                  </option>
+
+                  <option>
+                    International Passport
+                  </option>
+
+                  <option>
+                    National ID
+                  </option>
+
+                  <option>
+                    Driver's Licence
+                  </option>
+
+                  <option>
+                    Permanent Voter's Card
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_id_number">
+
+                  ID number
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_id_number"
+                  name="director2_id_number"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_id_issue">
+                  Date of issue
+                </label>
+
+                <input
+                  type="date"
+                  id="director2_id_issue"
+                  name="director2_id_issue">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_id_expiry">
+                  Expiry date
+                </label>
+
+                <input
+                  type="date"
+                  id="director2_id_expiry"
+                  name="director2_id_expiry">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_bvn">
+
+                  BVN
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_bvn"
+                  name="director2_bvn"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_nin">
+
+                  NIN
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_nin"
+                  name="director2_nin"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_dob">
+
+                  Date of birth
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="director2_dob"
+                  name="director2_dob"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_nationality">
+
+                  Nationality
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="director2_nationality"
+                  name="director2_nationality"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_email">
+
+                  Email
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="email"
+                  id="director2_email"
+                  name="director2_email"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="director2_phone">
+
+                  Phone
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="tel"
+                  id="director2_phone"
+                  name="director2_phone"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2 signature-upload-box">
+
+                <label for="director2_signature">
+
+                  Upload specimen signature
+                  <span class="req">*</span>
+
+                </label>
+
+                <p class="signature-help">
+                  Sign clearly on plain white paper
+                  or a clean white background.
+                  Upload a clear JPG, PNG or WEBP image
+                  between 10 KB and 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="director2_signature"
+                  name="director2_signature"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-signature-upload
+                  required>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 7
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            7. Signing mandate — instructions on this account
+          </legend>
+
+
+          <p class="step-sub">
+            Instructions on this account shall be valid when signed by:
+          </p>
+
+
+          <div class="field opt-row">
+
+            <label>
+
+              <input
+                type="radio"
+                name="signing_mandate"
+                value="Any one signatory"
+                required>
+
+              Any one signatory
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                name="signing_mandate"
+                value="Any two signatories">
+
+              Any two signatories
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                name="signing_mandate"
+                value="All signatories jointly">
+
+              All signatories jointly
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                id="signing_mandate_other"
+                name="signing_mandate"
+                value="Other">
+
+              Other
+
+            </label>
+
+          </div>
+
+
+          <div
+            class="field"
+            id="signing_mandate_other_wrap"
+            hidden>
+
+            <label for="signing_mandate_other_specify">
+              If other, specify
+            </label>
+
+            <input
+              type="text"
+              id="signing_mandate_other_specify"
+              name="signing_mandate_other_specify"
+              disabled>
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 8
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            8. Politically Exposed Person (PEP) declaration
+          </legend>
+
+
+          <p class="step-sub">
+            Has any director, shareholder, signatory or beneficial
+            owner of the applicant — or any of their close relatives
+            or associates — held a prominent public position
+            in the last 12 months?
+          </p>
+
+
+          <div class="field opt-row">
+
+            <label>
+
+              <input
+                type="radio"
+                id="corporate_pep_yes"
+                name="pep_status"
+                value="Yes"
+                required>
+
+              Yes
+
+            </label>
+
+
+            <label>
+
+              <input
+                type="radio"
+                id="corporate_pep_no"
+                name="pep_status"
+                value="No">
+
+              No
+
+            </label>
+
+          </div>
+
+
+          <div
+            class="field"
+            id="corporate_pep_details_wrap"
+            hidden>
+
+            <label for="corporate_pep_details">
+              If yes, give details
+              (name, position, country, period held)
+            </label>
+
+            <textarea
+              id="corporate_pep_details"
+              name="pep_details"
+              rows="3"
+              disabled></textarea>
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 9
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            9. Beneficial ownership — any person holding 5% or more
+          </legend>
+
+
+          <p class="step-sub">
+            Complete the details below for each applicable
+            beneficial owner.
+          </p>
+
+
+
+          <!-- BENEFICIAL OWNER 1 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Beneficial owner 1
+            </h3>
+
+
+            <div class="oa-grid">
+
+              <div class="field">
+
+                <label for="bo1_full_name">
+                  Full name
+                </label>
+
+                <input
+                  type="text"
+                  id="bo1_full_name"
+                  name="bo1_full_name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo1_percentage">
+                  % held
+                </label>
+
+                <input
+                  type="number"
+                  id="bo1_percentage"
+                  name="bo1_percentage"
+                  min="0"
+                  max="100"
+                  step="0.01">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo1_nationality">
+                  Nationality
+                </label>
+
+                <input
+                  type="text"
+                  id="bo1_nationality"
+                  name="bo1_nationality">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo1_bvn_id">
+                  BVN / ID number
+                </label>
+
+                <input
+                  type="text"
+                  id="bo1_bvn_id"
+                  name="bo1_bvn_id">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- BENEFICIAL OWNER 2 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Beneficial owner 2
+            </h3>
+
+
+            <div class="oa-grid">
+
+              <div class="field">
+
+                <label for="bo2_full_name">
+                  Full name
+                </label>
+
+                <input
+                  type="text"
+                  id="bo2_full_name"
+                  name="bo2_full_name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo2_percentage">
+                  % held
+                </label>
+
+                <input
+                  type="number"
+                  id="bo2_percentage"
+                  name="bo2_percentage"
+                  min="0"
+                  max="100"
+                  step="0.01">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo2_nationality">
+                  Nationality
+                </label>
+
+                <input
+                  type="text"
+                  id="bo2_nationality"
+                  name="bo2_nationality">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo2_bvn_id">
+                  BVN / ID number
+                </label>
+
+                <input
+                  type="text"
+                  id="bo2_bvn_id"
+                  name="bo2_bvn_id">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- BENEFICIAL OWNER 3 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Beneficial owner 3
+            </h3>
+
+
+            <div class="oa-grid">
+
+              <div class="field">
+
+                <label for="bo3_full_name">
+                  Full name
+                </label>
+
+                <input
+                  type="text"
+                  id="bo3_full_name"
+                  name="bo3_full_name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo3_percentage">
+                  % held
+                </label>
+
+                <input
+                  type="number"
+                  id="bo3_percentage"
+                  name="bo3_percentage"
+                  min="0"
+                  max="100"
+                  step="0.01">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo3_nationality">
+                  Nationality
+                </label>
+
+                <input
+                  type="text"
+                  id="bo3_nationality"
+                  name="bo3_nationality">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="bo3_bvn_id">
+                  BVN / ID number
+                </label>
+
+                <input
+                  type="text"
+                  id="bo3_bvn_id"
+                  name="bo3_bvn_id">
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 10
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            10. How did you hear about us?
+          </legend>
+
+
+          <div class="field opt-row">
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Website">
+              Website
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Referral">
+              Referral
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Newsletter">
+              Newsletter
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Event">
+              Event
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Social media">
+              Social media
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Adviser">
+              Adviser
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Free tools">
+              Free tools
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="heard_about_us"
+                value="Other">
+              Other
+            </label>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="corporate_referral_name">
+              Referral name (if any)
+            </label>
+
+            <input
+              type="text"
+              id="corporate_referral_name"
+              name="referral_name">
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 11
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            11. Declarations and acknowledgements
+          </legend>
+
+
+          <div class="clause-box">
+
+            <p class="kicker">
+              The applicant declares:
+            </p>
+
+
+            <ol>
+
+              <li>
+                The information given in this form is true,
+                complete and accurate, and we will notify
+                Starfetch Investment Limited promptly of any change.
+              </li>
+
+              <li>
+                We have received, read and understood the mandate terms,
+                the fee schedule and the risk disclosures applicable
+                to the service selected, and the fees were disclosed
+                to us before we invested.
+              </li>
+
+              <li>
+                We understand that investment involves risk,
+                including the possible loss of principal;
+                that investment values can fall as well as rise;
+                and that no return is guaranteed.
+                Past performance is not a reliable indicator
+                of future results.
+              </li>
+
+              <li>
+                We understand that client assets are held
+                in segregated custody with a regulated custodian,
+                separate from the assets of Starfetch Investment Limited.
+              </li>
+
+              <li>
+                We authorise Starfetch Investment Limited to verify
+                our identity and that of our directors,
+                signatories and beneficial owners,
+                including through BVN/NIN and other regulatory checks,
+                in line with applicable AML/CFT requirements.
+              </li>
+
+              <li>
+                We confirm the funds invested derive from lawful sources
+                and are not the proceeds of any unlawful activity.
+              </li>
+
+              <li>
+                Where a discretionary mandate is selected,
+                we confirm a separate Investment Policy Statement
+                has been agreed and executed.
+              </li>
+
+              <li>
+                We consent to the processing of our data
+                in accordance with the Privacy Policy
+                and the Nigeria Data Protection Act.
+              </li>
+
+            </ol>
+
+          </div>
+
+
+          <div class="consent">
+
+            <input
+              type="checkbox"
+              id="corporate_declaration_accept"
+              name="declaration_accept"
+              value="Yes"
+              required>
+
+            <label
+              for="corporate_declaration_accept"
+              style="font-weight:400;color:inherit">
+
+              We have read, understood and accept
+              the declarations and acknowledgements above.
+
+              <span class="req">*</span>
+
+            </label>
+
+          </div>
+
+
+
+          <div class="signature-section">
+
+            <h3>
+              Signed for and on behalf of the applicant
+            </h3>
+
+
+
+            <!-- DECLARATION SIGNATORY 1 -->
+
+            <div class="applicant-block">
+
+              <h3>
+                Authorised signatory 1
+              </h3>
+
+
+              <div class="oa-grid">
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory1_name">
+
+                    Name
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="declaration_signatory1_name"
+                    name="declaration_signatory1_name"
+                    required>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory1_designation">
+
+                    Designation
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="declaration_signatory1_designation"
+                    name="declaration_signatory1_designation"
+                    required>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory1_date">
+
+                    Date
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="date"
+                    id="declaration_signatory1_date"
+                    name="declaration_signatory1_date"
+                    required>
+
+                </div>
+
+
+                <div class="field span-2 signature-upload-box">
+
+                  <label for="declaration_signatory1_signature">
+
+                    Upload signature
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <p class="signature-help">
+                    Sign on plain white paper or a clean white background.
+                    Upload a clear JPG, PNG or WEBP image
+                    between 10 KB and 5 MB.
+                  </p>
+
+                  <input
+                    type="file"
+                    id="declaration_signatory1_signature"
+                    name="declaration_signatory1_signature"
+                    accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                    data-signature-upload
+                    required>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+
+            <!-- DECLARATION SIGNATORY 2 -->
+
+            <div class="applicant-block">
+
+              <h3>
+                Authorised signatory 2
+              </h3>
+
+
+              <div class="oa-grid">
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory2_name">
+
+                    Name
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="declaration_signatory2_name"
+                    name="declaration_signatory2_name"
+                    required>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory2_designation">
+
+                    Designation
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="text"
+                    id="declaration_signatory2_designation"
+                    name="declaration_signatory2_designation"
+                    required>
+
+                </div>
+
+
+                <div class="field">
+
+                  <label for="declaration_signatory2_date">
+
+                    Date
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <input
+                    type="date"
+                    id="declaration_signatory2_date"
+                    name="declaration_signatory2_date"
+                    required>
+
+                </div>
+
+
+                <div class="field span-2 signature-upload-box">
+
+                  <label for="declaration_signatory2_signature">
+
+                    Upload signature
+                    <span class="req">*</span>
+
+                  </label>
+
+                  <p class="signature-help">
+                    Sign on plain white paper or a clean white background.
+                    Upload a clear JPG, PNG or WEBP image
+                    between 10 KB and 5 MB.
+                  </p>
+
+                  <input
+                    type="file"
+                    id="declaration_signatory2_signature"
+                    name="declaration_signatory2_signature"
+                    accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                    data-signature-upload
+                    required>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+
+            <!-- COMPANY SEAL -->
+
+            <div class="applicant-block">
+
+              <h3>
+                Company seal / stamp
+              </h3>
+
+
+              <div class="field signature-upload-box">
+
+                <label for="company_seal">
+                  Upload company seal / stamp
+                </label>
+
+                <p class="signature-help">
+                  Upload a clear image of the company's
+                  official seal or stamp where applicable.
+                  JPG, PNG or WEBP only.
+                  Maximum file size: 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="company_seal"
+                  name="company_seal"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-image-upload>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 12
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            12. Electronic instruction indemnity
+          </legend>
+
+
+          <div class="oa-grid">
+
+            <div class="field">
+
+              <label for="indemnity_account_name">
+                Portfolio / mandate account name
+              </label>
+
+              <input
+                type="text"
+                id="indemnity_account_name"
+                name="indemnity_account_name">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="indemnity_account_numbers">
+                Account number(s)
+              </label>
+
+              <input
+                type="text"
+                id="indemnity_account_numbers"
+                name="indemnity_account_numbers">
+
+            </div>
+
+          </div>
+
+
+          <div class="clause-box">
+
+            <p class="kicker">
+              In relation to the mandate(s) above
+              (the “Account”), we confirm and agree as follows:
+            </p>
+
+
+            <ol>
+
+              <li>
+                We authorise Starfetch Investment Limited to act on,
+                and to debit the Account in accordance with,
+                instructions received in our name which bear or
+                purport to bear the signature of any person whose
+                specimen signature we have provided under the signing
+                mandate in this form, whether given by letter,
+                electronic scan or email.
+              </li>
+
+              <li>
+                We authorise Starfetch Investment Limited to act
+                on instructions and confirmations given in any format
+                agreed with us from time to time, including written,
+                scanned and emailed instructions.
+              </li>
+
+              <li>
+                We acknowledge that email, electronic scan and
+                facsimile are insecure transmission media,
+                and we undertake to indemnify Starfetch Investment
+                Limited against any loss it suffers by reason of acting
+                on such instructions, provided it has taken the
+                verification measures prescribed by its internal
+                policies, and irrespective of whether such instructions
+                prove erroneous, fraudulent or unauthorised.
+              </li>
+
+              <li>
+                All authorisations previously given by us continue
+                in full force except as supplemented or modified
+                by this authorisation, unless and until revoked
+                or modified by a subsequent authorisation received
+                by Starfetch Investment Limited.
+              </li>
+
+              <li>
+                This indemnity remains valid and binding throughout
+                the period the Account is maintained.
+              </li>
+
+            </ol>
+
+          </div>
+
+
+          <div class="consent">
+
+            <input
+              type="checkbox"
+              id="corporate_indemnity_accept"
+              name="indemnity_accept"
+              value="Yes"
+              required>
+
+            <label
+              for="corporate_indemnity_accept"
+              style="font-weight:400;color:inherit">
+
+              We have read, understood and agree
+              to the Electronic Instruction Indemnity above.
+
+              <span class="req">*</span>
+
+            </label>
+
+          </div>
+
+
+
+          <!-- INDEMNITY SIGNATORY 1 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Signatory 1
+            </h3>
+
+
+            <div class="oa-grid">
+
+              <div class="field">
+
+                <label for="indemnity_signatory1_name">
+
+                  Name
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="indemnity_signatory1_name"
+                  name="indemnity_signatory1_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="indemnity_signatory1_date">
+
+                  Date
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="indemnity_signatory1_date"
+                  name="indemnity_signatory1_date"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2 signature-upload-box">
+
+                <label for="indemnity_signatory1_signature">
+
+                  Upload signature
+                  <span class="req">*</span>
+
+                </label>
+
+                <p class="signature-help">
+                  Upload a clear JPG, PNG or WEBP
+                  signature image between 10 KB and 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="indemnity_signatory1_signature"
+                  name="indemnity_signatory1_signature"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-signature-upload
+                  required>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- INDEMNITY SIGNATORY 2 -->
+
+          <div class="applicant-block">
+
+            <h3>
+              Signatory 2
+            </h3>
+
+
+            <div class="oa-grid">
+
+              <div class="field">
+
+                <label for="indemnity_signatory2_name">
+
+                  Name
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="indemnity_signatory2_name"
+                  name="indemnity_signatory2_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="indemnity_signatory2_date">
+
+                  Date
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="indemnity_signatory2_date"
+                  name="indemnity_signatory2_date"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2 signature-upload-box">
+
+                <label for="indemnity_signatory2_signature">
+
+                  Upload signature
+                  <span class="req">*</span>
+
+                </label>
+
+                <p class="signature-help">
+                  Upload a clear JPG, PNG or WEBP
+                  signature image between 10 KB and 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="indemnity_signatory2_signature"
+                  name="indemnity_signatory2_signature"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-signature-upload
+                  required>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- WITNESS -->
+
+          <div class="applicant-block">
+
+            <h3>
+              In the presence of — Witness
+            </h3>
+
+
+            <div class="oa-grid">
+
+
+              <div class="field">
+
+                <label for="corporate_witness_name">
+
+                  Name
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="corporate_witness_name"
+                  name="witness_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="corporate_witness_occupation">
+
+                  Occupation
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="text"
+                  id="corporate_witness_occupation"
+                  name="witness_occupation"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2">
+
+                <label for="corporate_witness_address">
+
+                  Address
+                  <span class="req">*</span>
+
+                </label>
+
+                <textarea
+                  id="corporate_witness_address"
+                  name="witness_address"
+                  rows="3"
+                  required></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="corporate_witness_date">
+
+                  Date
+                  <span class="req">*</span>
+
+                </label>
+
+                <input
+                  type="date"
+                  id="corporate_witness_date"
+                  name="witness_date"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2 signature-upload-box">
+
+                <label for="corporate_witness_signature">
+
+                  Upload witness signature
+                  <span class="req">*</span>
+
+                </label>
+
+                <p class="signature-help">
+                  Sign clearly on plain white paper
+                  or a clean white background.
+                  Upload a JPG, PNG or WEBP image
+                  between 10 KB and 5 MB.
+                </p>
+
+                <input
+                  type="file"
+                  id="corporate_witness_signature"
+                  name="witness_signature"
+                  accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                  data-signature-upload
+                  required>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SECTION 13
+        ================================================== -->
+
+        <fieldset class="form-section">
+
+          <legend>
+            13. Application checklist
+          </legend>
+
+
+          <p class="step-sub">
+            Upload the corporate and KYC documents
+            that accompany this application.
+            Files should be clear and readable.
+          </p>
+
+
+
+          <!-- INCORPORATION CERTIFICATE -->
+
+          <div class="field signature-upload-box">
+
+            <label for="certificate_incorporation">
+
+              Certificate of Incorporation
+              (certified true copy)
+              <span class="req">*</span>
+
+            </label>
+
+            <input
+              type="file"
+              id="certificate_incorporation"
+              name="certificate_incorporation"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- MEMART -->
+
+          <div class="field signature-upload-box">
+
+            <label for="memorandum_articles">
+
+              Memorandum and Articles of Association
+              (certified true copy)
+              <span class="req">*</span>
+
+            </label>
+
+            <input
+              type="file"
+              id="memorandum_articles"
+              name="memorandum_articles"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- CAC REPORT -->
+
+          <div class="field signature-upload-box">
+
+            <label for="cac_status_report">
+
+              CAC Status Report / particulars of
+              directors and shareholders
+              <span class="req">*</span>
+
+            </label>
+
+            <p class="signature-help">
+              CAC 7A and 2A, or the applicable Status Report.
+            </p>
+
+            <input
+              type="file"
+              id="cac_status_report"
+              name="cac_status_report"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- BOARD RESOLUTION -->
+
+          <div class="field signature-upload-box">
+
+            <label for="board_resolution">
+
+              Board resolution
+              <span class="req">*</span>
+
+            </label>
+
+            <p class="signature-help">
+              Resolution authorising the opening of the account,
+              the investment and the named signatories.
+            </p>
+
+            <input
+              type="file"
+              id="board_resolution"
+              name="board_resolution"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- TIN CERTIFICATE -->
+
+          <div class="field signature-upload-box">
+
+            <label for="tin_certificate">
+
+              Tax Identification Number (TIN) certificate
+              <span class="req">*</span>
+
+            </label>
+
+            <input
+              type="file"
+              id="tin_certificate"
+              name="tin_certificate"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- ADDRESS -->
+
+          <div class="field signature-upload-box">
+
+            <label for="corporate_proof_address">
+
+              Evidence of registered/business address
+              <span class="req">*</span>
+
+            </label>
+
+            <p class="signature-help">
+              Utility bill not older than 3 months.
+            </p>
+
+            <input
+              type="file"
+              id="corporate_proof_address"
+              name="corporate_proof_address"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              required>
+
+          </div>
+
+
+
+          <!-- IDs -->
+
+          <div class="field signature-upload-box">
+
+            <label for="corporate_identity_documents">
+
+              Valid photo identification for directors,
+              signatories and beneficial owners
+              <span class="req">*</span>
+
+            </label>
+
+            <p class="signature-help">
+              International Passport, National ID,
+              Driver's Licence or Permanent Voter's Card.
+              You may select multiple files.
+            </p>
+
+            <input
+              type="file"
+              id="corporate_identity_documents"
+              name="corporate_identity_documents"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload
+              multiple
+              required>
+
+          </div>
+
+
+
+          <!-- PASSPORT PHOTO 1 -->
+
+          <div class="field signature-upload-box">
+
+            <label for="director1_passport_photo">
+
+              Passport photograph — Signatory 1
+              <span class="req">*</span>
+
+            </label>
+
+            <input
+              type="file"
+              id="director1_passport_photo"
+              name="director1_passport_photo"
+              accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+              data-image-upload
+              required>
+
+          </div>
+
+
+
+          <!-- PASSPORT PHOTO 2 -->
+
+          <div class="field signature-upload-box">
+
+            <label for="director2_passport_photo">
+
+              Passport photograph — Signatory 2
+              <span class="req">*</span>
+
+            </label>
+
+            <input
+              type="file"
+              id="director2_passport_photo"
+              name="director2_passport_photo"
+              accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+              data-image-upload
+              required>
+
+          </div>
+
+
+
+          <!-- IPS -->
+
+          <div
+            class="field signature-upload-box"
+            id="corporate_ips_upload_wrap">
+
+            <label for="corporate_ips">
+
+              Executed Investment Policy Statement
+              <span id="corporate_ips_required_marker"></span>
+
+            </label>
+
+            <p class="signature-help">
+              Required where a discretionary mandate is selected.
+            </p>
+
+            <input
+              type="file"
+              id="corporate_ips"
+              name="corporate_ips"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload>
+
+          </div>
+
+
+
+          <!-- SOURCE OF FUNDS EVIDENCE -->
+
+          <div class="field signature-upload-box">
+
+            <label for="source_funds_evidence">
+              Evidence of source of funds
+              (where required)
+            </label>
+
+            <input
+              type="file"
+              id="source_funds_evidence"
+              name="source_funds_evidence"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload>
+
+          </div>
+
+
+
+          <!-- SCUML -->
+
+          <div class="field signature-upload-box">
+
+            <label for="scuml_certificate">
+              SCUML registration certificate
+              (where applicable)
+            </label>
+
+            <input
+              type="file"
+              id="scuml_certificate"
+              name="scuml_certificate"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              data-document-upload>
+
+          </div>
+
+
+          <p class="form-note">
+
+            BVN and NIN information for each authorised signatory
+            has already been captured in Section 6.
+
+            Specimen signatures have also been captured
+            in Section 6.
+
+          </p>
+
+
+          <p class="form-note">
+
+            <strong>
+              Please note that cash is not an acceptable
+              mode of payment.
+            </strong>
+
+          </p>
+
+
+        </fieldset>
+
+
+
+        <!-- =================================================
+             SUBMIT
+        ================================================== -->
+
+        <div class="oa-actions">
+
+          <button
+            type="submit"
+            class="btn">
+
+            Submit corporate application
+
+          </button>
+
+        </div>
+
+
+        <p
+          id="corporate-form-status"
+          class="form-note"
+          role="status"
+          aria-live="polite"
+          hidden>
+        </p>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="newsletter-band">
+
+  <div class="wrap">
+
+    <span
+      class="eyebrow"
+      style="color:#B4E717">
+      Market digest
+    </span>
+
+    <h2>
+      Stay ahead of the Nigerian market
+    </h2>
+
+    <p>
+      Rates, market notes and plain-language
+      investing guidance — sent periodically,
+      no noise.
+    </p>
+
+
+    <form
+      action="thanks.html"
+      method="POST"
+      name="newsletter"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="newsletter">
+
+      <input
+        type="hidden"
+        name="consent_version"
+        value="2026-08-12.v5">
+
+      <input
+        type="hidden"
+        name="source"
+        value="newsletter-band">
+
+
+      <p style="display:none">
+
+        <label>
+          Don't fill this in:
+          <input name="bot-field">
+        </label>
+
+      </p>
+
+
+      <input
+        type="text"
+        name="first_name"
+        placeholder="First name"
+        required
+        aria-label="First name">
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        required
+        aria-label="Email address">
+
+      <button
+        class="btn"
+        type="submit">
+        Subscribe
+      </button>
+
+
+      <div class="consent">
+
+        <input
+          type="checkbox"
+          name="consent_newsletter"
+          id="nl-consent-corporate"
+          required
+          value="yes">
+
+        <label
+          for="nl-consent-corporate"
+          style="font-weight:400;color:inherit">
+
+          I agree that Starfetch Investment Limited
+          may store my details and send me its market digest
+          by email. I can withdraw consent at any time
+          using the unsubscribe link in every email.
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>.
+
+        </label>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <div>
+
+      <h4>
+        Starfetch Investment Limited
+      </h4>
+
+      <p>
+        The Bloc (2nd Floor), 70 Kusenla Road,
+        Off Lekki–Epe Expressway,
+        Ikate-Elegushi, Lekki, Lagos, Nigeria
+      </p>
+
+      <p style="margin-top:8px">
+
+        <a href="mailto:info@starfetchinvestltd.com.ng">
+          info@starfetchinvestltd.com.ng
+        </a>
+
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Explore
+      </h4>
+
+      <a href="about.html">
+        About us
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="tools/index.html">
+        Free tools
+      </a>
+
+      <a href="open-individual.html">
+        Open an account
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Legal
+      </h4>
+
+      <a href="privacy.html">
+        Privacy policy
+      </a>
+
+      <a href="complaints.html">
+        Complaints policy
+      </a>
+
+    </div>
+
+
+    <div class="footer-legal">
+
+      <p>
+        Starfetch Investment Limited · RC 7402697 ·
+        Incorporated in Nigeria under CAMA 2020.
+      </p>
+
+      <p>
+        Registered with the Securities and Exchange Commission,
+        Nigeria as a Fund/Portfolio Manager.
+      </p>
+
+      <p>
+        Investing involves risk, including the possible
+        loss of principal. Past performance is not a reliable
+        indicator of future results. Nothing on this website
+        constitutes investment, legal or tax advice,
+        an offer, or a solicitation to buy or sell any security.
+      </p>
+
+      <p>
+        © <span id="year">2026</span>
+        Starfetch Investment Limited.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MESSAGE WIDGET
+========================================================= -->
+
+<div class="msg-widget">
+
+  <button
+    class="msg-fab"
+    id="msg-fab"
+    aria-expanded="false"
+    aria-controls="msg-panel">
+
+    <span class="msg-fab-icon">
+      ✉
+    </span>
+
+    Leave a message
+
+  </button>
+
+
+  <div
+    class="msg-panel"
+    id="msg-panel"
+    hidden>
+
+    <div class="msg-head">
+
+      <strong>
+        Message Starfetch
+      </strong>
+
+      <button
+        class="msg-close"
+        id="msg-close"
+        aria-label="Close">
+        ×
+      </button>
+
+    </div>
+
+
+    <p class="msg-sub">
+      We reply by email — typically within one business day
+      (Mon–Fri, 8:30am–5:30pm WAT).
+    </p>
+
+
+    <form
+      action="thanks.html"
+      method="POST"
+      name="quick-message"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="quick-message">
+
+      <input
+        type="hidden"
+        name="consent_version"
+        value="2026-08-12.v5">
+
+      <input
+        type="hidden"
+        name="page"
+        value="Open a corporate account">
+
+
+      <p style="display:none">
+
+        <label>
+          Don't fill this in:
+          <input name="bot-field">
+        </label>
+
+      </p>
+
+
+      <div class="field">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          aria-label="Your name">
+
+      </div>
+
+
+      <div class="field">
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          required
+          aria-label="Email address">
+
+      </div>
+
+
+      <div class="field">
+
+        <textarea
+          name="message"
+          rows="3"
+          placeholder="How can we help?"
+          required
+          aria-label="Message"></textarea>
+
+      </div>
+
+
+      <div class="consent">
+
+        <input
+          type="checkbox"
+          name="consent_contact"
+          id="mw-consent-corporate"
+          required
+          value="yes">
+
+        <label
+          for="mw-consent-corporate"
+          style="font-weight:400;color:inherit">
+
+          You may store my details and reply to my message.
+
+          <a href="privacy.html">
+            Privacy
+          </a>.
+
+        </label>
+
+      </div>
+
+
+      <button
+        class="btn"
+        type="submit"
+        style="width:100%">
+        Send
+      </button>
+
+    </form>
+
+
+    <p class="msg-alt">
+
+      Prefer email?
+
+      <a href="mailto:info@starfetchinvestltd.com.ng">
+        info@starfetchinvestltd.com.ng
+      </a>
+
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<script src="assets/js/main.js?v=2026-09-30a"></script>
+<script src="assets/js/open-corporate.js?v=2026-10-01a"></script>
+
+</body>
+
+</html>
