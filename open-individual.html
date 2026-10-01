@@ -9,667 +9,3536 @@
 <link rel="stylesheet" href="assets/css/style.css?v=2026-09-28a">
 <link rel="stylesheet" href="assets/css/open-account.css?v=2026-09-28a">
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="wrap">
+
     <a class="brand" href="index.html">
       <img src="assets/img/logo-icon.svg" alt="Starfetch Investment Limited logo">
-      <span class="brand-name">STARFETCH<span>INVESTMENT LIMITED</span></span>
+      <span class="brand-name">
+        STARFETCH
+        <span>INVESTMENT LIMITED</span>
+      </span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+    <button
+      class="nav-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
     <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="tools/index.html">Free Tools</a>
-        <a href="contact.html">Contact</a>
-        <div class="nav-dropdown">
-          <button type="button" class="btn nav-dd-btn" id="open-account-btn" aria-haspopup="true" aria-expanded="false" aria-controls="open-account-menu">Open Account <span class="caret" aria-hidden="true">▾</span></button>
-          <div class="nav-dd-menu" id="open-account-menu" hidden>
-            <a href="open-individual.html?type=individual">Individual/Joint Account</a>
-            <a href="open-account.html?type=corporate">Corporate Account</a>
-          </div>
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="tools/index.html">Free Tools</a>
+      <a href="contact.html">Contact</a>
+
+      <div class="nav-dropdown">
+
+        <button
+          type="button"
+          class="btn nav-dd-btn"
+          id="open-account-btn"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="open-account-menu">
+
+          Open Account
+          <span class="caret" aria-hidden="true">▾</span>
+
+        </button>
+
+        <div
+          class="nav-dd-menu"
+          id="open-account-menu"
+          hidden>
+
+          <a href="open-individual.html?type=individual">
+            Individual/Joint Account
+          </a>
+
+          <a href="open-account.html?type=corporate">
+            Corporate Account
+          </a>
+
         </div>
+
+      </div>
+
     </nav>
+
   </div>
 </header>
 
+
 <section class="oa-intro">
+
   <div class="wrap">
-    <span class="eyebrow">Account opening</span>
-    <h1>Open an <em>account</em>.</h1>
-    <p class="lead">This is the account opening form you may know on paper — completed online, with no printing until the very end. Everything marked <span class="req">*</span> is compulsory. The form covers the Portfolio Management Mandate: Starfetch Fixed Note, Discretionary Portfolio Management, or the Non-Discretionary Mandate.</p>
+
+    <span class="eyebrow">
+      Account opening
+    </span>
+
+    <h1>
+      Open an <em>account</em>.
+    </h1>
+
+    <p class="lead">
+      This is the account opening form you may know on paper —
+      completed online, with no printing until the very end.
+      Everything marked
+      <span class="req">*</span>
+      is compulsory.
+      The form covers the Portfolio Management Mandate:
+      Starfetch Fixed Note, Discretionary Portfolio Management,
+      or the Non-Discretionary Mandate.
+    </p>
+
     <div class="oa-steps-note">
-      <strong>Before you start, please have to hand:</strong> your BVN and NIN, a valid photo ID (International Passport, National ID, Driver's Licence or Permanent Voter's Card), your bank details, and next-of-kin details.
-      <strong>Cash is not an acceptable mode of payment</strong> — funding must originate from an account in the applicant's own name.
+
+      <strong>Before you start, please have to hand:</strong>
+      your BVN and NIN, a valid photo ID
+      (International Passport, National ID, Driver's Licence
+      or Permanent Voter's Card),
+      your bank details, and next-of-kin details.
+
+      <strong>
+        Cash is not an acceptable mode of payment
+      </strong>
+      — funding must originate from an account
+      in the applicant's own name.
+
     </div>
+
   </div>
+
 </section>
+
 
 <section class="oa-shell">
+
   <div class="wrap">
+
     <div class="oa-panel">
-      <form name="account-opening" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="account-opening">
-        <input type="hidden" name="consent_version" value="2026-09-28.v6">
-        <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
 
+      <form
+        name="account-individual"
+        method="POST"
+        action="thanks.html"
+        data-netlify="true"
+        netlify-honeypot="bot-field">
+
+        <input
+          type="hidden"
+          name="form-name"
+          value="account-individual">
+
+        <input
+          type="hidden"
+          name="consent_version"
+          value="2026-09-28.v6">
+
+        <p style="display:none">
+          <label>
+            Don't fill this in:
+            <input name="bot-field">
+          </label>
+        </p>
+
+
+        <!-- SECTION 1 -->
         <fieldset class="form-section">
-          <legend>1. Account type</legend>
+
+          <legend>
+            1. Account type
+          </legend>
+
           <div class="field opt-row">
-            <label><input type="radio" name="account_type" value="Individual account" checked> Individual account</label>
-            <label><input type="radio" name="account_type" value="Joint account"> Joint account</label>
-            <label><input type="radio" name="account_type" value="Account for a minor (complete section 5)"> Account for a minor (complete section 5)</label>
+
+            <label>
+              <input
+                type="radio"
+                name="account_type"
+                value="Individual account"
+                checked>
+              Individual account
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="account_type"
+                value="Joint account">
+              Joint account
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="account_type"
+                value="Account for a minor (complete section 5)">
+              Account for a minor (complete section 5)
+            </label>
+
           </div>
+
+
           <div class="oa-grid">
+
             <div class="field">
-              <label for="referral_code">Referral code (if any)</label>
-              <input type="text" id="referral_code" name="referral_code">
+
+              <label for="referral_code">
+                Referral code (if any)
+              </label>
+
+              <input
+                type="text"
+                id="referral_code"
+                name="referral_code">
+
             </div>
+
+
             <div class="field">
-              <label for="referrer_name">Referrer's name</label>
-              <input type="text" id="referrer_name" name="referrer_name">
+
+              <label for="referrer_name">
+                Referrer's name
+              </label>
+
+              <input
+                type="text"
+                id="referrer_name"
+                name="referrer_name">
+
             </div>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 2 -->
         <fieldset class="form-section">
-          <legend>2. Mandate selection</legend>
-          <p class="step-sub">Please select the service(s) required.</p>
+
+          <legend>
+            2. Mandate selection
+          </legend>
+
+          <p class="step-sub">
+            Please select the service(s) required.
+          </p>
+
+
           <table class="svc-table">
-            <thead><tr><th>Service</th><th>Select</th><th>Amount (₦)</th></tr></thead>
+
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Select</th>
+                <th>Amount (₦)</th>
+              </tr>
+            </thead>
+
             <tbody>
+
               <tr>
-                <td><strong>Starfetch Fixed Note</strong><div class="svc-desc">Naira money-market instruments, treasury bills and quality corporate paper; designed for capital preservation and steady income.</div></td>
-                <td><label class="opt"><input type="checkbox" name="svc_fixed_note" value="Yes"> Select</label></td>
-                <td><input type="number" name="svc_fixed_note_amount" min="0" step="1000" aria-label="Starfetch Fixed Note amount in naira"></td>
+
+                <td>
+                  <strong>
+                    Starfetch Fixed Note
+                  </strong>
+
+                  <div class="svc-desc">
+                    Naira money-market instruments,
+                    treasury bills and quality corporate paper;
+                    designed for capital preservation
+                    and steady income.
+                  </div>
+                </td>
+
+                <td>
+                  <label class="opt">
+                    <input
+                      type="checkbox"
+                      name="svc_fixed_note"
+                      value="Yes">
+                    Select
+                  </label>
+                </td>
+
+                <td>
+                  <input
+                    type="number"
+                    name="svc_fixed_note_amount"
+                    min="0"
+                    step="1000"
+                    aria-label="Starfetch Fixed Note amount in naira">
+                </td>
+
               </tr>
+
+
               <tr>
-                <td><strong>Discretionary Portfolio Management</strong><div class="svc-desc">Day-to-day decisions delegated to our team under an agreed mandate, risk profile and investment policy statement.</div></td>
-                <td><label class="opt"><input type="checkbox" name="svc_discretionary" value="Yes"> Select</label></td>
-                <td><input type="number" name="svc_discretionary_amount" min="0" step="1000" aria-label="Discretionary Portfolio Management amount in naira"></td>
+
+                <td>
+                  <strong>
+                    Discretionary Portfolio Management
+                  </strong>
+
+                  <div class="svc-desc">
+                    Day-to-day decisions delegated to our team
+                    under an agreed mandate, risk profile
+                    and investment policy statement.
+                  </div>
+                </td>
+
+                <td>
+                  <label class="opt">
+                    <input
+                      type="checkbox"
+                      name="svc_discretionary"
+                      value="Yes">
+                    Select
+                  </label>
+                </td>
+
+                <td>
+                  <input
+                    type="number"
+                    name="svc_discretionary_amount"
+                    min="0"
+                    step="1000"
+                    aria-label="Discretionary Portfolio Management amount in naira">
+                </td>
+
               </tr>
+
+
               <tr>
-                <td><strong>Non-Discretionary Mandate</strong><div class="svc-desc">You retain every investment decision; we provide research, execution and administration.</div></td>
-                <td><label class="opt"><input type="checkbox" name="svc_non_discretionary" value="Yes"> Select</label></td>
-                <td><input type="number" name="svc_non_discretionary_amount" min="0" step="1000" aria-label="Non-Discretionary Mandate amount in naira"></td>
+
+                <td>
+                  <strong>
+                    Non-Discretionary Mandate
+                  </strong>
+
+                  <div class="svc-desc">
+                    You retain every investment decision;
+                    we provide research, execution
+                    and administration.
+                  </div>
+                </td>
+
+                <td>
+                  <label class="opt">
+                    <input
+                      type="checkbox"
+                      name="svc_non_discretionary"
+                      value="Yes">
+                    Select
+                  </label>
+                </td>
+
+                <td>
+                  <input
+                    type="number"
+                    name="svc_non_discretionary_amount"
+                    min="0"
+                    step="1000"
+                    aria-label="Non-Discretionary Mandate amount in naira">
+                </td>
+
               </tr>
+
             </tbody>
+
           </table>
-          <p class="form-note">Minimum investment amount is ₦ ____________. Funding must originate from an account in the applicant's own name. Cash is not accepted.</p>
+
+
+          <p class="form-note">
+            Minimum investment amount is ₦ ____________.
+            Funding must originate from an account
+            in the applicant's own name.
+            Cash is not accepted.
+          </p>
+
+
           <div class="oa-grid">
+
             <div class="field">
-              <label for="total_amount">Total amount to be invested (₦) <span class="req">*</span></label>
-              <input type="number" id="total_amount" name="total_amount" min="0" step="1000" required>
+
+              <label for="total_amount">
+                Total amount to be invested (₦)
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="number"
+                id="total_amount"
+                name="total_amount"
+                min="0"
+                step="1000"
+                required>
+
             </div>
+
+
             <div class="field">
-              <label for="funding_date">Proposed funding date</label>
-              <input type="date" id="funding_date" name="funding_date">
+
+              <label for="funding_date">
+                Proposed funding date
+              </label>
+
+              <input
+                type="date"
+                id="funding_date"
+                name="funding_date">
+
             </div>
+
+
             <div class="field">
-              <label for="investment_horizon">Investment horizon</label>
-              <select id="investment_horizon" name="investment_horizon">
-                <option value="">Select…</option>
-                <option value="Under 1 year">&lt; 1 year</option>
-                <option value="1–3 years">1–3 years</option>
-                <option value="3–5 years">3–5 years</option>
-                <option value="5 years +">5 years +</option>
+
+              <label for="investment_horizon">
+                Investment horizon
+              </label>
+
+              <select
+                id="investment_horizon"
+                name="investment_horizon">
+
+                <option value="">
+                  Select…
+                </option>
+
+                <option value="Under 1 year">
+                  &lt; 1 year
+                </option>
+
+                <option value="1–3 years">
+                  1–3 years
+                </option>
+
+                <option value="3–5 years">
+                  3–5 years
+                </option>
+
+                <option value="5 years +">
+                  5 years +
+                </option>
+
               </select>
+
             </div>
+
+
             <div class="field">
-              <label for="base_currency">Base currency</label>
-              <select id="base_currency" name="base_currency">
-                <option value="NGN" selected>NGN — Naira</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="EUR">EUR</option>
+
+              <label for="base_currency">
+                Base currency
+              </label>
+
+              <select
+                id="base_currency"
+                name="base_currency">
+
+                <option
+                  value="NGN"
+                  selected>
+                  NGN — Naira
+                </option>
+
+                <option value="USD">
+                  USD
+                </option>
+
+                <option value="GBP">
+                  GBP
+                </option>
+
+                <option value="EUR">
+                  EUR
+                </option>
+
               </select>
+
             </div>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 3 -->
         <fieldset class="form-section">
-          <legend>3. Personal details of applicant(s)</legend>
+
+          <legend>
+            3. Personal details of applicant(s)
+          </legend>
+
+
+          <!-- APPLICANT 1 -->
           <div class="applicant-block">
-            <h3>Applicant 1</h3>
+
+            <h3>
+              Applicant 1
+            </h3>
+
+
             <div class="oa-grid">
-              <div class="field"><label for="app1_title">Title <span class="req">*</span></label>
-                <select id="app1_title" name="app1_title" required>
+
+              <div class="field">
+
+                <label for="app1_title">
+                  Title
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app1_title"
+                  name="app1_title"
+                  required>
+
                   <option value="">Select…</option>
-                  <option>Mr</option><option>Mrs</option><option>Miss</option><option>Ms</option><option>Dr</option><option>Prof</option><option>Alhaji</option><option>Chief</option>
-                </select></div>
-              <div class="field"><label for="app1_first_name">First name <span class="req">*</span></label>
-                <input type="text" id="app1_first_name" name="app1_first_name" required></div>
-              <div class="field"><label for="app1_middle_name">Middle name</label>
-                <input type="text" id="app1_middle_name" name="app1_middle_name"></div>
-              <div class="field"><label for="app1_surname">Surname <span class="req">*</span></label>
-                <input type="text" id="app1_surname" name="app1_surname" required></div>
-              <div class="field"><label for="app1_dob">Date of birth <span class="req">*</span></label>
-                <input type="date" id="app1_dob" name="app1_dob" required></div>
-              <div class="field"><label for="app1_gender">Gender <span class="req">*</span></label>
-                <select id="app1_gender" name="app1_gender" required>
-                  <option value="">Select…</option><option>Male</option><option>Female</option>
-                </select></div>
-              <div class="field"><label for="app1_marital_status">Marital status</label>
-                <select id="app1_marital_status" name="app1_marital_status">
+                  <option>Mr</option>
+                  <option>Mrs</option>
+                  <option>Miss</option>
+                  <option>Ms</option>
+                  <option>Dr</option>
+                  <option>Prof</option>
+                  <option>Alhaji</option>
+                  <option>Chief</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_first_name">
+                  First name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_first_name"
+                  name="app1_first_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_middle_name">
+                  Middle name
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_middle_name"
+                  name="app1_middle_name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_surname">
+                  Surname
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_surname"
+                  name="app1_surname"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_dob">
+                  Date of birth
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="date"
+                  id="app1_dob"
+                  name="app1_dob"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_gender">
+                  Gender
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app1_gender"
+                  name="app1_gender"
+                  required>
+
                   <option value="">Select…</option>
-                  <option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option><option>Separated</option>
-                </select></div>
-              <div class="field"><label for="app1_mothers_maiden_name">Mother's maiden name <span class="req">*</span></label>
-                <input type="text" id="app1_mothers_maiden_name" name="app1_mothers_maiden_name" required></div>
-              <div class="field"><label for="app1_nationality">Nationality <span class="req">*</span></label>
-                <input type="text" id="app1_nationality" name="app1_nationality" required></div>
-              <div class="field"><label for="app1_country_of_birth">Country of birth</label>
-                <input type="text" id="app1_country_of_birth" name="app1_country_of_birth"></div>
-              <div class="field"><label for="app1_state_of_origin">State of origin</label>
-                <input type="text" id="app1_state_of_origin" name="app1_state_of_origin"></div>
-              <div class="field"><label for="app1_other_nationality">Other nationality / citizenship</label>
-                <input type="text" id="app1_other_nationality" name="app1_other_nationality"></div>
-              <div class="field span-2"><label for="app1_residential_address">Residential address <span class="req">*</span></label>
-                <textarea id="app1_residential_address" name="app1_residential_address" rows="2" required></textarea></div>
-              <div class="field"><label for="app1_lga">LGA of residence</label>
-                <input type="text" id="app1_lga" name="app1_lga"></div>
-              <div class="field"><label for="app1_state_of_residence">State of residence <span class="req">*</span></label>
-                <input type="text" id="app1_state_of_residence" name="app1_state_of_residence" required></div>
-              <div class="field"><label for="app1_tax_residence">Country of tax residence <span class="req">*</span></label>
-                <input type="text" id="app1_tax_residence" name="app1_tax_residence" required></div>
-              <div class="field"><label for="app1_email">Email address <span class="req">*</span></label>
-                <input type="email" id="app1_email" name="app1_email" required></div>
-              <div class="field"><label for="app1_mobile">Mobile phone <span class="req">*</span></label>
-                <input type="tel" id="app1_mobile" name="app1_mobile" required></div>
-              <div class="field"><label for="app1_id_type">ID card type <span class="req">*</span></label>
-                <select id="app1_id_type" name="app1_id_type" required>
+                  <option>Male</option>
+                  <option>Female</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_marital_status">
+                  Marital status
+                </label>
+
+                <select
+                  id="app1_marital_status"
+                  name="app1_marital_status">
+
                   <option value="">Select…</option>
-                  <option>International Passport</option><option>National ID</option><option>Driver's Licence</option><option>Permanent Voter's Card</option>
-                </select></div>
-              <div class="field"><label for="app1_id_number">ID card number <span class="req">*</span></label>
-                <input type="text" id="app1_id_number" name="app1_id_number" required></div>
-              <div class="field"><label for="app1_id_issue">Issue date</label>
-                <input type="date" id="app1_id_issue" name="app1_id_issue"></div>
-              <div class="field"><label for="app1_id_expiry">Expiry date</label>
-                <input type="date" id="app1_id_expiry" name="app1_id_expiry"></div>
-              <div class="field"><label for="app1_bvn">BVN <span class="req">*</span></label>
-                <input type="text" id="app1_bvn" name="app1_bvn" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" title="Enter exactly 11 digits." required></div>
-              <div class="field"><label for="app1_nin">NIN <span class="req">*</span></label>
-                <input type="text" id="app1_nin" name="app1_nin" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" title="Enter exactly 11 digits." required></div>
-              <div class="field"><label for="app1_tin">TIN</label>
-                <input type="text" id="app1_tin" name="app1_tin"></div>
-              <div class="field"><label for="app1_occupation">Occupation <span class="req">*</span></label>
-                <input type="text" id="app1_occupation" name="app1_occupation" required></div>
-              <div class="field"><label for="app1_employer">Employer's name</label>
-                <input type="text" id="app1_employer" name="app1_employer"></div>
-              <div class="field"><label for="app1_employment_status">Employment status</label>
-                <select id="app1_employment_status" name="app1_employment_status">
+                  <option>Single</option>
+                  <option>Married</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                  <option>Separated</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_mothers_maiden_name">
+                  Mother's maiden name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_mothers_maiden_name"
+                  name="app1_mothers_maiden_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_nationality">
+                  Nationality
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_nationality"
+                  name="app1_nationality"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_country_of_birth">
+                  Country of birth
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_country_of_birth"
+                  name="app1_country_of_birth">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_state_of_origin">
+                  State of origin
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_state_of_origin"
+                  name="app1_state_of_origin">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_other_nationality">
+                  Other nationality / citizenship
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_other_nationality"
+                  name="app1_other_nationality">
+
+              </div>
+
+
+              <div class="field span-2">
+
+                <label for="app1_residential_address">
+                  Residential address
+                  <span class="req">*</span>
+                </label>
+
+                <textarea
+                  id="app1_residential_address"
+                  name="app1_residential_address"
+                  rows="2"
+                  required></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_lga">
+                  LGA of residence
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_lga"
+                  name="app1_lga">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_state_of_residence">
+                  State of residence
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_state_of_residence"
+                  name="app1_state_of_residence"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_tax_residence">
+                  Country of tax residence
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_tax_residence"
+                  name="app1_tax_residence"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_email">
+                  Email address
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  id="app1_email"
+                  name="app1_email"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_mobile">
+                  Mobile phone
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="app1_mobile"
+                  name="app1_mobile"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_id_type">
+                  ID card type
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app1_id_type"
+                  name="app1_id_type"
+                  required>
+
                   <option value="">Select…</option>
-                  <option>Employed</option><option>Self-employed</option><option>Unemployed</option><option>Retired</option><option>Student</option><option>Other</option>
-                </select></div>
+                  <option>International Passport</option>
+                  <option>National ID</option>
+                  <option>Driver's Licence</option>
+                  <option>Permanent Voter's Card</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_id_number">
+                  ID card number
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_id_number"
+                  name="app1_id_number"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_id_issue">
+                  Issue date
+                </label>
+
+                <input
+                  type="date"
+                  id="app1_id_issue"
+                  name="app1_id_issue">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_id_expiry">
+                  Expiry date
+                </label>
+
+                <input
+                  type="date"
+                  id="app1_id_expiry"
+                  name="app1_id_expiry">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_bvn">
+                  BVN
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_bvn"
+                  name="app1_bvn"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_nin">
+                  NIN
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_nin"
+                  name="app1_nin"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_tin">
+                  TIN
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_tin"
+                  name="app1_tin">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_occupation">
+                  Occupation
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_occupation"
+                  name="app1_occupation"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_employer">
+                  Employer's name
+                </label>
+
+                <input
+                  type="text"
+                  id="app1_employer"
+                  name="app1_employer">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app1_employment_status">
+                  Employment status
+                </label>
+
+                <select
+                  id="app1_employment_status"
+                  name="app1_employment_status">
+
+                  <option value="">Select…</option>
+                  <option>Employed</option>
+                  <option>Self-employed</option>
+                  <option>Unemployed</option>
+                  <option>Retired</option>
+                  <option>Student</option>
+                  <option>Other</option>
+
+                </select>
+
+              </div>
+
             </div>
+
           </div>
 
-          <div class="applicant-block" data-when="joint">
-            <h3>Applicant 2 (joint accounts only)</h3>
+
+          <!-- APPLICANT 2 -->
+          <div
+            class="applicant-block"
+            data-when="joint">
+
+            <h3>
+              Applicant 2 (joint accounts only)
+            </h3>
+
+
             <div class="oa-grid">
-              <div class="field"><label for="app2_title">Title <span class="req">*</span></label>
-                <select id="app2_title" name="app2_title">
+
+              <div class="field">
+
+                <label for="app2_title">
+                  Title
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app2_title"
+                  name="app2_title"
+                  data-required-when-visible>
+
                   <option value="">Select…</option>
-                  <option>Mr</option><option>Mrs</option><option>Miss</option><option>Ms</option><option>Dr</option><option>Prof</option><option>Alhaji</option><option>Chief</option>
-                </select></div>
-              <div class="field"><label for="app2_first_name">First name <span class="req">*</span></label>
-                <input type="text" id="app2_first_name" name="app2_first_name"></div>
-              <div class="field"><label for="app2_middle_name">Middle name</label>
-                <input type="text" id="app2_middle_name" name="app2_middle_name"></div>
-              <div class="field"><label for="app2_surname">Surname <span class="req">*</span></label>
-                <input type="text" id="app2_surname" name="app2_surname"></div>
-              <div class="field"><label for="app2_dob">Date of birth <span class="req">*</span></label>
-                <input type="date" id="app2_dob" name="app2_dob"></div>
-              <div class="field"><label for="app2_gender">Gender <span class="req">*</span></label>
-                <select id="app2_gender" name="app2_gender">
-                  <option value="">Select…</option><option>Male</option><option>Female</option>
-                </select></div>
-              <div class="field"><label for="app2_marital_status">Marital status</label>
-                <select id="app2_marital_status" name="app2_marital_status">
+                  <option>Mr</option>
+                  <option>Mrs</option>
+                  <option>Miss</option>
+                  <option>Ms</option>
+                  <option>Dr</option>
+                  <option>Prof</option>
+                  <option>Alhaji</option>
+                  <option>Chief</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_first_name">
+                  First name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_first_name"
+                  name="app2_first_name"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_middle_name">
+                  Middle name
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_middle_name"
+                  name="app2_middle_name">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_surname">
+                  Surname
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_surname"
+                  name="app2_surname"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_dob">
+                  Date of birth
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="date"
+                  id="app2_dob"
+                  name="app2_dob"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_gender">
+                  Gender
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app2_gender"
+                  name="app2_gender"
+                  data-required-when-visible>
+
                   <option value="">Select…</option>
-                  <option>Single</option><option>Married</option><option>Divorced</option><option>Widowed</option><option>Separated</option>
-                </select></div>
-              <div class="field"><label for="app2_mothers_maiden_name">Mother's maiden name <span class="req">*</span></label>
-                <input type="text" id="app2_mothers_maiden_name" name="app2_mothers_maiden_name"></div>
-              <div class="field"><label for="app2_nationality">Nationality <span class="req">*</span></label>
-                <input type="text" id="app2_nationality" name="app2_nationality"></div>
-              <div class="field"><label for="app2_country_of_birth">Country of birth</label>
-                <input type="text" id="app2_country_of_birth" name="app2_country_of_birth"></div>
-              <div class="field"><label for="app2_state_of_origin">State of origin</label>
-                <input type="text" id="app2_state_of_origin" name="app2_state_of_origin"></div>
-              <div class="field"><label for="app2_other_nationality">Other nationality / citizenship</label>
-                <input type="text" id="app2_other_nationality" name="app2_other_nationality"></div>
-              <div class="field span-2"><label for="app2_residential_address">Residential address <span class="req">*</span></label>
-                <textarea id="app2_residential_address" name="app2_residential_address" rows="2"></textarea></div>
-              <div class="field"><label for="app2_lga">LGA of residence</label>
-                <input type="text" id="app2_lga" name="app2_lga"></div>
-              <div class="field"><label for="app2_state_of_residence">State of residence <span class="req">*</span></label>
-                <input type="text" id="app2_state_of_residence" name="app2_state_of_residence"></div>
-              <div class="field"><label for="app2_tax_residence">Country of tax residence <span class="req">*</span></label>
-                <input type="text" id="app2_tax_residence" name="app2_tax_residence"></div>
-              <div class="field"><label for="app2_email">Email address <span class="req">*</span></label>
-                <input type="email" id="app2_email" name="app2_email"></div>
-              <div class="field"><label for="app2_mobile">Mobile phone <span class="req">*</span></label>
-                <input type="tel" id="app2_mobile" name="app2_mobile"></div>
-              <div class="field"><label for="app2_id_type">ID card type <span class="req">*</span></label>
-                <select id="app2_id_type" name="app2_id_type">
+                  <option>Male</option>
+                  <option>Female</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_marital_status">
+                  Marital status
+                </label>
+
+                <select
+                  id="app2_marital_status"
+                  name="app2_marital_status">
+
                   <option value="">Select…</option>
-                  <option>International Passport</option><option>National ID</option><option>Driver's Licence</option><option>Permanent Voter's Card</option>
-                </select></div>
-              <div class="field"><label for="app2_id_number">ID card number <span class="req">*</span></label>
-                <input type="text" id="app2_id_number" name="app2_id_number"></div>
-              <div class="field"><label for="app2_id_issue">Issue date</label>
-                <input type="date" id="app2_id_issue" name="app2_id_issue"></div>
-              <div class="field"><label for="app2_id_expiry">Expiry date</label>
-                <input type="date" id="app2_id_expiry" name="app2_id_expiry"></div>
-              <div class="field"><label for="app2_bvn">BVN <span class="req">*</span></label>
-                <input type="text" id="app2_bvn" name="app2_bvn" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" title="Enter exactly 11 digits."></div>
-              <div class="field"><label for="app2_nin">NIN <span class="req">*</span></label>
-                <input type="text" id="app2_nin" name="app2_nin" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" title="Enter exactly 11 digits."></div>
-              <div class="field"><label for="app2_tin">TIN</label>
-                <input type="text" id="app2_tin" name="app2_tin"></div>
-              <div class="field"><label for="app2_occupation">Occupation <span class="req">*</span></label>
-                <input type="text" id="app2_occupation" name="app2_occupation"></div>
-              <div class="field"><label for="app2_employer">Employer's name</label>
-                <input type="text" id="app2_employer" name="app2_employer"></div>
-              <div class="field"><label for="app2_employment_status">Employment status</label>
-                <select id="app2_employment_status" name="app2_employment_status">
+                  <option>Single</option>
+                  <option>Married</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                  <option>Separated</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_mothers_maiden_name">
+                  Mother's maiden name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_mothers_maiden_name"
+                  name="app2_mothers_maiden_name"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_nationality">
+                  Nationality
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_nationality"
+                  name="app2_nationality"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_country_of_birth">
+                  Country of birth
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_country_of_birth"
+                  name="app2_country_of_birth">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_state_of_origin">
+                  State of origin
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_state_of_origin"
+                  name="app2_state_of_origin">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_other_nationality">
+                  Other nationality / citizenship
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_other_nationality"
+                  name="app2_other_nationality">
+
+              </div>
+
+
+              <div class="field span-2">
+
+                <label for="app2_residential_address">
+                  Residential address
+                  <span class="req">*</span>
+                </label>
+
+                <textarea
+                  id="app2_residential_address"
+                  name="app2_residential_address"
+                  rows="2"
+                  data-required-when-visible></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_lga">
+                  LGA of residence
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_lga"
+                  name="app2_lga">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_state_of_residence">
+                  State of residence
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_state_of_residence"
+                  name="app2_state_of_residence"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_tax_residence">
+                  Country of tax residence
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_tax_residence"
+                  name="app2_tax_residence"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_email">
+                  Email address
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="email"
+                  id="app2_email"
+                  name="app2_email"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_mobile">
+                  Mobile phone
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="app2_mobile"
+                  name="app2_mobile"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_id_type">
+                  ID card type
+                  <span class="req">*</span>
+                </label>
+
+                <select
+                  id="app2_id_type"
+                  name="app2_id_type"
+                  data-required-when-visible>
+
                   <option value="">Select…</option>
-                  <option>Employed</option><option>Self-employed</option><option>Unemployed</option><option>Retired</option><option>Student</option><option>Other</option>
-                </select></div>
+                  <option>International Passport</option>
+                  <option>National ID</option>
+                  <option>Driver's Licence</option>
+                  <option>Permanent Voter's Card</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_id_number">
+                  ID card number
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_id_number"
+                  name="app2_id_number"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_id_issue">
+                  Issue date
+                </label>
+
+                <input
+                  type="date"
+                  id="app2_id_issue"
+                  name="app2_id_issue">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_id_expiry">
+                  Expiry date
+                </label>
+
+                <input
+                  type="date"
+                  id="app2_id_expiry"
+                  name="app2_id_expiry">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_bvn">
+                  BVN
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_bvn"
+                  name="app2_bvn"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_nin">
+                  NIN
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_nin"
+                  name="app2_nin"
+                  inputmode="numeric"
+                  maxlength="11"
+                  pattern="[0-9]{11}"
+                  title="Enter exactly 11 digits."
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_tin">
+                  TIN
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_tin"
+                  name="app2_tin">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_occupation">
+                  Occupation
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_occupation"
+                  name="app2_occupation"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_employer">
+                  Employer's name
+                </label>
+
+                <input
+                  type="text"
+                  id="app2_employer"
+                  name="app2_employer">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="app2_employment_status">
+                  Employment status
+                </label>
+
+                <select
+                  id="app2_employment_status"
+                  name="app2_employment_status">
+
+                  <option value="">Select…</option>
+                  <option>Employed</option>
+                  <option>Self-employed</option>
+                  <option>Unemployed</option>
+                  <option>Retired</option>
+                  <option>Student</option>
+                  <option>Other</option>
+
+                </select>
+
+              </div>
+
             </div>
-            <p class="form-note">Applicant 2 fields become compulsory when the account type is “Joint account”.</p>
+
+
+            <p class="form-note">
+              Applicant 2 fields become compulsory when
+              the account type is “Joint account”.
+            </p>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 4 -->
         <fieldset class="form-section">
-          <legend>4. Next of kin</legend>
+
+          <legend>
+            4. Next of kin
+          </legend>
+
+
           <div class="applicant-block">
-            <h3>Next of kin — Applicant 1</h3>
+
+            <h3>
+              Next of kin — Applicant 1
+            </h3>
+
+
             <div class="oa-grid">
-              <div class="field"><label for="nok1_full_name">Full name <span class="req">*</span></label>
-                <input type="text" id="nok1_full_name" name="nok1_full_name" required></div>
-              <div class="field"><label for="nok1_relationship">Relationship <span class="req">*</span></label>
-                <input type="text" id="nok1_relationship" name="nok1_relationship" required></div>
-              <div class="field"><label for="nok1_dob">Date of birth</label>
-                <input type="date" id="nok1_dob" name="nok1_dob"></div>
-              <div class="field"><label for="nok1_phone">Phone <span class="req">*</span></label>
-                <input type="tel" id="nok1_phone" name="nok1_phone" required></div>
-              <div class="field span-2"><label for="nok1_address">Address <span class="req">*</span></label>
-                <textarea id="nok1_address" name="nok1_address" rows="2" required></textarea></div>
-              <div class="field"><label for="nok1_email">Email</label>
-                <input type="email" id="nok1_email" name="nok1_email"></div>
+
+              <div class="field">
+
+                <label for="nok1_full_name">
+                  Full name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="nok1_full_name"
+                  name="nok1_full_name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok1_relationship">
+                  Relationship
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="nok1_relationship"
+                  name="nok1_relationship"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok1_dob">
+                  Date of birth
+                </label>
+
+                <input
+                  type="date"
+                  id="nok1_dob"
+                  name="nok1_dob">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok1_phone">
+                  Phone
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="nok1_phone"
+                  name="nok1_phone"
+                  required>
+
+              </div>
+
+
+              <div class="field span-2">
+
+                <label for="nok1_address">
+                  Address
+                  <span class="req">*</span>
+                </label>
+
+                <textarea
+                  id="nok1_address"
+                  name="nok1_address"
+                  rows="2"
+                  required></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok1_email">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="nok1_email"
+                  name="nok1_email">
+
+              </div>
+
             </div>
+
           </div>
-          <div class="applicant-block" data-when="joint">
-            <h3>Next of kin — Applicant 2 (joint accounts only)</h3>
+
+
+          <!-- NEXT OF KIN APPLICANT 2 -->
+          <div
+            class="applicant-block"
+            data-when="joint">
+
+            <h3>
+              Next of kin — Applicant 2
+              (joint accounts only)
+            </h3>
+
+
             <div class="oa-grid">
-              <div class="field"><label for="nok2_full_name">Full name <span class="req">*</span></label>
-                <input type="text" id="nok2_full_name" name="nok2_full_name"></div>
-              <div class="field"><label for="nok2_relationship">Relationship <span class="req">*</span></label>
-                <input type="text" id="nok2_relationship" name="nok2_relationship"></div>
-              <div class="field"><label for="nok2_dob">Date of birth</label>
-                <input type="date" id="nok2_dob" name="nok2_dob"></div>
-              <div class="field"><label for="nok2_phone">Phone <span class="req">*</span></label>
-                <input type="tel" id="nok2_phone" name="nok2_phone"></div>
-              <div class="field span-2"><label for="nok2_address">Address <span class="req">*</span></label>
-                <textarea id="nok2_address" name="nok2_address" rows="2"></textarea></div>
-              <div class="field"><label for="nok2_email">Email</label>
-                <input type="email" id="nok2_email" name="nok2_email"></div>
+
+              <div class="field">
+
+                <label for="nok2_full_name">
+                  Full name
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="nok2_full_name"
+                  name="nok2_full_name"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok2_relationship">
+                  Relationship
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="nok2_relationship"
+                  name="nok2_relationship"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok2_dob">
+                  Date of birth
+                </label>
+
+                <input
+                  type="date"
+                  id="nok2_dob"
+                  name="nok2_dob">
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok2_phone">
+                  Phone
+                  <span class="req">*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="nok2_phone"
+                  name="nok2_phone"
+                  data-required-when-visible>
+
+              </div>
+
+
+              <div class="field span-2">
+
+                <label for="nok2_address">
+                  Address
+                  <span class="req">*</span>
+                </label>
+
+                <textarea
+                  id="nok2_address"
+                  name="nok2_address"
+                  rows="2"
+                  data-required-when-visible></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="nok2_email">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="nok2_email"
+                  name="nok2_email">
+
+              </div>
+
             </div>
+
           </div>
+
         </fieldset>
 
-        <fieldset class="form-section" data-when="minor">
-          <legend>5. Investing for a minor</legend>
-          <p class="step-sub">Complete only where the account is for a person under 18.</p>
-          <div class="oa-grid">
-            <div class="field"><label for="minor_surname">Surname <span class="req">*</span></label>
-              <input type="text" id="minor_surname" name="minor_surname"></div>
-            <div class="field"><label for="minor_first_name">First name <span class="req">*</span></label>
-              <input type="text" id="minor_first_name" name="minor_first_name"></div>
-            <div class="field"><label for="minor_middle_name">Middle name</label>
-              <input type="text" id="minor_middle_name" name="minor_middle_name"></div>
-            <div class="field"><label for="minor_dob">Date of birth <span class="req">*</span></label>
-              <input type="date" id="minor_dob" name="minor_dob"></div>
-            <div class="field"><label for="minor_gender">Gender</label>
-              <select id="minor_gender" name="minor_gender">
-                <option value="">Select…</option><option>Male</option><option>Female</option>
-              </select></div>
-            <div class="field"><label for="minor_country_of_birth">Country of birth</label>
-              <input type="text" id="minor_country_of_birth" name="minor_country_of_birth"></div>
-            <div class="field"><label for="minor_relationship">Relationship to applicant <span class="req">*</span></label>
-              <input type="text" id="minor_relationship" name="minor_relationship"></div>
-            <div class="field"><label for="minor_nin">Minor's NIN (if any)</label>
-              <input type="text" id="minor_nin" name="minor_nin" inputmode="numeric" maxlength="11"></div>
-          </div>
-          <p class="form-note">The applicant(s) named in section 3 will operate this account on the minor's behalf until the minor attains 18 years.</p>
-        </fieldset>
 
-        <fieldset class="form-section">
-          <legend>6. Investment objective and risk profile</legend>
-          <div class="field opt-row">
-            <span class="opt-label">Primary investment objective</span>
-            <label><input type="radio" name="objective" value="Capital preservation"> Capital preservation</label>
-            <label><input type="radio" name="objective" value="Income"> Income</label>
-            <label><input type="radio" name="objective" value="Balanced"> Balanced</label>
-            <label><input type="radio" name="objective" value="Growth"> Growth</label>
-          </div>
-          <div class="field opt-row">
-            <span class="opt-label">Risk tolerance</span>
-            <label><input type="radio" name="risk_tolerance" value="Conservative"> Conservative</label>
-            <label><input type="radio" name="risk_tolerance" value="Moderate"> Moderate</label>
-            <label><input type="radio" name="risk_tolerance" value="Balanced"> Balanced</label>
-            <label><input type="radio" name="risk_tolerance" value="Aggressive"> Aggressive</label>
-          </div>
-          <div class="field opt-row">
-            <span class="opt-label">Investment horizon</span>
-            <label><input type="radio" name="risk_horizon" value="Under 1 year"> &lt; 1 year</label>
-            <label><input type="radio" name="risk_horizon" value="1–3 years"> 1–3 years</label>
-            <label><input type="radio" name="risk_horizon" value="3–5 years"> 3–5 years</label>
-            <label><input type="radio" name="risk_horizon" value="5 years +"> 5 years +</label>
-          </div>
-          <div class="field opt-row">
-            <span class="opt-label">Investment knowledge and experience</span>
-            <label><input type="radio" name="knowledge" value="None"> None</label>
-            <label><input type="radio" name="knowledge" value="Limited"> Limited</label>
-            <label><input type="radio" name="knowledge" value="Good"> Good</label>
-            <label><input type="radio" name="knowledge" value="Extensive"> Extensive</label>
-          </div>
+        <!-- SECTION 5 -->
+        <fieldset
+          class="form-section"
+          data-when="minor">
+
+          <legend>
+            5. Investing for a minor
+          </legend>
+
+          <p class="step-sub">
+            Complete only where the account
+            is for a person under 18.
+          </p>
+
+
           <div class="oa-grid">
-            <div class="field"><label for="expected_withdrawals">Expected withdrawals (₦)</label>
-              <input type="number" id="expected_withdrawals" name="expected_withdrawals" min="0" step="1000"></div>
-            <div class="field"><label for="withdrawal_frequency">Frequency</label>
-              <select id="withdrawal_frequency" name="withdrawal_frequency">
+
+            <div class="field">
+
+              <label for="minor_surname">
+                Surname
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="minor_surname"
+                name="minor_surname"
+                data-required-when-visible>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_first_name">
+                First name
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="minor_first_name"
+                name="minor_first_name"
+                data-required-when-visible>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_middle_name">
+                Middle name
+              </label>
+
+              <input
+                type="text"
+                id="minor_middle_name"
+                name="minor_middle_name">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_dob">
+                Date of birth
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="date"
+                id="minor_dob"
+                name="minor_dob"
+                data-required-when-visible>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_gender">
+                Gender
+              </label>
+
+              <select
+                id="minor_gender"
+                name="minor_gender">
+
                 <option value="">Select…</option>
-                <option>None</option><option>Monthly</option><option>Quarterly</option><option>Semi-annual</option><option>Annual</option><option>As needed</option>
-              </select></div>
-            <div class="field"><label for="annual_income">Annual income (₦)</label>
-              <input type="number" id="annual_income" name="annual_income" min="0" step="1000"></div>
-            <div class="field"><label for="net_worth">Estimated net worth (₦)</label>
-              <input type="number" id="net_worth" name="net_worth" min="0" step="1000"></div>
-            <div class="field span-2"><label for="restrictions">Investment restrictions or exclusions (if any)</label>
-              <textarea id="restrictions" name="restrictions" rows="2"></textarea></div>
+                <option>Male</option>
+                <option>Female</option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_country_of_birth">
+                Country of birth
+              </label>
+
+              <input
+                type="text"
+                id="minor_country_of_birth"
+                name="minor_country_of_birth">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_relationship">
+                Relationship to applicant
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="minor_relationship"
+                name="minor_relationship"
+                data-required-when-visible>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="minor_nin">
+                Minor's NIN (if any)
+              </label>
+
+              <input
+                type="text"
+                id="minor_nin"
+                name="minor_nin"
+                inputmode="numeric"
+                maxlength="11">
+
+            </div>
+
           </div>
+
+
+          <p class="form-note">
+            The applicant(s) named in section 3
+            will operate this account on the minor's
+            behalf until the minor attains 18 years.
+          </p>
+
         </fieldset>
 
+
+        <!-- SECTION 6 -->
         <fieldset class="form-section">
-          <legend>7. Source of funds and wealth — AML/CFT</legend>
+
+          <legend>
+            6. Investment objective and risk profile
+          </legend>
+
+
           <div class="field opt-row">
-            <span class="opt-label">Source of funds to be invested</span>
-            <label><input type="checkbox" name="source_salary" value="Salary / employment"> Salary / employment</label>
-            <label><input type="checkbox" name="source_business" value="Business income"> Business income</label>
-            <label><input type="checkbox" name="source_assets" value="Sale of assets"> Sale of assets</label>
-            <label><input type="checkbox" name="source_inheritance" value="Inheritance / gift"> Inheritance / gift</label>
-            <label><input type="checkbox" name="source_savings" value="Savings"> Savings</label>
-            <label><input type="checkbox" name="source_pension" value="Pension / retirement"> Pension / retirement</label>
-            <label><input type="checkbox" name="source_investment" value="Investment proceeds"> Investment proceeds</label>
-            <label><input type="checkbox" name="source_other" id="source_other" value="Other (specify)"> Other (specify)</label>
+
+            <span class="opt-label">
+              Primary investment objective
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="objective"
+                value="Capital preservation">
+              Capital preservation
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="objective"
+                value="Income">
+              Income
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="objective"
+                value="Balanced">
+              Balanced
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="objective"
+                value="Growth">
+              Growth
+            </label>
+
           </div>
-          <div class="field" id="source_other_wrap" data-show-when-checked="source_other">
-            <label for="source_other_specify">If other, specify</label>
-            <input type="text" id="source_other_specify" name="source_other_specify">
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Risk tolerance
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Conservative">
+              Conservative
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Moderate">
+              Moderate
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Balanced">
+              Balanced
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_tolerance"
+                value="Aggressive">
+              Aggressive
+            </label>
+
           </div>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Investment horizon
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="Under 1 year">
+              &lt; 1 year
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="1–3 years">
+              1–3 years
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="3–5 years">
+              3–5 years
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="risk_horizon"
+                value="5 years +">
+              5 years +
+            </label>
+
+          </div>
+
+
+          <div class="field opt-row">
+
+            <span class="opt-label">
+              Investment knowledge and experience
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="knowledge"
+                value="None">
+              None
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="knowledge"
+                value="Limited">
+              Limited
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="knowledge"
+                value="Good">
+              Good
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="knowledge"
+                value="Extensive">
+              Extensive
+            </label>
+
+          </div>
+
+
           <div class="oa-grid">
-            <div class="field"><label for="annual_inflow">Expected annual inflow (₦)</label>
-              <input type="number" id="annual_inflow" name="annual_inflow" min="0" step="1000"></div>
-            <div class="field"><label for="transaction_frequency">Expected transaction frequency</label>
-              <select id="transaction_frequency" name="transaction_frequency">
+
+            <div class="field">
+
+              <label for="expected_withdrawals">
+                Expected withdrawals (₦)
+              </label>
+
+              <input
+                type="number"
+                id="expected_withdrawals"
+                name="expected_withdrawals"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="withdrawal_frequency">
+                Frequency
+              </label>
+
+              <select
+                id="withdrawal_frequency"
+                name="withdrawal_frequency">
+
                 <option value="">Select…</option>
-                <option>Rarely — a few times a year</option><option>Monthly</option><option>Weekly</option><option>Daily</option>
-              </select></div>
+                <option>None</option>
+                <option>Monthly</option>
+                <option>Quarterly</option>
+                <option>Semi-annual</option>
+                <option>Annual</option>
+                <option>As needed</option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="annual_income">
+                Annual income (₦)
+              </label>
+
+              <input
+                type="number"
+                id="annual_income"
+                name="annual_income"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="net_worth">
+                Estimated net worth (₦)
+              </label>
+
+              <input
+                type="number"
+                id="net_worth"
+                name="net_worth"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field span-2">
+
+              <label for="restrictions">
+                Investment restrictions
+                or exclusions (if any)
+              </label>
+
+              <textarea
+                id="restrictions"
+                name="restrictions"
+                rows="2"></textarea>
+
+            </div>
+
           </div>
+
         </fieldset>
 
-        <fieldset class="form-section">
-          <legend>8. Bank details</legend>
-          <p class="step-sub">For all withdrawals and distributions. Withdrawals will be paid only to an account held in the applicant's own name. Third-party payments are not permitted.</p>
-          <div class="oa-grid">
-            <div class="field"><label for="bank_name">Bank name <span class="req">*</span></label>
-              <input type="text" id="bank_name" name="bank_name" required></div>
-            <div class="field"><label for="bank_account_number">Account number (NUBAN) <span class="req">*</span></label>
-              <input type="text" id="bank_account_number" name="bank_account_number" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" title="Enter exactly 10 digits (NUBAN)." required></div>
-            <div class="field"><label for="bank_account_name">Account name <span class="req">*</span></label>
-              <input type="text" id="bank_account_name" name="bank_account_name" required></div>
-            <div class="field"><label for="bank_account_type">Account type</label>
-              <select id="bank_account_type" name="bank_account_type">
-                <option value="">Select…</option><option>Savings</option><option>Current</option>
-              </select></div>
-            <div class="field"><label for="bank_branch">Branch / sort code</label>
-              <input type="text" id="bank_branch" name="bank_branch"></div>
-            <div class="field"><label for="bank_bvn">BVN linked to account <span class="req">*</span></label>
-              <input type="text" id="bank_bvn" name="bank_bvn" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" title="Enter exactly 11 digits." required></div>
-          </div>
-        </fieldset>
 
+        <!-- SECTION 7 -->
         <fieldset class="form-section">
-          <legend>9. Politically Exposed Person (PEP) declaration</legend>
-          <p class="step-sub">Are you, or have you or any of your close relatives or associates within the last 12 months, occupied a prominent public position?</p>
+
+          <legend>
+            7. Source of funds and wealth — AML/CFT
+          </legend>
+
+
           <div class="field opt-row">
-            <label><input type="radio" name="pep_app1" value="Yes" required> Applicant 1 — Yes</label>
-            <label><input type="radio" name="pep_app1" value="No"> Applicant 1 — No</label>
+
+            <span class="opt-label">
+              Source of funds to be invested
+            </span>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_salary"
+                value="Salary / employment">
+              Salary / employment
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_business"
+                value="Business income">
+              Business income
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_assets"
+                value="Sale of assets">
+              Sale of assets
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_inheritance"
+                value="Inheritance / gift">
+              Inheritance / gift
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_savings"
+                value="Savings">
+              Savings
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_pension"
+                value="Pension / retirement">
+              Pension / retirement
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_investment"
+                value="Investment proceeds">
+              Investment proceeds
+            </label>
+
+            <label>
+              <input
+                type="checkbox"
+                name="source_other"
+                id="source_other"
+                value="Other (specify)">
+              Other (specify)
+            </label>
+
           </div>
+
+
+          <div
+            class="field"
+            id="source_other_wrap"
+            data-show-when-checked="source_other">
+
+            <label for="source_other_specify">
+              If other, specify
+            </label>
+
+            <input
+              type="text"
+              id="source_other_specify"
+              name="source_other_specify">
+
+          </div>
+
+
+          <div class="oa-grid">
+
+            <div class="field">
+
+              <label for="annual_inflow">
+                Expected annual inflow (₦)
+              </label>
+
+              <input
+                type="number"
+                id="annual_inflow"
+                name="annual_inflow"
+                min="0"
+                step="1000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="transaction_frequency">
+                Expected transaction frequency
+              </label>
+
+              <select
+                id="transaction_frequency"
+                name="transaction_frequency">
+
+                <option value="">Select…</option>
+                <option>Rarely — a few times a year</option>
+                <option>Monthly</option>
+                <option>Weekly</option>
+                <option>Daily</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- SECTION 8 -->
+        <fieldset class="form-section">
+
+          <legend>
+            8. Bank details
+          </legend>
+
+
+          <p class="step-sub">
+            For all withdrawals and distributions.
+            Withdrawals will be paid only to an account
+            held in the applicant's own name.
+            Third-party payments are not permitted.
+          </p>
+
+
+          <div class="oa-grid">
+
+            <div class="field">
+
+              <label for="bank_name">
+                Bank name
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="bank_name"
+                name="bank_name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="bank_account_number">
+                Account number (NUBAN)
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="bank_account_number"
+                name="bank_account_number"
+                inputmode="numeric"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                title="Enter exactly 10 digits (NUBAN)."
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="bank_account_name">
+                Account name
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="bank_account_name"
+                name="bank_account_name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="bank_account_type">
+                Account type
+              </label>
+
+              <select
+                id="bank_account_type"
+                name="bank_account_type">
+
+                <option value="">Select…</option>
+                <option>Savings</option>
+                <option>Current</option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="bank_branch">
+                Branch / sort code
+              </label>
+
+              <input
+                type="text"
+                id="bank_branch"
+                name="bank_branch">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="bank_bvn">
+                BVN linked to account
+                <span class="req">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="bank_bvn"
+                name="bank_bvn"
+                inputmode="numeric"
+                maxlength="11"
+                pattern="[0-9]{11}"
+                title="Enter exactly 11 digits."
+                required>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- SECTION 9 -->
+        <fieldset class="form-section">
+
+          <legend>
+            9. Politically Exposed Person (PEP) declaration
+          </legend>
+
+
+          <p class="step-sub">
+            Are you, or have you or any of your
+            close relatives or associates within
+            the last 12 months, occupied a prominent
+            public position?
+          </p>
+
+
+          <div class="field opt-row">
+
+            <label>
+              <input
+                type="radio"
+                name="pep_app1"
+                value="Yes"
+                required>
+              Applicant 1 — Yes
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="pep_app1"
+                value="No">
+              Applicant 1 — No
+            </label>
+
+          </div>
+
+
           <div class="field">
-            <label for="pep_app1_details">If yes, give details (name, position, country, period held)</label>
-            <textarea id="pep_app1_details" name="pep_app1_details" rows="2"></textarea>
+
+            <label for="pep_app1_details">
+              If yes, give details
+              (name, position, country, period held)
+            </label>
+
+            <textarea
+              id="pep_app1_details"
+              name="pep_app1_details"
+              rows="2"></textarea>
+
           </div>
+
+
           <div data-when="joint">
+
             <div class="field opt-row">
-              <label><input type="radio" name="pep_app2" value="Yes"> Applicant 2 — Yes</label>
-              <label><input type="radio" name="pep_app2" value="No"> Applicant 2 — No</label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="pep_app2"
+                  value="Yes">
+                Applicant 2 — Yes
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="pep_app2"
+                  value="No">
+                Applicant 2 — No
+              </label>
+
             </div>
+
+
             <div class="field">
-              <label for="pep_app2_details">If yes, give details (name, position, country, period held)</label>
-              <textarea id="pep_app2_details" name="pep_app2_details" rows="2"></textarea>
+
+              <label for="pep_app2_details">
+                If yes, give details
+                (name, position, country, period held)
+              </label>
+
+              <textarea
+                id="pep_app2_details"
+                name="pep_app2_details"
+                rows="2"></textarea>
+
             </div>
+
           </div>
+
         </fieldset>
 
-        <fieldset class="form-section" data-when="joint">
-          <legend>10. Signature mandate — joint accounts only</legend>
-          <p class="step-sub">Instructions on this account shall be valid when signed by:</p>
+
+        <!-- SECTION 10 -->
+        <fieldset
+          class="form-section"
+          data-when="joint">
+
+          <legend>
+            10. Signature mandate — joint accounts only
+          </legend>
+
+          <p class="step-sub">
+            Instructions on this account shall be valid when signed by:
+          </p>
+
+
           <div class="field opt-row">
-            <label><input type="radio" name="signature_mandate" value="Either to sign"> Either to sign</label>
-            <label><input type="radio" name="signature_mandate" value="Both to sign"> Both to sign</label>
+
+            <label>
+              <input
+                type="radio"
+                name="signature_mandate"
+                value="Either to sign">
+              Either to sign
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="signature_mandate"
+                value="Both to sign">
+              Both to sign
+            </label>
+
           </div>
-          <p class="form-note">In the event of the death of one holder, the account shall be dealt with in accordance with applicable law and our terms of business.</p>
+
+
+          <p class="form-note">
+            In the event of the death of one holder,
+            the account shall be dealt with in accordance
+            with applicable law and our terms of business.
+          </p>
+
         </fieldset>
 
+
+        <!-- SECTION 11 -->
         <fieldset class="form-section">
-          <legend>11. Data privacy consent</legend>
+
+          <legend>
+            11. Data privacy consent
+          </legend>
+
+
           <div class="clause-box">
-            <p class="kicker">Nigeria Data Protection Act 2023</p>
-            <p>Starfetch Investment Limited processes your personal information in accordance with the Nigeria Data Protection Act 2023 and our <a href="privacy.html">Privacy Policy</a>. “Personal information” means information relating to an identifiable individual, including name, contact details, identification numbers, financial information and biometric data.</p>
+
+            <p class="kicker">
+              Nigeria Data Protection Act 2023
+            </p>
+
+            <p>
+              Starfetch Investment Limited processes your
+              personal information in accordance with the
+              Nigeria Data Protection Act 2023 and our
+              <a href="privacy.html">Privacy Policy</a>.
+              “Personal information” means information relating
+              to an identifiable individual, including name,
+              contact details, identification numbers,
+              financial information and biometric data.
+            </p>
+
+
             <ol>
-              <li>We collect your personal information from you, and, where lawful and reasonable, from public sources, for identity verification, fraud prevention, regulatory compliance and the provision of our services.</li>
-              <li>Where you give us personal information about another person (for example a next of kin, beneficiary or minor), you confirm you are authorised to provide it and to receive privacy notices on their behalf.</li>
-              <li>We process your personal information to provide the services under this mandate, to meet our obligations under the Investments and Securities Act and SEC Rules and applicable AML/CFT requirements, and to carry out analysis to improve our services.</li>
-              <li>We may share your personal information with our regulators, custodians, auditors and service providers who are required to protect it to the same standard.</li>
-              <li>You may request access to, or correction of, your personal information, and may withdraw consent to marketing at any time. Our Privacy Policy is available on our website.</li>
+
+              <li>
+                We collect your personal information from you,
+                and, where lawful and reasonable, from public
+                sources, for identity verification,
+                fraud prevention, regulatory compliance
+                and the provision of our services.
+              </li>
+
+              <li>
+                Where you give us personal information about
+                another person (for example a next of kin,
+                beneficiary or minor), you confirm you are
+                authorised to provide it and to receive
+                privacy notices on their behalf.
+              </li>
+
+              <li>
+                We process your personal information to provide
+                the services under this mandate, to meet our
+                obligations under the Investments and Securities
+                Act and SEC Rules and applicable AML/CFT
+                requirements, and to carry out analysis
+                to improve our services.
+              </li>
+
+              <li>
+                We may share your personal information with our
+                regulators, custodians, auditors and service
+                providers who are required to protect it
+                to the same standard.
+              </li>
+
+              <li>
+                You may request access to, or correction of,
+                your personal information, and may withdraw
+                consent to marketing at any time.
+                Our Privacy Policy is available on our website.
+              </li>
+
             </ol>
+
           </div>
+
+
           <div class="consent">
-            <input type="checkbox" name="privacy_consent" id="privacy_consent" required value="Yes">
-            <label for="privacy_consent" style="font-weight:400;color:inherit">I consent to the processing of my/our data as set out in section 11 and the <a href="privacy.html">Privacy Policy</a>. <span class="req">*</span></label>
+
+            <input
+              type="checkbox"
+              name="privacy_consent"
+              id="privacy_consent"
+              required
+              value="Yes">
+
+            <label
+              for="privacy_consent"
+              style="font-weight:400;color:inherit">
+
+              I consent to the processing of my/our data
+              as set out in section 11 and the
+              <a href="privacy.html">Privacy Policy</a>.
+              <span class="req">*</span>
+
+            </label>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 12 -->
         <fieldset class="form-section">
-          <legend>12. Marketing consent — optional</legend>
+
+          <legend>
+            12. Marketing consent — optional
+          </legend>
+
+
           <div class="field opt-row">
-            <span class="opt-label">Send me the weekly market digest and plain-language investing guidance</span>
-            <label><input type="radio" name="marketing_digest" value="Yes"> Yes</label>
-            <label><input type="radio" name="marketing_digest" value="No"> No</label>
+
+            <span class="opt-label">
+              Send me the weekly market digest and
+              plain-language investing guidance
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_digest"
+                value="Yes">
+              Yes
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_digest"
+                value="No">
+              No
+            </label>
+
           </div>
+
+
           <div class="field opt-row">
-            <span class="opt-label">Market your products, services and special offers to me</span>
-            <label><input type="radio" name="marketing_products" value="Yes"> Yes</label>
-            <label><input type="radio" name="marketing_products" value="No"> No</label>
+
+            <span class="opt-label">
+              Market your products, services
+              and special offers to me
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_products"
+                value="Yes">
+              Yes
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_products"
+                value="No">
+              No
+            </label>
+
           </div>
+
+
           <div class="field opt-row">
-            <span class="opt-label">Contact me for research purposes</span>
-            <label><input type="radio" name="marketing_research" value="Yes"> Yes</label>
-            <label><input type="radio" name="marketing_research" value="No"> No</label>
+
+            <span class="opt-label">
+              Contact me for research purposes
+            </span>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_research"
+                value="Yes">
+              Yes
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="marketing_research"
+                value="No">
+              No
+            </label>
+
           </div>
-          <p class="form-note">You may withdraw any of these consents at any time via the unsubscribe link in every email, or by contacting us.</p>
+
+
+          <p class="form-note">
+            You may withdraw any of these consents
+            at any time via the unsubscribe link
+            in every email, or by contacting us.
+          </p>
+
         </fieldset>
 
+
+        <!-- SECTION 13 -->
         <fieldset class="form-section">
-          <legend>13. Declarations and acknowledgements</legend>
+
+          <legend>
+            13. Declarations and acknowledgements
+          </legend>
+
+
           <div class="clause-box">
-            <p class="kicker">The applicant(s) declare(s):</p>
+
+            <p class="kicker">
+              The applicant(s) declare(s):
+            </p>
+
+
             <ol>
-              <li>The information given in this form is true, complete and accurate, and I/we will notify Starfetch Investment Limited promptly of any change.</li>
-              <li>I/We have received, read and understood the mandate terms, the fee schedule and the risk disclosures for the service selected, and the fees were disclosed to me/us before I/we invested.</li>
-              <li>I/We understand that investment involves risk, including the possible loss of principal; that investment values can fall as well as rise; and that no return is guaranteed. Past performance is not a reliable indicator of future results.</li>
-              <li>I/We understand that client assets are held in segregated custody with a regulated custodian, separate from the assets of Starfetch Investment Limited.</li>
-              <li>I/We authorise Starfetch Investment Limited to verify my/our identity, including through BVN/NIN and other regulatory checks, in line with applicable AML/CFT requirements.</li>
-              <li>I/We confirm the funds invested derive from lawful sources and are not the proceeds of any unlawful activity.</li>
-              <li>Where a discretionary mandate is selected, I/we confirm a separate Investment Policy Statement has been agreed and executed.</li>
-              <li>I/We consent to the processing of my/our data as set out in section 11 and the Privacy Policy.</li>
+
+              <li>
+                The information given in this form is true,
+                complete and accurate, and I/we will notify
+                Starfetch Investment Limited promptly
+                of any change.
+              </li>
+
+              <li>
+                I/We have received, read and understood
+                the mandate terms, the fee schedule and
+                the risk disclosures for the service selected,
+                and the fees were disclosed to me/us
+                before I/we invested.
+              </li>
+
+              <li>
+                I/We understand that investment involves risk,
+                including the possible loss of principal;
+                that investment values can fall as well as rise;
+                and that no return is guaranteed.
+                Past performance is not a reliable
+                indicator of future results.
+              </li>
+
+              <li>
+                I/We understand that client assets are held
+                in segregated custody with a regulated custodian,
+                separate from the assets of
+                Starfetch Investment Limited.
+              </li>
+
+              <li>
+                I/We authorise Starfetch Investment Limited
+                to verify my/our identity, including through
+                BVN/NIN and other regulatory checks,
+                in line with applicable AML/CFT requirements.
+              </li>
+
+              <li>
+                I/We confirm the funds invested derive
+                from lawful sources and are not the proceeds
+                of any unlawful activity.
+              </li>
+
+              <li>
+                Where a discretionary mandate is selected,
+                I/we confirm a separate Investment Policy
+                Statement has been agreed and executed.
+              </li>
+
+              <li>
+                I/We consent to the processing of my/our data
+                as set out in section 11
+                and the Privacy Policy.
+              </li>
+
             </ol>
+
           </div>
+
+
           <div class="consent">
-            <input type="checkbox" name="declarations_accept" id="declarations_accept" required value="Yes">
-            <label for="declarations_accept" style="font-weight:400;color:inherit">I/We have read, understood and accept each of the declarations and acknowledgements above. <span class="req">*</span></label>
+
+            <input
+              type="checkbox"
+              name="declarations_accept"
+              id="declarations_accept"
+              required
+              value="Yes">
+
+            <label
+              for="declarations_accept"
+              style="font-weight:400;color:inherit">
+
+              I/We have read, understood and accept
+              each of the declarations and
+              acknowledgements above.
+              <span class="req">*</span>
+
+            </label>
+
           </div>
+
+
           <div class="pp-sign">
-            <p class="form-note">Signatures — print this form and sign below in ink (this page is your section 13 &amp; 14 signature block).</p>
-            <div class="sign-row"><span>Applicant 1 — signature</span><span class="sign-line"></span></div>
-            <div class="sign-row"><span>Name / date</span><span class="sign-line"></span></div>
-            <div class="sign-row" data-when="joint"><span>Applicant 2 — signature</span><span class="sign-line"></span></div>
-            <div class="sign-row" data-when="joint"><span>Name / date</span><span class="sign-line"></span></div>
+
+            <p class="form-note">
+              Signatures — print this form and sign below
+              in ink (this page is your section 13 &amp; 14
+              signature block).
+            </p>
+
+
+            <div class="sign-row">
+              <span>
+                Applicant 1 — signature
+              </span>
+              <span class="sign-line"></span>
+            </div>
+
+
+            <div class="sign-row">
+              <span>
+                Name / date
+              </span>
+              <span class="sign-line"></span>
+            </div>
+
+
+            <div
+              class="sign-row"
+              data-when="joint">
+
+              <span>
+                Applicant 2 — signature
+              </span>
+
+              <span class="sign-line"></span>
+
+            </div>
+
+
+            <div
+              class="sign-row"
+              data-when="joint">
+
+              <span>
+                Name / date
+              </span>
+
+              <span class="sign-line"></span>
+
+            </div>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 14 -->
         <fieldset class="form-section">
-          <legend>14. Electronic instruction indemnity</legend>
+
+          <legend>
+            14. Electronic instruction indemnity
+          </legend>
+
+
           <div class="clause-box">
-            <p class="kicker">In relation to the mandate(s) in this application (the “Account”), I/we confirm and agree as follows:</p>
+
+            <p class="kicker">
+              In relation to the mandate(s) in this application
+              (the “Account”), I/we confirm and agree as follows:
+            </p>
+
+
             <ol>
-              <li>I/We authorise Starfetch Investment Limited to act on, and to debit the Account in accordance with, instructions received in my/our name which bear or purport to bear the signature of any person whose specimen signature I/we have provided under the signature mandate in this form, whether given by letter, electronic scan or email.</li>
-              <li>I/We authorise Starfetch Investment Limited to act on instructions and confirmations given in any format agreed with me/us from time to time, including written, scanned and emailed instructions.</li>
-              <li>I/We acknowledge that email, electronic scan and facsimile are insecure transmission media, and I/we undertake to indemnify Starfetch Investment Limited against any loss it suffers by reason of acting on such instructions, provided it has taken the verification measures prescribed by its internal policies, and irrespective of whether such instructions prove erroneous, fraudulent or unauthorised.</li>
-              <li>All authorisations previously given by me/us continue in full force except as supplemented or modified by this authorisation, unless and until revoked or modified by a subsequent authorisation received by Starfetch Investment Limited.</li>
-              <li>This indemnity remains valid and binding throughout the period the Account is maintained.</li>
+
+              <li>
+                I/We authorise Starfetch Investment Limited
+                to act on, and to debit the Account in accordance
+                with, instructions received in my/our name
+                which bear or purport to bear the signature
+                of any person whose specimen signature
+                I/we have provided under the signature mandate
+                in this form, whether given by letter,
+                electronic scan or email.
+              </li>
+
+              <li>
+                I/We authorise Starfetch Investment Limited
+                to act on instructions and confirmations
+                given in any format agreed with me/us
+                from time to time, including written,
+                scanned and emailed instructions.
+              </li>
+
+              <li>
+                I/We acknowledge that email, electronic scan
+                and facsimile are insecure transmission media,
+                and I/we undertake to indemnify
+                Starfetch Investment Limited against any loss
+                it suffers by reason of acting on such
+                instructions, provided it has taken the
+                verification measures prescribed by its internal
+                policies, and irrespective of whether such
+                instructions prove erroneous, fraudulent
+                or unauthorised.
+              </li>
+
+              <li>
+                All authorisations previously given by me/us
+                continue in full force except as supplemented
+                or modified by this authorisation,
+                unless and until revoked or modified
+                by a subsequent authorisation received
+                by Starfetch Investment Limited.
+              </li>
+
+              <li>
+                This indemnity remains valid and binding
+                throughout the period the Account is maintained.
+              </li>
+
             </ol>
+
           </div>
+
+
           <div class="consent">
-            <input type="checkbox" name="indemnity_accept" id="indemnity_accept" required value="Yes">
-            <label for="indemnity_accept" style="font-weight:400;color:inherit">I/We agree to the Electronic Instruction Indemnity above. The signed version will be returned on the printed form, in the presence of a witness. <span class="req">*</span></label>
+
+            <input
+              type="checkbox"
+              name="indemnity_accept"
+              id="indemnity_accept"
+              required
+              value="Yes">
+
+            <label
+              for="indemnity_accept"
+              style="font-weight:400;color:inherit">
+
+              I/We agree to the Electronic Instruction
+              Indemnity above.
+              The signed version will be returned on the
+              printed form, in the presence of a witness.
+              <span class="req">*</span>
+
+            </label>
+
           </div>
+
+
           <div class="pp-sign">
-            <div class="sign-row"><span>In the presence of — Witness name</span><span class="sign-line"></span></div>
-            <div class="sign-row"><span>Occupation / address</span><span class="sign-line"></span></div>
-            <div class="sign-row"><span>Witness signature / date</span><span class="sign-line"></span></div>
+
+            <div class="sign-row">
+              <span>
+                In the presence of — Witness name
+              </span>
+              <span class="sign-line"></span>
+            </div>
+
+            <div class="sign-row">
+              <span>
+                Occupation / address
+              </span>
+              <span class="sign-line"></span>
+            </div>
+
+            <div class="sign-row">
+              <span>
+                Witness signature / date
+              </span>
+              <span class="sign-line"></span>
+            </div>
+
           </div>
+
         </fieldset>
 
+
+        <!-- SECTION 15 -->
         <fieldset class="form-section">
-          <legend>15. Application checklist</legend>
-          <p class="step-sub">Documents to accompany this form. Please send these together with the signed printed form to <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a>.</p>
+
+          <legend>
+            15. Application checklist
+          </legend>
+
+
+          <p class="step-sub">
+            Documents to accompany this form.
+            Please send these together with the signed
+            printed form to
+            <a href="mailto:info@starfetchinvestltd.com.ng">
+              info@starfetchinvestltd.com.ng
+            </a>.
+          </p>
+
+
           <ul class="docs-list">
-            <li><label><input type="checkbox" name="docs_completed_form" value="Yes"> This completed and signed account opening form</label></li>
-            <li><label><input type="checkbox" name="docs_passport_photo" value="Yes"> One passport photograph of each applicant</label></li>
-            <li><label><input type="checkbox" name="docs_photo_id" value="Yes"> Valid photo identification for each applicant (International Passport, National ID, Driver's Licence or Permanent Voter's Card)</label></li>
-            <li><label><input type="checkbox" name="docs_bvn_nin" value="Yes"> BVN and NIN for each applicant</label></li>
-            <li><label><input type="checkbox" name="docs_proof_of_address" value="Yes"> Proof of address (utility bill not older than 3 months)</label></li>
-            <li><label><input type="checkbox" name="docs_source_of_funds" value="Yes"> Evidence of source of funds where required</label></li>
-            <li data-when="minor"><label><input type="checkbox" name="docs_minor_birth_cert" value="Yes"> Birth certificate or age declaration of the minor (accounts for a minor only)</label></li>
-            <li><label><input type="checkbox" name="docs_ips" value="Yes"> Executed Investment Policy Statement (discretionary mandates only)</label></li>
-            <li><label><input type="checkbox" name="docs_fee_schedule" value="Yes"> Signed fee schedule and terms of business</label></li>
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_completed_form"
+                  value="Yes">
+                This completed and signed account opening form
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_passport_photo"
+                  value="Yes">
+                One passport photograph of each applicant
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_photo_id"
+                  value="Yes">
+                Valid photo identification for each applicant
+                (International Passport, National ID,
+                Driver's Licence or Permanent Voter's Card)
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_bvn_nin"
+                  value="Yes">
+                BVN and NIN for each applicant
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_proof_of_address"
+                  value="Yes">
+                Proof of address
+                (utility bill not older than 3 months)
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_source_of_funds"
+                  value="Yes">
+                Evidence of source of funds where required
+              </label>
+            </li>
+
+
+            <li data-when="minor">
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_minor_birth_cert"
+                  value="Yes">
+                Birth certificate or age declaration
+                of the minor
+                (accounts for a minor only)
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_ips"
+                  value="Yes">
+                Executed Investment Policy Statement
+                (discretionary mandates only)
+              </label>
+            </li>
+
+
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  name="docs_fee_schedule"
+                  value="Yes">
+                Signed fee schedule and terms of business
+              </label>
+            </li>
+
           </ul>
-          <p class="form-note"><strong>Please note that cash is not an acceptable mode of payment.</strong></p>
+
+
+          <p class="form-note">
+            <strong>
+              Please note that cash is not
+              an acceptable mode of payment.
+            </strong>
+          </p>
+
         </fieldset>
+
 
         <div class="oa-actions">
-          <button type="button" class="btn btn-outline-dark" id="btn-print">Print this form</button>
-          <button type="submit" class="btn">Submit application</button>
+
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            id="btn-print">
+            Print this form
+          </button>
+
+          <button
+            type="submit"
+            class="btn">
+            Submit application
+          </button>
+
         </div>
-        <p class="form-note">After submitting, please print this page, sign sections 13 and 14 in ink — the indemnity in the presence of a witness — and email the signed form with the section 15 documents to <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a>. We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
+
+
+        <p class="form-note">
+          After submitting, please print this page,
+          sign sections 13 and 14 in ink —
+          the indemnity in the presence of a witness —
+          and email the signed form with the section 15
+          documents to
+          <a href="mailto:info@starfetchinvestltd.com.ng">
+            info@starfetchinvestltd.com.ng
+          </a>.
+          We reply by email — typically within one business day
+          (Mon–Fri, 8:30am–5:30pm WAT).
+        </p>
+
       </form>
+
     </div>
+
   </div>
+
 </section>
 
+
 <section class="newsletter-band">
+
   <div class="wrap">
-    <span class="eyebrow" style="color:#B4E717">Market digest</span>
-    <h2>Stay ahead of the Nigerian market</h2>
-    <p>Rates, market notes and plain-language investing guidance — sent periodically, no noise.</p>
-    <form action="thanks.html" method="POST" name="newsletter" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="newsletter">
-      <input type="hidden" name="consent_version" value="2026-08-12.v5">
-      <input type="hidden" name="source" value="newsletter-band">
-      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
-      <input type="text" name="first_name" placeholder="First name" required aria-label="First name">
-      <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
-      <button class="btn" type="submit">Subscribe</button>
+
+    <span
+      class="eyebrow"
+      style="color:#B4E717">
+      Market digest
+    </span>
+
+    <h2>
+      Stay ahead of the Nigerian market
+    </h2>
+
+    <p>
+      Rates, market notes and plain-language
+      investing guidance — sent periodically,
+      no noise.
+    </p>
+
+
+    <form
+      action="thanks.html"
+      method="POST"
+      name="newsletter"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="newsletter">
+
+      <input
+        type="hidden"
+        name="consent_version"
+        value="2026-08-12.v5">
+
+      <input
+        type="hidden"
+        name="source"
+        value="newsletter-band">
+
+
+      <p style="display:none">
+        <label>
+          Don't fill this in:
+          <input name="bot-field">
+        </label>
+      </p>
+
+
+      <input
+        type="text"
+        name="first_name"
+        placeholder="First name"
+        required
+        aria-label="First name">
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        required
+        aria-label="Email address">
+
+      <button
+        class="btn"
+        type="submit">
+        Subscribe
+      </button>
+
+
       <div class="consent">
-        <input type="checkbox" name="consent_newsletter" id="nl-consent" required value="yes">
-        <label for="nl-consent" style="font-weight:400;color:inherit">I agree that Starfetch Investment Limited may store my details and send me its market digest by email. I can withdraw consent at any time using the unsubscribe link in every email. <a href="privacy.html">Privacy Policy</a>.</label>
+
+        <input
+          type="checkbox"
+          name="consent_newsletter"
+          id="nl-consent"
+          required
+          value="yes">
+
+        <label
+          for="nl-consent"
+          style="font-weight:400;color:inherit">
+
+          I agree that Starfetch Investment Limited
+          may store my details and send me its
+          market digest by email.
+          I can withdraw consent at any time using
+          the unsubscribe link in every email.
+          <a href="privacy.html">
+            Privacy Policy
+          </a>.
+
+        </label>
+
       </div>
+
     </form>
+
   </div>
+
 </section>
+
+
 <footer>
+
   <div class="wrap">
+
     <div>
-      <h4>Starfetch Investment Limited</h4>
-      <p>The Bloc (2nd Floor), 70 Kusenla Road, Off Lekki–Epe Expressway, Ikate-Elegushi, Lekki, Lagos, Nigeria</p>
-      <p style="margin-top:8px"><a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+
+      <h4>
+        Starfetch Investment Limited
+      </h4>
+
+      <p>
+        The Bloc (2nd Floor), 70 Kusenla Road,
+        Off Lekki–Epe Expressway,
+        Ikate-Elegushi, Lekki, Lagos, Nigeria
+      </p>
+
+      <p style="margin-top:8px">
+
+        <a href="mailto:info@starfetchinvestltd.com.ng">
+          info@starfetchinvestltd.com.ng
+        </a>
+
+      </p>
+
     </div>
+
+
     <div>
-      <h4>Explore</h4>
-      <a href="about.html">About us</a>
-      <a href="services.html">Services</a>
-      <a href="tools/index.html">Free tools</a>
-      <a href="open-account.html">Open an account</a>
-      <a href="contact.html">Contact</a>
+
+      <h4>
+        Explore
+      </h4>
+
+      <a href="about.html">
+        About us
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="tools/index.html">
+        Free tools
+      </a>
+
+      <a href="open-account.html">
+        Open an account
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </div>
+
+
     <div>
-      <h4>Legal</h4>
-      <a href="privacy.html">Privacy policy</a>
-      <a href="complaints.html">Complaints policy</a>
+
+      <h4>
+        Legal
+      </h4>
+
+      <a href="privacy.html">
+        Privacy policy
+      </a>
+
+      <a href="complaints.html">
+        Complaints policy
+      </a>
+
     </div>
+
+
     <div class="footer-legal">
-      <p>Starfetch Investment Limited · RC 7402697 · Incorporated in Nigeria under CAMA 2020.</p>
-      <p>Registered with the Securities and Exchange Commission, Nigeria as a Fund/Portfolio Manager.</p>
-      <p>Investing involves risk, including the possible loss of principal. Past performance is not a reliable indicator of future results. Nothing on this website constitutes investment, legal or tax advice, an offer, or a solicitation to buy or sell any security.</p>
-      <p>© <span id="year">2026</span> Starfetch Investment Limited. All rights reserved.</p>
+
+      <p>
+        Starfetch Investment Limited · RC 7402697 ·
+        Incorporated in Nigeria under CAMA 2020.
+      </p>
+
+      <p>
+        Registered with the Securities and Exchange
+        Commission, Nigeria as a Fund/Portfolio Manager.
+      </p>
+
+      <p>
+        Investing involves risk, including the possible
+        loss of principal. Past performance is not a
+        reliable indicator of future results.
+        Nothing on this website constitutes investment,
+        legal or tax advice, an offer, or a solicitation
+        to buy or sell any security.
+      </p>
+
+      <p>
+        © <span id="year">2026</span>
+        Starfetch Investment Limited.
+        All rights reserved.
+      </p>
+
     </div>
+
   </div>
+
 </footer>
+
+
 <div class="msg-widget">
-  <button class="msg-fab" id="msg-fab" aria-expanded="false" aria-controls="msg-panel">
-    <span class="msg-fab-icon">✉</span> Leave a message
+
+  <button
+    class="msg-fab"
+    id="msg-fab"
+    aria-expanded="false"
+    aria-controls="msg-panel">
+
+    <span class="msg-fab-icon">
+      ✉
+    </span>
+
+    Leave a message
+
   </button>
-  <div class="msg-panel" id="msg-panel" hidden>
+
+
+  <div
+    class="msg-panel"
+    id="msg-panel"
+    hidden>
+
     <div class="msg-head">
-      <strong>Message Starfetch</strong>
-      <button class="msg-close" id="msg-close" aria-label="Close">×</button>
+
+      <strong>
+        Message Starfetch
+      </strong>
+
+      <button
+        class="msg-close"
+        id="msg-close"
+        aria-label="Close">
+        ×
+      </button>
+
     </div>
-    <p class="msg-sub">We reply by email — typically within one business day (Mon–Fri, 8:30am–5:30pm WAT).</p>
-    <form action="thanks.html" method="POST" name="quick-message" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="quick-message">
-      <input type="hidden" name="consent_version" value="2026-08-12.v5">
-      <input type="hidden" name="page" value="Open an account">
-      <p style="display:none"><label>Don't fill this in: <input name="bot-field"></label></p>
-      <div class="field"><input type="text" name="name" placeholder="Your name" required aria-label="Your name"></div>
-      <div class="field"><input type="email" name="email" placeholder="Email address" required aria-label="Email address"></div>
-      <div class="field"><textarea name="message" rows="3" placeholder="How can we help?" required aria-label="Message"></textarea></div>
-      <div class="consent">
-        <input type="checkbox" name="consent_contact" id="mw-consent-oa" required value="yes">
-        <label for="mw-consent-oa" style="font-weight:400;color:inherit">You may store my details and reply to my message. <a href="privacy.html">Privacy</a>.</label>
+
+
+    <p class="msg-sub">
+      We reply by email — typically within one business day
+      (Mon–Fri, 8:30am–5:30pm WAT).
+    </p>
+
+
+    <form
+      action="thanks.html"
+      method="POST"
+      name="quick-message"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+
+      <input
+        type="hidden"
+        name="form-name"
+        value="quick-message">
+
+      <input
+        type="hidden"
+        name="consent_version"
+        value="2026-08-12.v5">
+
+      <input
+        type="hidden"
+        name="page"
+        value="Open an account">
+
+
+      <p style="display:none">
+        <label>
+          Don't fill this in:
+          <input name="bot-field">
+        </label>
+      </p>
+
+
+      <div class="field">
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          aria-label="Your name">
+
       </div>
-      <button class="btn" type="submit" style="width:100%">Send</button>
+
+
+      <div class="field">
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          required
+          aria-label="Email address">
+
+      </div>
+
+
+      <div class="field">
+
+        <textarea
+          name="message"
+          rows="3"
+          placeholder="How can we help?"
+          required
+          aria-label="Message"></textarea>
+
+      </div>
+
+
+      <div class="consent">
+
+        <input
+          type="checkbox"
+          name="consent_contact"
+          id="mw-consent-oa"
+          required
+          value="yes">
+
+        <label
+          for="mw-consent-oa"
+          style="font-weight:400;color:inherit">
+
+          You may store my details
+          and reply to my message.
+
+          <a href="privacy.html">
+            Privacy
+          </a>.
+
+        </label>
+
+      </div>
+
+
+      <button
+        class="btn"
+        type="submit"
+        style="width:100%">
+        Send
+      </button>
+
     </form>
-    <p class="msg-alt">Prefer email? <a href="mailto:info@starfetchinvestltd.com.ng">info@starfetchinvestltd.com.ng</a></p>
+
+
+    <p class="msg-alt">
+
+      Prefer email?
+
+      <a href="mailto:info@starfetchinvestltd.com.ng">
+        info@starfetchinvestltd.com.ng
+      </a>
+
+    </p>
+
   </div>
+
 </div>
+
+
 <script src="assets/js/main.js?v=2026-09-28a"></script>
 <script src="assets/js/open-account.js?v=2026-09-28a"></script>
+
 </body>
 </html>

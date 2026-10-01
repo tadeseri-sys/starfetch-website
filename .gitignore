@@ -8,3 +8,6 @@ PAUSE_PUBLISH
 publish.sh.bak-*
 00 - WEBSITE DID NOT PUBLISH - READ ME.txt
 .netlify/
+.env
+.env.*
+!.env.example
