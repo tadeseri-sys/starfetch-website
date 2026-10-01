@@ -214,6 +214,85 @@
     }
   );
 
+  // ------------------------------------------------------------
+// SIGNATURE IMAGE VALIDATION
+// ------------------------------------------------------------
+
+var signatureMinSize = 10 * 1024; // 10 KB
+var signatureMaxSize = 5 * 1024 * 1024; // 5 MB
+
+var allowedSignatureTypes = [
+  "image/jpeg",
+  "image/png",
+  "image/webp"
+];
+
+
+Array.prototype.forEach.call(
+  form.querySelectorAll("[data-signature-upload]"),
+  function (input) {
+
+    input.addEventListener(
+      "change",
+      function () {
+
+        // Clear any previous validation message.
+        input.setCustomValidity("");
+
+
+        if (!input.files || !input.files.length) {
+          return;
+        }
+
+
+        var file = input.files[0];
+
+
+        // Validate file type.
+        if (
+          allowedSignatureTypes.indexOf(file.type) === -1
+        ) {
+
+          input.setCustomValidity(
+            "Please upload your signature as a JPG, PNG or WEBP image."
+          );
+
+          input.reportValidity();
+          return;
+
+        }
+
+
+        // Validate minimum size.
+        if (file.size < signatureMinSize) {
+
+          input.setCustomValidity(
+            "The signature image is too small. Please upload an image of at least 10 KB."
+          );
+
+          input.reportValidity();
+          return;
+
+        }
+
+
+        // Validate maximum size.
+        if (file.size > signatureMaxSize) {
+
+          input.setCustomValidity(
+            "The signature image is too large. Please upload an image no larger than 5 MB."
+          );
+
+          input.reportValidity();
+          return;
+
+        }
+
+      }
+    );
+
+  }
+);
 
   // ------------------------------------------------------------
   // 6. PRINT BUTTON

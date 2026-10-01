@@ -62,9 +62,9 @@
             Individual/Joint Account
           </a>
 
-          <a href="open-account.html?type=corporate">
-            Corporate Account
-          </a>
+          <a href="open-corporate.html">
+  Corporate Account
+</a>
 
         </div>
 
@@ -130,6 +130,7 @@
         name="account-individual"
         method="POST"
         action="thanks.html"
+        enctype="multipart/form-data"
         data-netlify="true"
         netlify-honeypot="bot-field">
 
@@ -2810,57 +2811,146 @@
           </div>
 
 
-          <div class="pp-sign">
+          <div class="signature-section">
 
-            <p class="form-note">
-              Signatures — print this form and sign below
-              in ink (this page is your section 13 &amp; 14
-              signature block).
-            </p>
+  <h3>Applicant signature details</h3>
 
-
-            <div class="sign-row">
-              <span>
-                Applicant 1 — signature
-              </span>
-              <span class="sign-line"></span>
-            </div>
+  <p class="form-note">
+    Sign clearly on plain white paper or a clean white background.
+    Take a clear photo or scan, crop it to the signature area and
+    upload it below. Accepted formats: JPG, PNG or WEBP.
+    File size must be between 10 KB and 5 MB.
+  </p>
 
 
-            <div class="sign-row">
-              <span>
-                Name / date
-              </span>
-              <span class="sign-line"></span>
-            </div>
+  <!-- APPLICANT 1 SIGNATURE -->
+  <div class="applicant-block">
+
+    <h3>Applicant 1</h3>
+
+    <div class="oa-grid">
+
+      <div class="field">
+        <label for="declaration_app1_name">
+          Full name
+          <span class="req">*</span>
+        </label>
+
+        <input
+          type="text"
+          id="declaration_app1_name"
+          name="declaration_app1_name"
+          required>
+      </div>
 
 
-            <div
-              class="sign-row"
-              data-when="joint">
+      <div class="field">
+        <label for="declaration_app1_date">
+          Date
+          <span class="req">*</span>
+        </label>
 
-              <span>
-                Applicant 2 — signature
-              </span>
+        <input
+          type="date"
+          id="declaration_app1_date"
+          name="declaration_app1_date"
+          required>
+      </div>
 
-              <span class="sign-line"></span>
 
-            </div>
+      <div class="field span-2 signature-upload-box">
+
+        <label for="declaration_app1_signature">
+          Upload Applicant 1 signature
+          <span class="req">*</span>
+        </label>
+
+        <p class="signature-help">
+          Sign on plain white paper or a clean white background.
+          Upload a clear JPG, PNG or WEBP image between
+          10 KB and 5 MB.
+        </p>
+
+        <input
+          type="file"
+          id="declaration_app1_signature"
+          name="declaration_app1_signature"
+          accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+          data-signature-upload
+          required>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
-            <div
-              class="sign-row"
-              data-when="joint">
+  <!-- APPLICANT 2 SIGNATURE — JOINT ACCOUNTS ONLY -->
+  <div
+    class="applicant-block"
+    data-when="joint">
 
-              <span>
-                Name / date
-              </span>
+    <h3>Applicant 2 — joint accounts only</h3>
 
-              <span class="sign-line"></span>
+    <div class="oa-grid">
 
-            </div>
+      <div class="field">
+        <label for="declaration_app2_name">
+          Full name
+          <span class="req">*</span>
+        </label>
 
-          </div>
+        <input
+          type="text"
+          id="declaration_app2_name"
+          name="declaration_app2_name"
+          data-required-when-visible>
+      </div>
+
+
+      <div class="field">
+        <label for="declaration_app2_date">
+          Date
+          <span class="req">*</span>
+        </label>
+
+        <input
+          type="date"
+          id="declaration_app2_date"
+          name="declaration_app2_date"
+          data-required-when-visible>
+      </div>
+
+
+      <div class="field span-2 signature-upload-box">
+
+        <label for="declaration_app2_signature">
+          Upload Applicant 2 signature
+          <span class="req">*</span>
+        </label>
+
+        <p class="signature-help">
+          Sign on plain white paper or a clean white background.
+          Upload a clear JPG, PNG or WEBP image between
+          10 KB and 5 MB.
+        </p>
+
+        <input
+          type="file"
+          id="declaration_app2_signature"
+          name="declaration_app2_signature"
+          accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+          data-signature-upload
+          data-required-when-visible>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
         </fieldset>
 
@@ -2944,44 +3034,122 @@
               value="Yes">
 
             <label
-              for="indemnity_accept"
-              style="font-weight:400;color:inherit">
+  for="indemnity_accept"
+  style="font-weight:400;color:inherit">
 
-              I/We agree to the Electronic Instruction
-              Indemnity above.
-              The signed version will be returned on the
-              printed form, in the presence of a witness.
-              <span class="req">*</span>
+  I/We have read, understood and agree to the
+  Electronic Instruction Indemnity above and confirm
+  that the required witness details will be provided below.
+  <span class="req">*</span>
 
-            </label>
-
-          </div>
-
-
-          <div class="pp-sign">
-
-            <div class="sign-row">
-              <span>
-                In the presence of — Witness name
-              </span>
-              <span class="sign-line"></span>
-            </div>
-
-            <div class="sign-row">
-              <span>
-                Occupation / address
-              </span>
-              <span class="sign-line"></span>
-            </div>
-
-            <div class="sign-row">
-              <span>
-                Witness signature / date
-              </span>
-              <span class="sign-line"></span>
-            </div>
+</label>
 
           </div>
+
+
+          <div class="applicant-block">
+
+  <h3>Witness details</h3>
+
+  <p class="form-note">
+    The witness should complete the details below and upload
+    their signature after witnessing the applicant's acceptance
+    of the Electronic Instruction Indemnity.
+  </p>
+
+
+  <div class="oa-grid">
+
+    <div class="field">
+
+      <label for="witness_name">
+        Witness full name
+        <span class="req">*</span>
+      </label>
+
+      <input
+        type="text"
+        id="witness_name"
+        name="witness_name"
+        required>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="witness_occupation">
+        Occupation
+        <span class="req">*</span>
+      </label>
+
+      <input
+        type="text"
+        id="witness_occupation"
+        name="witness_occupation"
+        required>
+
+    </div>
+
+
+    <div class="field span-2">
+
+      <label for="witness_address">
+        Address
+        <span class="req">*</span>
+      </label>
+
+      <textarea
+        id="witness_address"
+        name="witness_address"
+        rows="3"
+        required></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="witness_date">
+        Date
+        <span class="req">*</span>
+      </label>
+
+      <input
+        type="date"
+        id="witness_date"
+        name="witness_date"
+        required>
+
+    </div>
+
+
+    <div class="field span-2 signature-upload-box">
+
+      <label for="witness_signature">
+        Upload witness signature
+        <span class="req">*</span>
+      </label>
+
+      <p class="signature-help">
+        Sign clearly on plain white paper or a clean white background.
+        Upload a clear JPG, PNG or WEBP image between
+        10 KB and 5 MB.
+      </p>
+
+      <input
+        type="file"
+        id="witness_signature"
+        name="witness_signature"
+        accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+        data-signature-upload
+        required>
+
+    </div>
+
+  </div>
+
+</div>
 
         </fieldset>
 
@@ -3314,7 +3482,7 @@
         Free tools
       </a>
 
-      <a href="open-account.html">
+      <a href="open-individual.html">
         Open an account
       </a>
 

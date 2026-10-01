@@ -92,6 +92,45 @@ label.opt {
   background: transparent; border: 2px solid var(--line); color: var(--forest-deep);
 }
 .btn-outline-dark:hover { background: var(--mist); transform: translateY(-1px); }
+
+/* Signature upload */
+.signature-section {
+  margin-top: 22px;
+}
+
+.signature-upload-box {
+  padding: 18px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.signature-upload-box label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.signature-help {
+  margin: 0 0 12px;
+  color: var(--grey);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+.signature-upload-box input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--mist);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.signature-upload-box input[type="file"]:focus {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
 @media print {
   .site-header, .ngx-ticker, .oa-intro .oa-steps-note, .newsletter-band,
   footer, .msg-widget, .oa-actions, .form-note a[href^="mailto"] {
