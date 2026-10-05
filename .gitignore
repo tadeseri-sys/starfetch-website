@@ -11,3 +11,4 @@ publish.sh.bak-*
 .env
 .env.*
 !.env.example
+node_modules/

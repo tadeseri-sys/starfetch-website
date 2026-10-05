@@ -1,0 +1,25 @@
+{
+  "name": "starfetch-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadeseri-sys/starfetch-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tadeseri-sys/starfetch-website/issues"
+  },
+  "homepage": "https://github.com/tadeseri-sys/starfetch-website#readme",
+  "dependencies": {
+    "@netlify/functions": "^6.0.2",
+    "@supabase/supabase-js": "^2.117.2"
+  }
+}
