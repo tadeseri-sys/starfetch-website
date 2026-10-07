@@ -83,11 +83,16 @@ const FILE_RULES = {
   },
 
   witness_signature: {
-    applicationTypes: ["corporate"],
-    category: "signature",
-    minSize: TEN_KB,
-    maxSize: FIVE_MB
-  },
+  applicationTypes: [
+    "corporate",
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "signature",
+  minSize: TEN_KB,
+  maxSize: FIVE_MB
+},
 
   company_seal: {
     applicationTypes: ["corporate"],
@@ -167,7 +172,12 @@ const FILE_RULES = {
   },
 
   source_funds_evidence: {
-    applicationTypes: ["corporate"],
+    applicationTypes: [
+  "corporate",
+  "individual",
+  "joint",
+  "minor"
+],
     category: "document",
     minSize: 1,
     maxSize: TEN_MB
@@ -178,7 +188,120 @@ const FILE_RULES = {
     category: "document",
     minSize: 1,
     maxSize: TEN_MB
-  }
+  },
+
+  declaration_app1_signature: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "signature",
+  minSize: TEN_KB,
+  maxSize: FIVE_MB
+},
+
+declaration_app2_signature: {
+  applicationTypes: [
+    "joint"
+  ],
+  category: "signature",
+  minSize: TEN_KB,
+  maxSize: FIVE_MB
+},
+
+completed_signed_form: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+app1_passport_photo: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "image",
+  minSize: 1,
+  maxSize: FIVE_MB
+},
+
+app2_passport_photo: {
+  applicationTypes: [
+    "joint"
+  ],
+  category: "image",
+  minSize: 1,
+  maxSize: FIVE_MB
+},
+
+app1_photo_id: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+app2_photo_id: {
+  applicationTypes: [
+    "joint"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+proof_of_address: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+minor_birth_certificate: {
+  applicationTypes: [
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+personal_ips: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+},
+
+signed_fee_schedule: {
+  applicationTypes: [
+    "individual",
+    "joint",
+    "minor"
+  ],
+  category: "document",
+  minSize: 1,
+  maxSize: TEN_MB
+}
 
 };
 
