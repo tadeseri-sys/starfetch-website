@@ -901,8 +901,8 @@
 
 
 
-  // ============================================================
-  // SUBMISSION
+    // ============================================================
+  // SECURE APPLICATION SUBMISSION
   // ============================================================
 
   var status =
@@ -911,9 +911,663 @@
     );
 
 
+  var submitButton =
+    form.querySelector(
+      'button[type="submit"]'
+    );
+
+
+  /*
+   * Kept only in browser memory.
+   *
+   * We deliberately do NOT store the application
+   * submission token in localStorage, sessionStorage,
+   * cookies or the URL.
+   */
+  var activeSubmission = null;
+
+
+  /*
+   * Keeps track of files successfully confirmed
+   * during this page session.
+   *
+   * This allows a retry after a temporary network
+   * failure without unnecessarily uploading files
+   * that were already confirmed.
+   */
+  var confirmedUploads =
+    Object.create(null);
+
+
+
+  function setSubmissionStatus(
+    message
+  ) {
+
+    if (!status) return;
+
+
+    status.hidden = false;
+
+    status.textContent =
+      message;
+
+
+    status.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }
+
+
+
+  function setSubmitting(
+    submitting
+  ) {
+
+    if (!submitButton) return;
+
+
+    submitButton.disabled =
+      submitting;
+
+
+    submitButton.textContent =
+      submitting
+        ? "Submitting application..."
+        : "Submit corporate application";
+
+  }
+
+
+
+  async function apiRequest(
+    url,
+    payload
+  ) {
+
+    var response;
+
+
+    try {
+
+      response =
+        await fetch(
+          url,
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body:
+              JSON.stringify(
+                payload
+              )
+          }
+        );
+
+    } catch (error) {
+
+      var networkError =
+        new Error(
+          "A network error occurred. Please check your connection and try again."
+        );
+
+      networkError.status = 0;
+
+      throw networkError;
+
+    }
+
+
+    var data = null;
+
+
+    try {
+
+      data =
+        await response.json();
+
+    } catch (error) {
+
+      data = null;
+
+    }
+
+
+    if (
+      !response.ok ||
+      !data ||
+      data.ok !== true
+    ) {
+
+      var requestError =
+        new Error(
+          data &&
+          data.message
+            ? data.message
+            : "The request could not be completed."
+        );
+
+
+      requestError.status =
+        response.status;
+
+
+      requestError.data =
+        data || {};
+
+
+      throw requestError;
+
+    }
+
+
+    return data;
+
+  }
+
+
+
+  function getCheckboxValue(
+    name
+  ) {
+
+    var input =
+      form.querySelector(
+        '[name="' +
+        name +
+        '"]'
+      );
+
+
+    return Boolean(
+      input &&
+      input.checked
+    );
+
+  }
+
+
+
+  function buildCorporateFormData() {
+
+    var result = {};
+
+    var browserFormData =
+      new FormData(form);
+
+
+    browserFormData.forEach(
+      function (
+        value,
+        key
+      ) {
+
+        /*
+         * Actual files are stored in Supabase Storage.
+         * They must not also be placed in form_data.
+         */
+        if (
+          value instanceof File
+        ) {
+          return;
+        }
+
+
+        /*
+         * Radio groups normally produce one value.
+         * This also safely handles any repeated
+         * non-file field names.
+         */
+        if (
+          Object.prototype
+            .hasOwnProperty
+            .call(
+              result,
+              key
+            )
+        ) {
+
+          if (
+            !Array.isArray(
+              result[key]
+            )
+          ) {
+
+            result[key] = [
+              result[key]
+            ];
+
+          }
+
+
+          result[key].push(
+            value
+          );
+
+          return;
+
+        }
+
+
+        result[key] =
+          value;
+
+      }
+    );
+
+
+    /*
+     * Send explicit true / false values for
+     * checkboxes so an unchecked box is not
+     * confused with a missing field.
+     */
+
+    [
+      "svc_fixed_note",
+      "svc_discretionary",
+      "svc_non_discretionary",
+
+      "source_business",
+      "source_asset_sale",
+      "source_financing",
+      "source_other",
+
+      "declaration_accept",
+      "indemnity_accept"
+
+    ].forEach(
+      function (name) {
+
+        result[name] =
+          getCheckboxValue(
+            name
+          );
+
+      }
+    );
+
+
+    /*
+     * The anti-bot field is only needed when
+     * starting the application.
+     */
+    delete result.website;
+
+
+    return result;
+
+  }
+
+
+
+  function collectSelectedFiles() {
+
+    var files = [];
+
+
+    Array.prototype.forEach.call(
+      form.querySelectorAll(
+        'input[type="file"][name]'
+      ),
+      function (input) {
+
+        if (
+          !input.files ||
+          !input.files.length
+        ) {
+          return;
+        }
+
+
+        for (
+          var i = 0;
+          i < input.files.length;
+          i++
+        ) {
+
+          files.push({
+            input:
+              input,
+
+            file:
+              input.files[i],
+
+            index:
+              i,
+
+            fileType:
+              input.name
+          });
+
+        }
+
+      }
+    );
+
+
+    return files;
+
+  }
+
+
+
+  function createFileFingerprint(
+    fileItem
+  ) {
+
+    return [
+      fileItem.fileType,
+      fileItem.index,
+      fileItem.file.name,
+      fileItem.file.size,
+      fileItem.file.type,
+      fileItem.file.lastModified
+    ].join("::");
+
+  }
+
+
+
+  async function startCorporateApplication() {
+
+    var institutionInput =
+      form.querySelector(
+        '[name="institution_name"]'
+      );
+
+
+    var contactEmailInput =
+      form.querySelector(
+        '[name="contact_email"]'
+      );
+
+
+    var contactPhoneInput =
+      form.querySelector(
+        '[name="contact_phone"]'
+      );
+
+
+    var honeypotInput =
+      form.querySelector(
+        '[name="website"]'
+      );
+
+
+    var response =
+      await apiRequest(
+        "/api/start-application",
+        {
+          applicationType:
+            "corporate",
+
+          applicantName:
+            institutionInput
+              ? institutionInput.value
+              : "",
+
+          contactEmail:
+            contactEmailInput
+              ? contactEmailInput.value
+              : "",
+
+          contactPhone:
+            contactPhoneInput
+              ? contactPhoneInput.value
+              : "",
+
+          website:
+            honeypotInput
+              ? honeypotInput.value
+              : ""
+        }
+      );
+
+
+    if (
+      !response.application ||
+      !response.application.id ||
+      !response.application.reference ||
+      !response.submissionToken
+    ) {
+
+      throw new Error(
+        "The secure application session could not be created."
+      );
+
+    }
+
+
+    return {
+      id:
+        response.application.id,
+
+      reference:
+        response.application.reference,
+
+      submissionToken:
+        response.submissionToken
+    };
+
+  }
+
+
+
+  async function uploadFile(
+    fileItem
+  ) {
+
+    var file =
+      fileItem.file;
+
+
+    /*
+     * Browser MIME type is required because our
+     * backend uses an explicit MIME allow-list.
+     */
+    if (!file.type) {
+
+      throw new Error(
+        "The browser could not determine the type of \"" +
+        file.name +
+        "\". Please choose the file again."
+      );
+
+    }
+
+
+
+    var permission =
+      await apiRequest(
+        "/api/create-upload-url",
+        {
+          applicationId:
+            activeSubmission.id,
+
+          submissionToken:
+            activeSubmission.submissionToken,
+
+          fileType:
+            fileItem.fileType,
+
+          originalName:
+            file.name,
+
+          mimeType:
+            file.type,
+
+          sizeBytes:
+            file.size
+        }
+      );
+
+
+
+    if (
+      !permission.upload ||
+      !permission.upload.signedUrl ||
+      !permission.upload.path
+    ) {
+
+      throw new Error(
+        "Secure upload permission could not be created."
+      );
+
+    }
+
+
+
+    /*
+     * Upload the file DIRECTLY to private
+     * Supabase Storage.
+     *
+     * The Supabase server secret is never exposed
+     * to browser JavaScript.
+     */
+    var uploadResponse;
+
+
+    try {
+
+      uploadResponse =
+        await fetch(
+          permission.upload.signedUrl,
+          {
+            method:
+              "PUT",
+
+            headers: {
+              "Content-Type":
+                file.type,
+
+              "Cache-Control":
+                "max-age=3600",
+
+              "x-upsert":
+                "false"
+            },
+
+            body:
+              file
+          }
+        );
+
+    } catch (error) {
+
+      throw new Error(
+        "The file \"" +
+        file.name +
+        "\" could not be uploaded. Please check your connection and try again."
+      );
+
+    }
+
+
+
+    if (
+      !uploadResponse.ok
+    ) {
+
+      throw new Error(
+        "The file \"" +
+        file.name +
+        "\" could not be uploaded securely."
+      );
+
+    }
+
+
+
+    /*
+     * Ask our backend to inspect the ACTUAL object
+     * in private Storage before accepting it.
+     */
+    await apiRequest(
+      "/api/confirm-upload",
+      {
+        applicationId:
+          activeSubmission.id,
+
+        submissionToken:
+          activeSubmission.submissionToken,
+
+        fileType:
+          fileItem.fileType,
+
+        path:
+          permission.upload.path,
+
+        originalName:
+          file.name,
+
+        mimeType:
+          file.type,
+
+        sizeBytes:
+          file.size
+      }
+    );
+
+  }
+
+
+
+  function focusFirstServerInvalidField(
+    fieldNames
+  ) {
+
+    if (
+      !Array.isArray(
+        fieldNames
+      ) ||
+      !fieldNames.length
+    ) {
+      return;
+    }
+
+
+    var field =
+      form.querySelector(
+        '[name="' +
+        fieldNames[0] +
+        '"]'
+      );
+
+
+    if (!field) return;
+
+
+    field.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+
+    try {
+
+      field.focus({
+        preventScroll: true
+      });
+
+    } catch (error) {
+
+      field.focus();
+
+    }
+
+  }
+
+
+
   form.addEventListener(
     "submit",
-    function (event) {
+    async function (event) {
 
       event.preventDefault();
 
@@ -929,56 +1583,235 @@
       syncPEP();
 
 
+
       if (!form.checkValidity()) {
 
         form.reportValidity();
 
-        if (status) {
 
-          status.hidden = false;
+        setSubmissionStatus(
+          "Please complete the required fields before submitting the application."
+        );
 
-          status.textContent =
-            "Please complete the required fields before submitting the application.";
-
-        }
 
         return;
 
       }
 
 
-      /*
-       * IMPORTANT:
-       *
-       * Corporate KYC data must not be sent through
-       * Netlify Forms or directly to the database
-       * from browser-side JavaScript.
-       *
-       * We will replace this block with the secure
-       * backend/API submission when the database,
-       * private storage and admin system are ready.
-       */
+
+      setSubmitting(true);
 
 
-      if (status) {
+      try {
 
-        status.hidden = false;
+        /*
+         * Only create a new application once during
+         * this page session.
+         *
+         * If a temporary network failure occurs,
+         * pressing Submit again reuses the same
+         * application instead of creating duplicates.
+         */
+        if (!activeSubmission) {
 
-        status.innerHTML =
-          "<strong>Form completed successfully.</strong> " +
-          "Secure corporate application submission is being connected to the Starfetch onboarding system. " +
-          "No sensitive information has been transmitted from this page yet.";
+          setSubmissionStatus(
+            "Creating your secure Starfetch application..."
+          );
 
-        status.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+
+          activeSubmission =
+            await startCorporateApplication();
+
+        }
+
+
+
+        var files =
+          collectSelectedFiles();
+
+
+        for (
+          var i = 0;
+          i < files.length;
+          i++
+        ) {
+
+          var fileItem =
+            files[i];
+
+
+          var fingerprint =
+            createFileFingerprint(
+              fileItem
+            );
+
+
+          /*
+           * Skip a file that was already successfully
+           * uploaded and confirmed during this page session.
+           */
+          if (
+            confirmedUploads[
+              fingerprint
+            ]
+          ) {
+            continue;
+          }
+
+
+
+          setSubmissionStatus(
+            "Securely uploading file " +
+            (i + 1) +
+            " of " +
+            files.length +
+            ": " +
+            fileItem.file.name
+          );
+
+
+
+          await uploadFile(
+            fileItem
+          );
+
+
+          confirmedUploads[
+            fingerprint
+          ] = true;
+
+        }
+
+
+
+        setSubmissionStatus(
+          "Finalising your application. Please do not close this page."
+        );
+
+
+
+        var finalResult =
+          await apiRequest(
+            "/api/finalize-application",
+            {
+              applicationId:
+                activeSubmission.id,
+
+              submissionToken:
+                activeSubmission.submissionToken,
+
+              formData:
+                buildCorporateFormData()
+            }
+          );
+
+
+
+        if (
+          !finalResult.application ||
+          !finalResult.application.reference
+        ) {
+
+          throw new Error(
+            "The final application reference could not be confirmed."
+          );
+
+        }
+
+
+
+        var reference =
+          finalResult.application.reference;
+
+
+        /*
+         * Token is no longer useful after finalisation
+         * because the backend destroys its database hash.
+         */
+        activeSubmission =
+          null;
+
+
+        confirmedUploads =
+          Object.create(null);
+
+
+
+        /*
+         * Only the harmless application reference goes
+         * into the URL.
+         *
+         * No BVN, NIN, token, email or other KYC data
+         * is placed in the query string.
+         */
+        window.location.assign(
+          "application-submitted.html?ref=" +
+          encodeURIComponent(
+            reference
+          )
+        );
+
+
+      } catch (error) {
+
+        /*
+         * A 401 means the temporary application session
+         * is no longer usable.
+         *
+         * Clear browser-memory state so the next Submit
+         * begins a fresh secure application.
+         */
+        if (
+          error &&
+          error.status === 401
+        ) {
+
+          activeSubmission =
+            null;
+
+
+          confirmedUploads =
+            Object.create(null);
+
+
+          setSubmissionStatus(
+            "Your secure submission session expired or is no longer valid. Please press Submit again to start a fresh secure submission."
+          );
+
+        } else {
+
+          if (
+            error &&
+            error.data &&
+            Array.isArray(
+              error.data.fields
+            )
+          ) {
+
+            focusFirstServerInvalidField(
+              error.data.fields
+            );
+
+          }
+
+
+          setSubmissionStatus(
+            error &&
+            error.message
+              ? error.message
+              : "The application could not be submitted. Please try again."
+          );
+
+        }
+
+
+        setSubmitting(false);
 
       }
 
     }
   );
-
 
 
   // ============================================================
